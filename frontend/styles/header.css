@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.nav-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  margin: 15px 0;
+  font-weight: 400;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+}
+
+.header-block {
+  width: 100%;
+  background-image: url("./../img/header/header-bg.jpg");
+}
+
+.header-block-container {
+  display: flex;
+  flex-direction: column;
+  background: rgba(31, 31, 31, 0.85);
+}
+
+.header-container-left {
+  margin: 25px 30px 0 30px;
+}
+
+.header-container-left-title {
+  display: flex;
+}
+
+.header-container-left-title-content {
+  margin-left: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(222, 222, 222);
+}
+
+.header-container-left-content {
+  margin: 10px 10px;
+  color: rgb(222, 222, 222);
+}
+
+.header-container-left-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  background: #ffb400;
+  width: 230px;
+  height: 55px;
+}
+
+.header-yellow-button {
+  color: #ffffff;
+  text-align: left;
+  font: 600 14px "Rubik", sans-serif;
+  position: relative;
+}
+
+.header-container-right {
+  margin: 10px 30px 10px 30px;
+}
+
+.header-container-right-title {
+  color: #ffb400;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.header-container-right-block-section {
+  display: flex;
+  margin: 0 10px;
+}
+
+.header-container-right-block-section-box {
+  margin: 5px 10px;
+}
+
+.header-container-right-block-section-image {
+  width: 70px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-container-right-block-section-title {
+  color: #dedede;
+  font-size: 20px;
+}
+
+.header-container-right-block-section-content {
+  color: #dedede;
+  width: 250px;
+  text-align: justify;
+}
+
+@media (min-width: 768px) {
+  header {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .header-block-container {
+    flex-direction: row;
+  }
+
+  .header-container-left {
+    max-width: 700px;
+  }
+
+  .bg-image {
+    max-width: 1200px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 20px 20px;
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: end;
+  }
+}
