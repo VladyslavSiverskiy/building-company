@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Building company</title>
+</head>
+
+<body>
+    <section class="add-comment">
+        <div class="add-comment__wrapper">
+            <form action="" class="add-comment__form" id="cmnt-form">
+                <p class="add-comment__label">
+                    Leave a comment
+                </p>
+                <div class="add-comment__black-divider"></div>
+                <p class="add-comment__rate">Rate your recent experience:</p>
+                <div class="add-comment__rating">
+                    <div class="add-comment__rating-items">
+                        <input class="add-comment__rating-item" name="rating" id="rating__five" type="radio" value="5">
+                        <label class="add-comment__rating-label" for="rating__five"></label>
+
+                        <input class="add-comment__rating-item" name="rating" id="rating__four" type="radio" value="4">
+                        <label class="add-comment__rating-label" for="rating__four"></label>
+
+                        <input class="add-comment__rating-item" name="rating" id="rating__three" type="radio" value="3">
+                        <label class="add-comment__rating-label" for="rating__three"></label>
+
+                        <input class="add-comment__rating-item" name="rating" id="rating__two" type="radio" value="2">
+                        <label class="add-comment__rating-label" for="rating__two"></label>
+
+                        <input class="add-comment__rating-item" name="rating" id="rating__one" type="radio" value="1">
+                        <label class="add-comment__rating-label" for="rating__one"></label>
+                    </div>
+                </div>
+                <div class="add-comment__text-area">
+                    <p class="add-comment__tell">Tell us about your experience:</p>
+                    <textarea name="comment" form="cmnt-form" placeholder="Enter text here..."></textarea>
+                </div>
+                <button class="add-comment__submit-button" type="submit">Sent Review</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>

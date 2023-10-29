@@ -1,0 +1,137 @@
+.add-comment {
+  margin: auto;
+  width: 100%;
+  padding: 120px 0;
+  background-color: #f5f5f5;
+}
+
+.add-comment__wrapper {
+  margin: auto;
+  max-width: var(--container-width);
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 70px 0;
+}
+
+form {
+  margin: auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.add-comment__label {
+  font-family: var(--font-family-header);
+  font-weight: bold;
+  font-size: 55px;
+  text-align: center;
+}
+
+.add-comment__rating {
+  font-size: 30px;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+
+.add-comment__rating::before {
+  display: block;
+  color: black;
+  content: "★★★★★";
+}
+
+.add-comment__rating-items {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.add-comment__rating-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.add-comment__text-area {
+  min-height: 100%;
+}
+
+.add-comment__text-area textarea {
+  min-width: 100%;
+  min-height: 260px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #000;
+  padding: 5px;
+  font-size: 16px;
+  font-family: var(--font-family-paragraph);
+  resize: none;
+}
+
+.add-comment__black-divider {
+  height: 5px;
+  max-width: 80px;
+  background-color: black;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+
+.add-comment__rating-label {
+  flex: 0 0 20%;
+  height: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  color: #aeaeae;
+}
+
+.add-comment__submit-button {
+  background-color: #ffffff00;
+  padding: 2px 5px;
+  border-radius: 0;
+  border-color: black;
+  border-style: solid;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.add-comment__rate {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family-header);
+  font-size: 25px;
+}
+
+.add-comment__tell {
+  margin-top: 35px;
+  font-family: var(--font-family-header);
+  font-size: 25px;
+}
+
+.add-comment__rating-label::before {
+  content: "★";
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.add-comment__rating-item:checked,
+.add-comment__rating-item:checked ~ .add-comment__rating-label {
+  color: #d6e200;
+}
+
+.add-comment__rating-label:hover,
+.add-comment__rating-label:hover ~ .add-comment__rating-label,
+.add-comment__rating-label:checked ~ .add-comment__rating-label:hover {
+  color: #f2ff00;
+}

@@ -1,0 +1,12 @@
+.login-form {
+  padding: 120px 0;
+  margin: auto;
+  max-width: var(--container-width);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+form {
+  width: 320px;
+}
