@@ -1,15 +1,18 @@
 package com.example.building_company.model;
 
 import jakarta.persistence.*;
-import lombok.NonNull;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table
 public class Project {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,7 +32,6 @@ public class Project {
     private String place;
     @Column(name = "title_image_link")
     private String titleImageLink;
-
     @ElementCollection
     @CollectionTable(name = "project_additional_images", joinColumns = @JoinColumn(name = "project_id"))
     @Column(name = "additional_image_link")
