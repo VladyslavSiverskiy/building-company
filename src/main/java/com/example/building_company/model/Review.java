@@ -1,14 +1,16 @@
 package com.example.building_company.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Builder
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "reviews")
 public class Review {
 
@@ -26,30 +28,4 @@ public class Review {
 
     @Column(name = "is_verified")
     private Boolean isVerified;
-
-    public Review() {
-    }
-
-    public Review(Long id, String content, LocalDateTime creationTime, Boolean isVerified) {
-        this.id = id;
-        this.content = content;
-        this.creationTime = creationTime;
-        this.isVerified = isVerified;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public void setCreationTime(LocalDateTime creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    public void setVerified(Boolean verified) {
-        isVerified = verified;
-    }
 }
