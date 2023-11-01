@@ -1,14 +1,20 @@
 package com.example.building_company.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
-@Getter
 @Entity
 @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 public class User {
 
@@ -26,37 +32,12 @@ public class User {
     @Column(nullable = false)
     private String username;
 
-    public User() {
-
-    }
-
-    public User(Long id, String email, String password, String username) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.username = username;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         User user = (User) o;
         return Objects.equals(id, user.id);
     }
@@ -69,10 +50,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-               "id=" + id +
-               ", email='" + email + '\'' +
-               ", password='" + password + '\'' +
-               ", username='" + username + '\'' +
-               '}';
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                '}';
     }
 }
