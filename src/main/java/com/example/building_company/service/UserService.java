@@ -1,5 +1,6 @@
 package com.example.building_company.service;
 
+import com.example.building_company.dto.UserDto;
 import com.example.building_company.model.User;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public interface UserService {
      * @return {@link User} instance with specified id.
      * @author Nazar Klimovych
      */
-    User findById(Long id);
+    UserDto findById(Long id);
 
     /**
      * Method that allow you to find {@link User} by email.
@@ -22,7 +23,7 @@ public interface UserService {
      * @return {@link User} with specified email.
      * @author Nazar Klimovych
      */
-    User findByEmail(String email);
+    UserDto findByEmail(String email);
 
     /**
      * Method that allow you to find all {@link User}'s.
@@ -30,7 +31,7 @@ public interface UserService {
      * @return {@link User} with specified email.
      * @author Nazar Klimovych
      */
-    List<User> findAll();
+    List<UserDto> findAll();
 
     /**
      * Method for saving {@link User} to a database.
@@ -39,7 +40,7 @@ public interface UserService {
      * @return {@link User} instance.
      * @author Nazar Klimovych
      */
-    User saveUser(User user);
+    UserDto save(User user);
 
     /**
      * Method for deleting user from a database.
