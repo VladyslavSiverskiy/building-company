@@ -2,6 +2,7 @@ package com.example.building_company.dto;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.building_company.model.Project;
@@ -23,7 +24,7 @@ public class ProjectDto {
     private String description;
     private String place;
     private String titleImageLink;
-    private List<String> additionalImages;
+    private List<String> additionalImages = new ArrayList<>();
 
     public static Project toEntity(ProjectDto dto) {
         return Project.builder()
