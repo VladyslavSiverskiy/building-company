@@ -13,7 +13,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Controller
-
 @RequestMapping("/project")
 @AllArgsConstructor
 public class ProjectController {
@@ -33,11 +32,14 @@ public class ProjectController {
             Model model
     ) throws IOException {
 
-        for (MultipartFile file: files) {
-            StringBuilder fileNames = new StringBuilder();
-            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
-            fileNames.append(file.getOriginalFilename());
-            Files.write(fileNameAndPath, file.getBytes());
+        for (int i = 0; i < files.length; i++) {
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, files[i].getOriginalFilename());
+            Files.write(fileNameAndPath, files[i].getBytes());
+            if(i == 0) {
+                project.setTitleImageLink(String.valueOf(fileNameAndPath));
+            }else{
+                project.getAdditionalImages().add(String.valueOf(fileNameAndPath));
+            }
         }
 
         System.out.println(project);
