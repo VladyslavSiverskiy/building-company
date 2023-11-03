@@ -1,6 +1,8 @@
 package com.example.building_company.service;
 
+import com.example.building_company.dto.UserDto;
 import com.example.building_company.exception.UserNotFoundException;
+import com.example.building_company.mapping.UserDtoMapper;
 import com.example.building_company.model.User;
 import com.example.building_company.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -12,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UserServiceImpl  implements UserService {
     private final UserRepository userRepository;
+    private final UserDtoMapper userDtoMapper;
 
     /**
      * Method that allow you to find {@link User} by id.
@@ -21,8 +24,9 @@ public class UserServiceImpl  implements UserService {
      * @author Nazar Klimovych
      */
     @Override
-    public User findById(Long id) {
-        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User not found!"));
+    public UserDto findById(Long id) {
+        User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User not found!"));
+        return userDtoMapper.convertToDto(user);
     }
 
     /**
@@ -33,8 +37,8 @@ public class UserServiceImpl  implements UserService {
      * @author Nazar Klimovych
      */
     @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public UserDto findByEmail(String email) {
+        return userDtoMapper.convertToDto(userRepository.findByEmail(email));
     }
 
     /**
@@ -44,8 +48,8 @@ public class UserServiceImpl  implements UserService {
      * @author Nazar Klimovych
      */
     @Override
-    public List<User> findAll() {
-        return userRepository.findAll();
+    public List<UserDto> findAll() {
+        return mapList(userRepository.findAll());
     }
 
     /**
@@ -56,8 +60,8 @@ public class UserServiceImpl  implements UserService {
      * @author Nazar Klimovych
      */
     @Override
-    public User saveUser(User user) {
-        return userRepository.save(user);
+    public UserDto save(User user) {
+        return userDtoMapper.convertToDto(userRepository.save(user));
     }
 
     /**
@@ -72,5 +76,18 @@ public class UserServiceImpl  implements UserService {
         User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User not found!"));
         userRepository.deleteById(user.getId());
         return id;
+    }
+
+    /**
+     * Maps a list of {@link User} objects to a list of {@link UserDto} objects.
+     *
+     * @param user the list of {@link User} objects to be mapped.
+     * @return a list of {@link UserDto} objects.
+     * @author Nazar Klimovych
+     */
+    private List<UserDto> mapList(List<User> user) {
+        return user.stream()
+                .map(userDtoMapper::convertToDto)
+                .toList();
     }
 }
