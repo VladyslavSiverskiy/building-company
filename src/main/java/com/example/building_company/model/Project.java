@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -20,9 +21,9 @@ public class Project {
     @Column(nullable = false)
     private String title;
     @Column(name = "start_date")
-    private LocalDate startDate;
+    private LocalDateTime startDate;
     @Column(name = "end_date")
-    private LocalDate endDate;
+    private LocalDateTime endDate;
     @Column(nullable = false)
     private String category;
     @Column(name = "client_name")
