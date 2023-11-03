@@ -1,7 +1,9 @@
 package com.example.building_company.controller;
 
 import com.example.building_company.dto.ProjectDto;
+import com.example.building_company.service.ProjectService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +16,9 @@ import java.nio.file.Paths;
 
 @Controller
 @RequestMapping("/project")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProjectController {
-
+    private final ProjectService projectService;
     public static String UPLOAD_DIRECTORY = "C:\\java_training\\spring\\building_company\\building-company\\pictures";
 
     @GetMapping("/create")
@@ -41,8 +43,7 @@ public class ProjectController {
                 project.getAdditionalImages().add(String.valueOf(fileNameAndPath));
             }
         }
-
-        System.out.println(project);
+        projectService.save(project);
         return "redirect:/";
     }
 
