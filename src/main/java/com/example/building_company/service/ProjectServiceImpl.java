@@ -1,6 +1,8 @@
 package com.example.building_company.service;
 
+import com.example.building_company.constants.ExceptionMessages;
 import com.example.building_company.dto.ProjectDto;
+import com.example.building_company.exception.ProjectNotFoundException;
 import com.example.building_company.mapping.ProjectDtoMapper;
 import com.example.building_company.model.Project;
 import com.example.building_company.repository.ProjectRepository;
@@ -12,38 +14,43 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository projectRepository;
-    private final ProjectDtoMapper mapper;
     private final ModelMapper modelMapper;
 
     @Override
     public ProjectDto findById(Long projectId) {
-        return null;
+        Project project = projectRepository.findById(projectId)
+                .orElseThrow(() -> new ProjectNotFoundException(ExceptionMessages.PROJECT_NOT_FOUND + projectId));;
+        return modelMapper.map(project, ProjectDto.class);
     }
 
     @Override
     public List<ProjectDto> findAll() {
-        return null;
+        return projectRepository.findAll().stream()
+                .map(element -> modelMapper.map(element, ProjectDto.class))
+                .toList();
     }
 
     @Override
     public void delete(Long projectId) {
-
+        Project project = projectRepository.findById(projectId)
+                .orElseThrow(() -> new ProjectNotFoundException(ExceptionMessages.PROJECT_NOT_FOUND + projectId));
+        projectRepository.delete(project);
     }
 
     @Override
     public ProjectDto save(ProjectDto projectDto) {
-        Project project = modelMapper.map(projectDto, Project.class);
-        System.out.println(project);
-        project = projectRepository.save(project);
-        System.out.println(project);
-        ProjectDto projectDto1 = modelMapper.map(project, ProjectDto.class);
-        System.out.println(projectDto1);
-        return projectDto1;
+        if (Objects.isNull(projectDto)) {
+            throw new IllegalArgumentException("Project can`t be null.");
+        }
+        Project project = projectRepository.save(modelMapper.map(projectDto, Project.class));
+        return modelMapper.map(project, ProjectDto.class);
     }
 }
