@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/project")
@@ -33,18 +34,24 @@ public class ProjectController {
             @RequestParam("images") MultipartFile[] files,
             Model model
     ) throws IOException {
-
         for (int i = 0; i < files.length; i++) {
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, files[i].getOriginalFilename());
-            Files.write(fileNameAndPath, files[i].getBytes());
-            if(i == 0) {
-                project.setTitleImageLink(String.valueOf(fileNameAndPath));
-            }else{
-                project.getAdditionalImages().add(String.valueOf(fileNameAndPath));
+            if (!Objects.isNull(files[i]) && files[i].getOriginalFilename().length() > 3){
+                Files.write(fileNameAndPath, files[i].getBytes());
+                if(i == 0) {
+                    project.setTitleImageLink(String.valueOf(fileNameAndPath));
+                }else{
+                    project.getAdditionalImages().add(String.valueOf(fileNameAndPath));
+                }
             }
         }
         projectService.save(project);
         return "redirect:/";
     }
 
+    @GetMapping("/{projectId}/delete")
+    public String delete(long projectId) {
+        projectService.delete(projectId);
+        return "redirect:/admin/home";
+    }
 }

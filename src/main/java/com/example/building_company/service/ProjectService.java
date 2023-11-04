@@ -1,7 +1,6 @@
 package com.example.building_company.service;
 
 import com.example.building_company.dto.ProjectDto;
-import com.example.building_company.model.Project;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -19,6 +19,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository projectRepository;
     private final ProjectDtoMapper mapper;
+    private final ModelMapper modelMapper;
 
     @Override
     public ProjectDto findById(Long projectId) {
@@ -37,7 +38,12 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public ProjectDto save(ProjectDto projectDto) {
-        Project saved = projectRepository.save(mapper.convertToEntity(projectDto));
-        return mapper.convertToDto(saved);
+        Project project = modelMapper.map(projectDto, Project.class);
+        System.out.println(project);
+        project = projectRepository.save(project);
+        System.out.println(project);
+        ProjectDto projectDto1 = modelMapper.map(project, ProjectDto.class);
+        System.out.println(projectDto1);
+        return projectDto1;
     }
 }

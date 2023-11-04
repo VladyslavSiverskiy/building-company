@@ -6,35 +6,21 @@ import org.modelmapper.AbstractConverter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProjectDtoMapper{
+public class ProjectDtoMapper extends AbstractConverter<Project, ProjectDto>{
 
-    public Project convertToEntity(ProjectDto projectDto) {
-        return Project.builder()
-                .id(projectDto.getId())
-                .title(projectDto.getTitle())
-                .startDate(projectDto.getStartDate())
-                .endDate(projectDto.getEndDate())
-                .category(projectDto.getCategory())
-                .clientName(projectDto.getClientName())
-                .description(projectDto.getDescription())
-                .place(projectDto.getPlace())
-                .titleImageLink(projectDto.getTitleImageLink())
-                .additionalImages(projectDto.getAdditionalImages())
+    @Override
+    public ProjectDto convert(Project entity) {
+        return ProjectDto.builder()
+                .id(entity.getId())
+                .title(entity.getTitle())
+                .startDate(entity.getStartDate())
+                .endDate(entity.getEndDate())
+                .category(entity.getCategory())
+                .clientName(entity.getClientName())
+                .description(entity.getDescription())
+                .place(entity.getPlace())
+                .titleImageLink(entity.getTitleImageLink())
+                .additionalImages(entity.getAdditionalImages())
                 .build();
     }
-
-    public ProjectDto convertToDto(Project entity) {
-        return new ProjectDto(
-                entity.getId(),
-                entity.getTitle(),
-                entity.getStartDate(),
-                entity.getEndDate(),
-                entity.getCategory(),
-                entity.getClientName(),
-                entity.getDescription(),
-                entity.getPlace(),
-                entity.getTitleImageLink(),
-                entity.getAdditionalImages());
-    }
-
 }
