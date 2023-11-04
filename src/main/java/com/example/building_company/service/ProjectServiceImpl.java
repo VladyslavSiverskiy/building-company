@@ -3,19 +3,14 @@ package com.example.building_company.service;
 import com.example.building_company.constants.ExceptionMessages;
 import com.example.building_company.dto.ProjectDto;
 import com.example.building_company.exception.ProjectNotFoundException;
-import com.example.building_company.mapping.ProjectDtoMapper;
 import com.example.building_company.model.Project;
 import com.example.building_company.repository.ProjectRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -52,5 +47,10 @@ public class ProjectServiceImpl implements ProjectService {
         }
         Project project = projectRepository.save(modelMapper.map(projectDto, Project.class));
         return modelMapper.map(project, ProjectDto.class);
+    }
+
+    @Override
+    public ProjectDto update(ProjectDto projectDto) {
+        return null;
     }
 }
