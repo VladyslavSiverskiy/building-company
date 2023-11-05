@@ -56,15 +56,19 @@ public class ProjectController {
     @GetMapping("/{projectId}/delete")
     public String delete(@PathVariable Long projectId) {
         projectService.delete(projectId);
-        return "redirect:/admin/home";
+        return "redirect:/admin";
     }
 
-    @GetMapping
-    public String getAllProjects(Model model) {
-        model.addAttribute("projects", projectService.findAll()
-                .stream()
-                .map(element -> modelMapper.map(element, Project.class))
-                .collect(Collectors.toList()));
-        return "";
+    @GetMapping("/{projectId}")
+    public String getProject(@PathVariable Long projectId, Model model){
+        projectService.findById(projectId);
+        model.addAttribute("project", projectService.findById(projectId));
+        return ""; //TODO: create page for project
+    }
+
+    @GetMapping("/{projectId}/update")
+    public String updateProject(@PathVariable Long projectId, Model model) {
+        model.addAttribute("project", projectService.findById(projectId));
+        return ""; // TODO: create page for updating
     }
 }

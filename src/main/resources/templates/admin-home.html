@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
+    >
+    <title>Building company admin</title>
+</head>
+<body>
+<div class="container mt-5 pl-5 pr-5">
+    <h1 class="row mb-5 justify-content-center">Manage content</h1>
+    <div class="row justify-content-around">
+        <ul class="nav nav-tabs w-100 d-flex justify-content-start">
+            <li class="nav-item">
+                <a class="nav-link" th:classappend="${currentPage.equals('project') ? ' active' : ''}" th:href="@{/admin(currentPage='project')}">Project</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:classappend="${currentPage.equals('review') ? ' active' : ''}" th:href="@{/admin(currentPage='review')}">Review</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:classappend="${currentPage.equals('other')  ? ' active' : ''}" th:href="@{/admin(currentPage='other')}">Other</a>
+            </li>
+        </ul>
+    </div>
+    <div th:if="${currentPage.equals('project')}" th:insert="projects-list::projects"></div>
+</div>
+</body>
+</html>

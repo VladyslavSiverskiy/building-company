@@ -23,7 +23,7 @@ public class Project {
     private String title;
     @Column(name = "start_date")
     private LocalDateTime startDate;
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = false)
     private LocalDateTime endDate;
     @Column(nullable = false)
     private String category;
