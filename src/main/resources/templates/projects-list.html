@@ -26,10 +26,10 @@
                 </td>
                 <td th:text="${project.getEndDate()}"></td>
                 <td>
-                    <a th:href="@{/project/{projectId}/(projectId=${project.getId()})}">See details</a>
+                    <a th:href="@{/project/{projectId}(projectId=${project.getId()})}">See details</a>
                 </td>
                 <td>
-                    <a th:href="@{/project/{projectId}/update/(projectId=${project.getId()})}">Edit</a>
+                    <a th:href="@{/project/{projectId}/update(projectId=${project.getId()})}">Edit</a>
                 </td>
                 <td>
                     <a th:href="@{/project/{projectId}/delete(projectId=${project.getId()})}">Delete</a>

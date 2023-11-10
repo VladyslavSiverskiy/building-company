@@ -1,6 +1,8 @@
 package com.example.building_company.controller;
 
+import com.example.building_company.dto.ProjectDto;
 import com.example.building_company.model.Project;
+import com.example.building_company.service.FileService;
 import com.example.building_company.service.ProjectService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
 
     private final ProjectService projectService;
+    private final FileService fileService;
     private final ModelMapper modelMapper;
 
     @GetMapping
@@ -29,5 +32,22 @@ public class AdminController {
         return "admin-home";
     }
 
+    @GetMapping("/project/deleteImage")
+    public String deleteProjectImage(
+            @RequestParam(name = "deleteImagePath", defaultValue = "title") String deleteImagePath,
+            @RequestParam(name = "projectId") Long projectId
+    ) {
+
+        ProjectDto projectDto = projectService.findById(projectId);
+        if (deleteImagePath.equals("title")) {
+            fileService.deleteImage(projectDto.getTitleImageLink());
+            projectDto.setTitleImageLink(null);
+        }else {
+            fileService.deleteImage(deleteImagePath);
+            projectDto.getAdditionalImages().remove(deleteImagePath);
+        }
+        projectService.update(projectDto);
+        return "redirect:/project/" + projectId + "/update";
+    }
 
 }
