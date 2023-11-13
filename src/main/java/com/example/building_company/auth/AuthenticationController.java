@@ -1,32 +1,35 @@
 package com.example.building_company.auth;
 
+import com.example.building_company.model.Role;
+import com.example.building_company.model.User;
+import com.example.building_company.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
-    private final AuthenticationService authService;
 
-//    @PostMapping("/registration")
-//    public ResponseEntity<AuthenticationResponse> register(
-//            @RequestBody RegisterRequest request
-//    ) {
-//        return ResponseEntity.ok(authService.register(request));
-//    }
-
-    @PostMapping("/login")
-    public ResponseEntity<AuthenticationResponse> authenticate(
-            @RequestBody AuthenticationRequest request
-    ) {
-        return ResponseEntity.ok(authService.authenticate(request));
-    }
+    private final UserServiceImpl userService;
 
     @GetMapping("/login")
     public String authenticate() {
+        return "signin";
+    }
+
+    @GetMapping("/login-error")
+    public String loginError(Model model) {
+        model.addAttribute("loginError", true);
+        return "signin";
+    }
+
+    @GetMapping("/register")
+    public String registerUser() {
+        userService.save(new User(0L, "user@gmail.com", "user", "user", Role.USER));
         return "signin";
     }
 }
