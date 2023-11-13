@@ -22,7 +22,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public ProjectDto findById(Long projectId) {
         Project project = projectRepository.findById(projectId)
-                .orElseThrow(() -> new ProjectNotFoundException(ExceptionMessages.PROJECT_NOT_FOUND + projectId));;
+                .orElseThrow(() -> new ProjectNotFoundException(ExceptionMessages.PROJECT_NOT_FOUND + projectId));
         return modelMapper.map(project, ProjectDto.class);
     }
 
