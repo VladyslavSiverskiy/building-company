@@ -9,6 +9,9 @@
 </head>
 <body>
 <div class="container mt-5 pl-5 pr-5">
+    <form class="form-horizontal" th:action="@{/logout}" method="POST">
+        <input class="btn btn" type="submit" value="LogOut">
+    </form>
     <h1 class="row mb-5 justify-content-center">Manage content</h1>
     <div class="row justify-content-around">
         <ul class="nav nav-tabs w-100 d-flex justify-content-start">
