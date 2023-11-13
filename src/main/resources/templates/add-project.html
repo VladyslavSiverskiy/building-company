@@ -49,6 +49,7 @@
 
                 <button type="submit" class="btn btn-primary">Create</button>
                 <button type="reset" class="btn btn-secondary">Clear</button>
+                <div th:if="${error}" th:text="${error}" class="alert alert-danger container mt-4 mr-auto ml-auto text-center" role="alert"></div>
             </form>
         </div>
     </div>

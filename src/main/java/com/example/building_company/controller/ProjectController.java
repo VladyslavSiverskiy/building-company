@@ -15,6 +15,8 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import static com.example.building_company.constants.AppConstants.DATE_FORMAT;
+
 @Controller
 @RequestMapping("/project")
 @RequiredArgsConstructor
@@ -35,6 +37,13 @@ public class ProjectController {
             @RequestParam("images") MultipartFile[] files,
             Model model
     ) {
+        if (project.getStartDate().isAfter(project.getEndDate())) {
+            model.addAttribute("error", "Date of ending couldn't be less than date of beginning.");
+            project.setStartDate(null);
+            project.setEndDate(null);
+            model.addAttribute("project", project);
+            return "add-project";
+        }
         ProjectDto savedProject = projectService.save(project);
         fileService.saveProjectImages(savedProject, files);
         projectService.update(savedProject);
@@ -71,12 +80,23 @@ public class ProjectController {
                                  @RequestParam("start-date") String startDate,
                                  @RequestParam("end-date") String endDate,
                                  @RequestParam(value = "images",  required = false) MultipartFile[] files,
-                                 @RequestParam(value = "title-image", required = false) MultipartFile titleImage
+                                 @RequestParam(value = "title-image", required = false) MultipartFile titleImage,
+                                 Model model
     ) {
         ProjectDto projectDtoToUpdate = projectService.findById(projectId);
         projectDto.setId(projectId);
-        projectDto.setStartDate(LocalDate.parse(startDate, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-        projectDto.setEndDate(LocalDate.parse(endDate, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        if (LocalDate.parse(startDate, DateTimeFormatter.ofPattern(DATE_FORMAT))
+                .isAfter(LocalDate.parse(endDate, DateTimeFormatter.ofPattern(DATE_FORMAT)))) {
+            model.addAttribute("error", "Date of ending couldn't be less than date of beginning.");
+            model.addAttribute("project", projectDtoToUpdate);
+            model.addAttribute("startDate",
+                    Date.from(projectDtoToUpdate.getStartDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+            model.addAttribute("endDate",
+                    Date.from(projectDtoToUpdate.getEndDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+            return "edit-project";
+        }
+        projectDto.setStartDate(LocalDate.parse(startDate, DateTimeFormatter.ofPattern(DATE_FORMAT)));
+        projectDto.setEndDate(LocalDate.parse(endDate, DateTimeFormatter.ofPattern(DATE_FORMAT)));
         fileService.updateProjectImages(projectDto, projectDtoToUpdate, titleImage, files);
         projectDto.getAdditionalImages().addAll(projectDtoToUpdate.getAdditionalImages());
         projectService.update(projectDto);

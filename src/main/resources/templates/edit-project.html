@@ -68,6 +68,9 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary m-auto text-center w-100">Update</button>
+
+                <div th:if="${error}" th:text="${error}" class="alert alert-danger container mt-4 mr-auto ml-auto text-center" role="alert">
+                </div>
             </form>
         </div>
     </div>
