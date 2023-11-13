@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1 class="mb-4">Create New Project</h1>
@@ -36,11 +36,11 @@
                 </div>
                 <div class="form-group">
                     <label for="start-date">Start date:</label>
-                    <input th:field="*{startDate}"  type="datetime-local" class="form-control" name="start-date" id="start-date">
+                    <input th:field="*{startDate}"  type="date" class="form-control" name="start-date" id="start-date">
                 </div>
                 <div class="form-group">
                     <label for="end-date">End date:</label>
-                    <input th:field="*{endDate}" type="datetime-local" class="form-control" name="end-date" id="end-date">
+                    <input th:field="*{endDate}" type="date" class="form-control" name="end-date" id="end-date">
                 </div>
 
                 <div class="form-group">
@@ -49,6 +49,7 @@
 
                 <button type="submit" class="btn btn-primary">Create</button>
                 <button type="reset" class="btn btn-secondary">Clear</button>
+                <div th:if="${error}" th:text="${error}" class="alert alert-danger container mt-4 mr-auto ml-auto text-center" role="alert"></div>
             </form>
         </div>
     </div>

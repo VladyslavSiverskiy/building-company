@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -51,6 +52,14 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public ProjectDto update(ProjectDto projectDto) {
-        return null;
+        if (Objects.isNull(projectDto)) {
+            throw new IllegalArgumentException("Project can`t be null.");
+        }
+        Optional<Project> projectOptional = projectRepository.findById(projectDto.getId());
+        if (projectOptional.isEmpty()) {
+            throw new ProjectNotFoundException(ExceptionMessages.PROJECT_NOT_FOUND + projectDto.getId());
+        }
+        Project project = projectRepository.save(modelMapper.map(projectDto, Project.class));
+        return modelMapper.map(project, ProjectDto.class);
     }
 }
