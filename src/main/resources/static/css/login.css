@@ -10,3 +10,14 @@
 form {
   width: 320px;
 }
+
+.vh-100 {
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-image: radial-gradient(75% 75% at 50% 50%, #A100FFFF 0%, #71C4FFFF 100%);
+}
+
+.error {
+  color: firebrick;
+  border: #5d1313;
+}
