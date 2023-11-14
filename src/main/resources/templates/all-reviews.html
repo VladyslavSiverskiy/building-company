@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+    <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .review-card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    h5 {
+      color: #007bff;
+    }
+
+    .info-btn {
+      margin-top: 10px;
+    }
+  </style>
+    <title>All Reviews</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>All Reviews</h2>
+
+      <div th:each="review : ${reviews}" class="review-card">
+        <h5 th:text="${review.content}"></h5>
+        <p th:text="${review.author}"></p>
+        <p th:text="${review.creationTime}"></p>
+        <p th:text="${review.isVerified}"></p>
+        <a th:href="@{/review/{reviewId}/read(reviewId=${review.getId()})}"
+          class="btn btn-primary info-btn">See details</a>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
