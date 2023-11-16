@@ -30,11 +30,13 @@
 }
 
 .header-container-left {
+  max-width: 500px;
   margin: 25px 30px 0 30px;
 }
 
 .header-container-left-title {
   display: flex;
+  max-width: 320px;
 }
 
 .header-container-left-title-content {
@@ -74,12 +76,12 @@
   color: #ffb400;
   font-size: 32px;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 20px 10px 10px 10px;
 }
 
 .header-container-right-block-section {
   display: flex;
-  margin: 0 10px;
+  margin: 15px 10px;
 }
 
 .header-container-right-block-section-box {
@@ -112,10 +114,12 @@
 
   .header-block-container {
     flex-direction: row;
+    justify-content: space-evenly;
+    height: 450px;
   }
 
-  .header-container-left {
-    max-width: 700px;
+  .header-container-left-title {
+    max-width: 320px;
   }
 
   .bg-image {
