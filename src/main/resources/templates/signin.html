@@ -38,12 +38,13 @@
                                 </div>
 
                                 <input type="submit" value="Login" class="btn btn-primary btn-lg btn-block mb-3"/>
+                                <p th:if="${loginError}" class="error">Wrong username or password!</p>
+
                                 <div class="restore-group">
                                     <h6 class="welcome">Forget your password?</h6>
                                     <a href="#">Restore</a>
                                 </div>
 
-                                <p th:if="${loginError}" class="error">Wrong username or password!</p>
                             </form>
                         </div>
                     </div>
