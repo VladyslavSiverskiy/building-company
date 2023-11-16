@@ -9,15 +9,63 @@
 
 form {
   width: 320px;
+  color: #566a7f;
 }
 
 .vh-100 {
   background-size: 100% 100%;
-  background-position: 0 0;
-  background-image: radial-gradient(75% 75% at 50% 50%, #A100FFFF 0%, #71C4FFFF 100%);
+  background: linear-gradient(135deg, #005091 0%, #43529f 100%) 0 0;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+}
+
+.col-12 {
+  max-width: 420px;
+}
+
+.form-control::placeholder {
+  font-weight: 300;
+  font-size: 14px;
+  color: #b2b2b2;
+}
+
+.welcome {
+  font-weight: 300;
+  text-align: start;
+}
+
+.form-outline {
+  font-weight: 300;
+  text-align: start;
+}
+
+.checkbox-group, .restore-group {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.restore-group {
+  justify-content: center;
+}
+
+.restore-group > h6 {
+  margin-bottom: 0;
+  padding-right: 5px;
+}
+
+.form-label {
+  font-size: 12px;
+  margin: 5px;
+}
+
+.checkbox {
+  margin: 5px;
 }
 
 .error {
-  color: firebrick;
-  border: #5d1313;
+  color: #ff0000;
 }
+
