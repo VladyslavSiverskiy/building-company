@@ -25,6 +25,12 @@ public class ProjectController {
     private final FileService fileService;
     private final ModelMapper modelMapper;
 
+    @GetMapping
+    public String getAllProjects(Model model) {
+        model.addAttribute("projects", projectService.findAll());
+        return "all-projects";
+    }
+
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("project", new ProjectDto());
@@ -60,7 +66,7 @@ public class ProjectController {
     public String getProject(@PathVariable Long projectId, Model model){
         projectService.findById(projectId);
         model.addAttribute("project", projectService.findById(projectId));
-        return ""; //TODO: create page for project
+        return "project";
     }
 
     @GetMapping("/{projectId}/update")

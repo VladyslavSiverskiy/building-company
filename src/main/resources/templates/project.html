@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -14,37 +14,41 @@
     <section class="project">
         <div class="project__header">
             <div class="project__header__description">
-                <div class="project__header__description-title">Single project</div>
-                <div class="project__header__description-path">Home / Projects Archive / Single Project</div>
+                <div th:text="${project.getTitle()}" class="project__header__description-title"></div>
+                <div class="project__header__description-path">Home / Projects Archive /
+                    <span th:text="${project.getTitle()}"></span>
+                </div>
             </div>
         </div>
         <div class="project__content">
             <div class="project__content__additional">
-                <h2 class="project__content__additional__name">London Palace</h2>
-                <div class="project__content__additional__short-description">Lorem Ipsum is simply dummy text of
+                <h2 th:text="${project.getTitle()}" class="project__content__additional__name"></h2>
+                <div th:text="${project.getDescription()}" class="project__content__additional__short-description">Lorem Ipsum is simply dummy text of
                     the printing and typesetting industry. Lorem Ipsum
                     has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
                     galley of type and scrambled it to make a type specimen book. It has survived not only five
                     centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
                 <div class="project__content__additional__info">
                     <h3 class="project__content__additional__info__header">Project info</h3>
-                    <div class="project__content__additional__info__unit">
+                    <div th:if="${project.getClientName()}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Client:</div>
-                        <div class="project__content__additional__info__unit__text">John Doe</div>
+                        <div th:text="${project.getClientName()}" class="project__content__additional__info__unit__text">
+
+                        </div>
                     </div>
-                    <div class="project__content__additional__info__unit">
+                    <div th:if="${project.getCategory()}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Category:</div>
-                        <div class="project__content__additional__info__unit__text">Construction Business</div>
+                        <div th:text="${project.getCategory()}" class="project__content__additional__info__unit__text"></div>
                     </div>
-                    <div class="project__content__additional__info__unit">
+                    <div th:if="${project.getEndDate()}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Completed on:</div>
-                        <div class="project__content__additional__info__unit__text">20 January 2022</div>
+                        <div th:text="${project.getEndDate()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                 </div>
             </div>
             <div class="project__content__main">
-                <img src="/img/projects/title-image.png" alt="main-image" class="project__content__main__title-image">
-                <div class="project__content__main__full-description">
+                <img th:if="${project.getTitleImageLink() != null}" class="project__content__main__title-image" th:src="@{${project.getTitleImageLink()}}" alt="img"/>
+                <div th:text="${project.getDescription()}" class="project__content__main__full-description">
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                     classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
                     professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
@@ -59,18 +63,11 @@
                     their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
                 </div>
                 <div class="project__content__main__additional-images">
-                    <img src="/img/projects/image1.jpg" alt="additional-image"
-                         class="project__content__main__additional-images__image">
-                    <img src="/img/projects/image2.jpg" alt="additional-image"
-                         class="project__content__main__additional-images__image">
-                    <img src="/img/projects/image3.jpg" alt="additional-image"
-                         class="project__content__main__additional-images__image">
-                    <img src="/img/projects/image4.jpg" alt="additional-image"
-                         class="project__content__main__additional-images__image">
-                    <img src="/img/projects/image4.jpg" alt="additional-image"
-                         class="project__content__main__additional-images__image">
+                    <image th:src="@{${file}}" th:each="file, index: ${project.getAdditionalImages()}"
+                           class="project__content__main__additional-images__image"></image>
                 </div>
-                <div class="project__content__main__management">
+
+                    <div class="project__content__main__management">
                     <a href="#" class="project__content__main__management__link"><img
                             src="/img/projects/prev-proj.svg">
                         <p>Previous project</p>
@@ -83,8 +80,6 @@
             </div>
 
         </div>
-        <a href="signin.html">Login</a>
-        <a href="comments.html">Comments</a>
     </section>
 
 </body>
