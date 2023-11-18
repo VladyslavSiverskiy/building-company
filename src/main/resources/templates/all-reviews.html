@@ -7,43 +7,49 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet">
     <style>
-    body {
-      background-color: #f8f9fa;
-    }
+      body {
+        background-color: #f8f9fa;
+      }
 
-    .container {
-      margin-top: 50px;
-    }
+      .container {
+        margin-top: 50px;
+      }
 
-    .review-card {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
+      .review-card {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
 
-    h5 {
-      color: #007bff;
-    }
+      h5 {
+        color: #007bff;
+      }
 
-    .info-btn {
-      margin-top: 10px;
-    }
-  </style>
+      .info-btn {
+        margin-top: 10px;
+      }
+    </style>
     <title>All Reviews</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" th:fragment="reviews">
       <h2>All Reviews</h2>
 
-      <div th:each="review : ${reviews}" class="review-card">
-        <h5 th:text="${review.content}"></h5>
-        <p th:text="${review.author}"></p>
-        <p th:text="${review.creationTime}"></p>
-        <p th:text="${review.isVerified}"></p>
-        <a th:href="@{/review/{reviewId}/read(reviewId=${review.getId()})}"
-          class="btn btn-primary info-btn">See details</a>
+      <div class="row">
+        <div th:each="review, iterStat : ${reviews}" class="col-md-4">
+          <div class="review-card">
+            <p><strong>ID: </strong><span th:text="${review.id}"></span></p>
+            <p><strong>Author: </strong><span th:text="${review.author}"></span></p>
+            <p><strong>Content: </strong><span th:text="${review.content}"></span></p>
+            <p><strong>Date: </strong><span th:text="${review.creationTime}"></span></p>
+            <p><strong>Verified: </strong><span th:text="${review.isVerified}"></span></p>
+            <a th:href="@{/review/{reviewId}/read(reviewId=${review.getId()})}"
+              class="btn btn-primary info-btn">See details</a>
+          </div>
+          <div th:if="${iterStat.index % 3 == 2}" class="w-100"></div>
+        </div>
       </div>
     </div>
 

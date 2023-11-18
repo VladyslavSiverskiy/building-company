@@ -32,6 +32,8 @@
             </div>
             <div th:if="${currentPage.equals('project')}"
                 th:insert="~{projects-list::projects}"></div>
+            <div th:if="${currentPage.equals('review')}"
+                th:insert="~{all-reviews::reviews}"></div>
         </div>
     </body>
 </html>
