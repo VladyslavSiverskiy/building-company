@@ -19,53 +19,52 @@
 }
 
 .header-block {
-  width: 100%;
-  background-image: url("../img/header/header-bg.jpg");
+  background-image: url("../img/header/header-bg-home.png");
 }
 
 .header-block-container {
   display: flex;
   flex-direction: column;
-  background: rgba(31, 31, 31, 0.85);
+  background: rgba(31, 31, 31, 0.7);
 }
 
 .header-container-left {
   max-width: 500px;
-  margin: 25px 30px 0 30px;
+  margin: 30px 30px 0 30px;
 }
 
 .header-container-left-title {
   display: flex;
-  max-width: 320px;
+  max-width: 360px;
 }
 
 .header-container-left-title-content {
   margin-left: 15px;
-  font-size: 35px;
+  font-size: 36px;
   font-weight: bold;
   color: rgb(222, 222, 222);
+  max-height: 110px;
 }
 
 .header-container-left-content {
-  margin: 10px 10px;
+  margin: 10px 0 10px 10px;
   color: rgb(222, 222, 222);
+  text-align: justify;
+  text-indent: 10%;
 }
 
-.header-container-left-button {
+.header-container-left-button > .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 10px;
-  background: #ffb400;
+  background: #ffb400 !important;
+  color: #ffffff;
+  border-radius: 0;
   width: 230px;
   height: 55px;
-}
-
-.header-yellow-button {
-  color: #ffffff;
-  text-align: left;
-  font: 600 14px "Rubik", sans-serif;
-  position: relative;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .header-container-right {
@@ -106,20 +105,56 @@
   text-align: justify;
 }
 
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  height: 134px;
+}
+
+.quote-content {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 25px;
+  padding: 10px;
+}
+
+.quote-button {
+  padding: 10px;
+}
+
+.quote-button > .btn {
+  border-radius: 0;
+  border-width: 4px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 @media (min-width: 768px) {
   header {
     margin: 0 auto;
     max-width: 1200px;
   }
 
+  .header-container-left-title-content {
+    font-size: 48px;
+  }
+
   .header-block-container {
     flex-direction: row;
     justify-content: space-evenly;
-    height: 450px;
+    height: 425px;
   }
 
   .header-container-left-title {
-    max-width: 320px;
+    max-width: 420px;
+    line-height: 52px;
+  }
+
+  .header-container-left-title-rectangle {
+    height: 100%;
   }
 
   .bg-image {
@@ -139,5 +174,20 @@
   .navbar-collapse {
     display: flex;
     justify-content: end;
+  }
+
+  .quote-container {
+    flex-direction: row;
+    height: 80px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-container-left {
+    margin: 20px 5px;
+  }
+
+  .header-container-right {
+    margin: 0 5px;
   }
 }
