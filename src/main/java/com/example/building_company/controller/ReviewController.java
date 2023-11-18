@@ -70,6 +70,6 @@ public class ReviewController {
     @GetMapping("/{reviewId}/delete")
     public String deleteReview(@PathVariable Long reviewId) {
         reviewService.delete(reviewId);
-        return "redirect: /admin";
+        return "redirect:/admin";
     }
 }
