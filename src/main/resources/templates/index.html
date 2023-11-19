@@ -16,155 +16,39 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white ">
-
-            <a class="navbar-brand" href="#">Building Company</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                </ul>
+        <div th:insert="top-nav.html"></div>
+        <div th:insert="header-home.html"></div>
+    </header>
+    <section class="our-projects">
+        <div class="our-project__intro">
+            <h3 class="our-projects__intro_title">Latest projects</h3>
+            <div class="horizontal-orange-divider">
             </div>
-        </nav>
-
-        <div class="header-block">
-            <div class="header-block-container">
-                <div class="header-container-left">
-                    <div class="header-container-left-title">
-                        <div class="header-container-left-title-rectangle">
-                            <img src="/img/header/rectangle.svg" alt="Yellow rectangle before text">
-                        </div>
-                        <div class="header-container-left-title-content">Our Construction Services</div>
-                    </div>
-
-                    <div class="header-container-left-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis egestas
-                        pellentesque libero dolor in diam consequat ut.
-                    </div>
-                    <div class="header-container-left-button">
-                        <div class="header-yellow-button">GET A FREE QUOTE</div>
-                    </div>
-                </div>
-
-                <div class="header-container-right">
-                    <div class="header-container-right-title">What We Do</div>
-                    <div class="header-container-right-block">
-                        <div class="header-container-right-block-section">
-                            <div class="header-container-right-block-section-image">
-                                <img src="/img/header/Group%20429.svg" alt="Yellow building">
-                            </div>
-                            <div class="header-container-right-block-section-box">
-                                <div class="header-container-right-block-section-title">Building Construction</div>
-                                <div class="header-container-right-block-section-content">
-                                    Lorem ipsum dolor sit consectetur adipiscing elit. Nullam lectus erat
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header-container-right-block-section">
-                            <div class="header-container-right-block-section-image">
-                                <img src="./img/header/Group%20434.svg" alt="Yellow tools">
-                            </div>
-                            <div class="header-container-right-block-section-box">
-                                <div class="header-container-right-block-section-title">Building Repairs</div>
-                                <div class="header-container-right-block-section-content">
-                                    Lorem ipsum dolor sit consectetur adipiscing elit. Nullam lectus erat
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header-container-right-block-section">
-                            <div class="header-container-right-block-section-image">
-                                <img src="/img/header/Group%20433.svg" alt="Yellow brush">
-                            </div>
-                            <div class="header-container-right-block-section-box">
-                                <div class="header-container-right-block-section-title">Custom Design</div>
-                                <div class="header-container-right-block-section-content">
-                                    Lorem ipsum dolor sit consectetur adipiscing elit. Nullam lectus erat
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+        <div class="our-projects__content">
+            <div class="our-projects__content__project-card" th:each="project, index: ${recent_projects}">
+                <img th:if="${project.getTitleImageLink() != null}" class="our-projects__content__project-card_picture" th:src="@{${project.getTitleImageLink()}}"
+                     alt="project">
+                <img th:if="${project.getTitleImageLink() == null}" class="our-projects__content__project-card_picture" alt="no-title-image" src="/img/default.jpg">
+                <div class="our-projects__content__project-card__description">
+                    <h3 class="our-projects__content__project-card__description_title" th:text="${project.getTitle()}">
+                        Project title
+                    </h3>
+                    <p class="our-projects__content__project-card__description_text" th:text="${#strings.length(project.getDescription()) > 65 ? #strings.substring(project.getDescription(), 0, 65) + '...' : project.getDescription()}">Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Id et euismod bibendum adipiscing et orci, fermentum.
+                    </p>
+                    <a class="our-projects__content__project-card__description_more" th:href="@{/project/{projectId}(projectId=${project.getId()})}">
+                        View project
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
-
+        <a class="our-projects__content__project-card__description_view-all" th:href="@{/project}">
+            View all
+        </a>
+    </section>
 
     <div class="main_container">
-        <div class="latest_projects_container">
-            <h1 class="latest_projects_title">Latest Projects</h1>
-            <ul>
-                <li>
-                    <div class="project_container">
-                        <img src="/img/example/photo_2023-10-23_10-56-25.jpg" alt="project"
-                             class="image_project">
-                        <div class="descripton_project">
-                            <h2 class="description_title">Project Title</h2>
-                            <p class="description_content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Explicabo distinctio dolores maxime laboriosam quos magni, laudantium nisi recusandae
-                                debitis totam, nulla, dolorum porro facere modi maiores ut. Nam, velit placeat!
-                                Aspernatur fugit laudantium mollitia cupiditate nesciunt. Totam qui molestiae quae optio
-                                dicta vel debitis animi sapiente officiis exercitationem soluta incidunt quisquam quam
-                                quia repudiandae consequuntur, dolores blanditiis aliquid expedita perferendis.</p>
-                            <button class="description_button">View Project</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="project_container">
-                        <img src="/img/example/photo_2023-10-23_10-56-17.jpg" alt="project"
-                             class="image_project">
-                        <div class="descripton_project">
-                            <h2 class="description_title">Project Title</h2>
-                            <p class="description_content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Explicabo distinctio dolores maxime laboriosam quos magni, laudantium nisi recusandae
-                                debitis totam, nulla, dolorum porro facere modi maiores ut. Nam, velit placeat!
-                                Aspernatur fugit laudantium mollitia cupiditate nesciunt. Totam qui molestiae quae optio
-                                dicta vel debitis animi sapiente officiis exercitationem soluta incidunt quisquam quam
-                                quia repudiandae consequuntur, dolores blanditiis aliquid expedita perferendis.</p>
-                            <button class="description_button">View Project</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="project_container">
-                        <img src="/img/example/photo_2023-10-23_10-56-23.jpg" alt="project"
-                             class="image_project">
-                        <div class="descripton_project">
-                            <h2 class="description_title">Project Title</h2>
-                            <p class="description_content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Explicabo distinctio dolores maxime laboriosam quos magni, laudantium nisi recusandae
-                                debitis totam, nulla, dolorum porro facere modi maiores ut. Nam, velit placeat!
-                                Aspernatur fugit laudantium mollitia cupiditate nesciunt. Totam qui molestiae quae optio
-                                dicta vel debitis animi sapiente officiis exercitationem soluta incidunt quisquam quam
-                                quia repudiandae consequuntur, dolores blanditiis aliquid expedita perferendis.</p>
-                            <button class="description_button">View Project</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="main"><a href="#" class="view_all">View All</a>
-            </div>
-        </div>
         <div class="comments_container">
             <h1 class="client_testimonials">Client Testimonials</h1>
             <ul>

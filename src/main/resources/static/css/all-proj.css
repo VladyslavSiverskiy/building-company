@@ -1,0 +1,204 @@
+a {
+  text-decoration: none!important;
+}
+
+.our-projects__container {
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  height: 100%;
+  max-width: 1200px;
+}
+
+.our-projects{
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  padding: 100px 0 100px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-projects__header {
+  background: rgba(0, 0, 0, 0.65) url("../img/projects/all-proj-bg.png");
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  height: 339px;
+}
+
+.verical-orange-divider {
+  width: 5px;
+  background-color: orange;
+  height: 200px;
+}
+
+.our-projects__text {
+  align-content: center;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.our-projects__title {
+  padding: 0 20px;
+  color: #ffffff;
+  font-family: var(--font-family-header);
+  font-size: 64px;
+  font-weight: 500;
+  vertical-align: bottom;
+}
+
+.our-projects__content {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 25px;
+  max-width: 1200px;
+  margin: auto;
+  row-gap: 44px;
+}
+
+.our-projects__content__project-card {
+  margin: auto;
+  width: 293px;
+  max-height: 491px;
+  margin-bottom: 26px;
+}
+
+.our-projects__content__project-card_picture {
+  display: block;
+  width: 100%;
+  height: 182px;
+}
+
+.our-projects__content__project-card__description {
+  border: 1px solid #666;
+  display: flex;
+  padding: 42px 24px 29px 24px;
+  flex-direction: column;
+}
+
+.our-projects__content__project-card__description_title {
+  font-family: var(--font-family-paragraph);
+  color: #2a2a2a;
+  font-size: 15px;
+  margin-bottom: 21px;
+  font-weight: 700;
+}
+
+.our-projects__content__project-card__description_text {
+  color: #666;
+  font-family: var(--font-family-paragraph);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 32px;
+  height: 54px;
+}
+
+.horizontal-orange-divider{
+  width: 48px;
+  height: 5px;
+  margin: auto;
+  margin-bottom: 36px;
+  background-color: orange;
+}
+
+.our-projects__intro_title{
+  padding: 0 20px;
+  color: #000000;
+  font-family: var(--font-family-header);
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.our-projects__content__project-card__description_more {
+  font-family: var(--font-family-header);
+  background: none;
+  border: 1px solid #666;
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px;
+  width: 138px;
+  color: #666;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.our-projects__content__project-card__description_view-all {
+  font-family: var(--font-family-header);
+  background: none;
+  border: 3px solid #ffc107;
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px;
+  width: 138px;
+  color: #ffc107;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.our-projects__content__project-card__description_view-all:hover{
+  color: #d5aa02;
+  border-color: #d5aa02;
+}
+
+.our-projects__content__project-card__description_more:hover {
+  background-color: #f0f0f0;
+  color: orange;
+}
+
+@media (min-width: 442px) {
+  .our-projects__header {
+    height: 210px;
+  }
+
+  .verical-orange-divider {
+    height: 110px;
+  }
+
+  .our-projects__title {
+    padding: 4px 20px 0 20px;
+    color: #ffffff;
+    font-family: var(--font-family-header);
+    font-size: 64px;
+    font-weight: 500;
+    vertical-align: bottom;
+  }
+}
+
+@media (min-width: 600px) {
+  .our-projects__content {
+    grid-template-columns: 45% 45%;
+    column-gap: 5%;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 900px) {
+  .our-projects__content {
+    grid-template-columns: 33% 33% 33%;
+    padding: 75px 0 75px 0;
+    column-gap: 0;
+    justify-content: space-between;
+  }
+  .our-projects > .our-projects__content{
+    display: flex;
+    padding: 0;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
