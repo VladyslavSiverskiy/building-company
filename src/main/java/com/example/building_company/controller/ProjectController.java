@@ -25,6 +25,12 @@ public class ProjectController {
     private final FileService fileService;
     private final ModelMapper modelMapper;
 
+    @GetMapping
+    public String getAllProjects(Model model) {
+        model.addAttribute("projects", projectService.findAll());
+        return "all-projects";
+    }
+
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("project", new ProjectDto());
@@ -37,17 +43,18 @@ public class ProjectController {
             @RequestParam("images") MultipartFile[] files,
             Model model
     ) {
-        if (project.getStartDate().isAfter(project.getEndDate())) {
-            model.addAttribute("error", "Date of ending couldn't be less than date of beginning.");
-            project.setStartDate(null);
-            project.setEndDate(null);
-            model.addAttribute("project", project);
-            return "add-project";
+        if (project.getStartDate() != null && project.getEndDate() != null
+            && (project.getStartDate().isAfter(project.getEndDate()))) {
+                model.addAttribute("error", "Date of ending couldn't be less than date of beginning.");
+                project.setStartDate(null);
+                project.setEndDate(null);
+                model.addAttribute("project", project);
+                return "add-project";
         }
         ProjectDto savedProject = projectService.save(project);
         fileService.saveProjectImages(savedProject, files);
         projectService.update(savedProject);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 
     @GetMapping("/{projectId}/delete")
@@ -60,15 +67,17 @@ public class ProjectController {
     public String getProject(@PathVariable Long projectId, Model model){
         projectService.findById(projectId);
         model.addAttribute("project", projectService.findById(projectId));
-        return ""; //TODO: create page for project
+        return "project";
     }
 
     @GetMapping("/{projectId}/update")
     public String updateProject(@PathVariable Long projectId, Model model) {
         ProjectDto projectDto = projectService.findById(projectId);
         model.addAttribute("project", projectDto);
-        model.addAttribute("startDate",
-                Date.from(projectDto.getStartDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        if (projectDto.getStartDate() != null) {
+            model.addAttribute("startDate",
+                    Date.from(projectDto.getStartDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        }
         model.addAttribute("endDate",
                 Date.from(projectDto.getEndDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
         return "edit-project";

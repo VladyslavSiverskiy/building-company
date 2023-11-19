@@ -6,9 +6,14 @@ import org.modelmapper.AbstractConverter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ReviewDtoMapper extends AbstractConverter<ReviewDto, Review> {
+public class ReviewDtoMapper extends AbstractConverter<Review, ReviewDto> {
     @Override
-    protected Review convert(ReviewDto reviewDto) {
-        return null;
+    protected ReviewDto convert(Review review) {
+        return new ReviewDto(
+                review.getId(),
+                review.getAuthor(),
+                review.getContent(),
+                review.getCreationTime(),
+                review.getIsVerified());
     }
 }

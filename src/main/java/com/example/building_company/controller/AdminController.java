@@ -2,9 +2,14 @@ package com.example.building_company.controller;
 
 import com.example.building_company.dto.ProjectDto;
 import com.example.building_company.model.Project;
+import com.example.building_company.model.Review;
 import com.example.building_company.service.FileService;
 import com.example.building_company.service.ProjectService;
+import com.example.building_company.service.ReviewService;
+
 import lombok.AllArgsConstructor;
+
+import org.hibernate.mapping.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
 
     private final ProjectService projectService;
+    private final ReviewService reviewService;
     private final FileService fileService;
     private final ModelMapper modelMapper;
 
@@ -27,7 +33,12 @@ public class AdminController {
                 .stream()
                 .map(element -> modelMapper.map(element, Project.class))
                 .toList();
+        var reviews = reviewService.findAll()
+                .stream()
+                .map(elem -> modelMapper.map(elem, Review.class))
+                .toList();
         model.addAttribute("projects", pr);
+        model.addAttribute("reviews", reviews);
         model.addAttribute("currentPage", currentPage);
         return "admin-home";
     }
@@ -35,14 +46,13 @@ public class AdminController {
     @GetMapping("/project/deleteImage")
     public String deleteProjectImage(
             @RequestParam(name = "deleteImagePath", defaultValue = "title") String deleteImagePath,
-            @RequestParam(name = "projectId") Long projectId
-    ) {
+            @RequestParam(name = "projectId") Long projectId) {
 
         ProjectDto projectDto = projectService.findById(projectId);
         if (deleteImagePath.equals("title")) {
             fileService.deleteImage(projectDto.getTitleImageLink());
             projectDto.setTitleImageLink(null);
-        }else {
+        } else {
             fileService.deleteImage(deleteImagePath);
             projectDto.getAdditionalImages().remove(deleteImagePath);
         }
