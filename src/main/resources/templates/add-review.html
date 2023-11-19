@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/add-review.css}" rel="stylesheet">
+        <title>Add Review</title>
+    </head>
+    <body>
+        <div class="add-review-container">
+            <h2 class="title-review">Leave your comment</h2>
+            <form th:action="@{/review/add-review}" method="post">
+                <div class="author-r">
+                    <label for="author">Author:</label>
+                    <input type="text" class="form-control" name="author"
+                        id="author">
+                </div>
+                <div class="content-r">
+                    <label for="content" class="form-label">Content</label>
+                    <textarea class="form-control" id="content" name="content"
+                        required></textarea>
+                </div>
+                <div class="time-r">
+                    <label for="creationTime" class="form-label">Date:</label>
+                    <input type="date" class="form-control" id="creationTime"
+                        name="creationTime" required>
+                </div>
+                <button type="submit" class="btn-send-review">Send</button>
+            </form>
+        </div>
+    </body>
+</html>
