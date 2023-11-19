@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### DS_Store ###
+src/main/resources/static/img/.DS_Store
+src/main/resources/static/img/top-counter/.DS_Store
