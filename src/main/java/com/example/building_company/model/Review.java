@@ -3,7 +3,7 @@ package com.example.building_company.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Builder
@@ -19,12 +19,14 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
+    @Column
+    private String author;
+
     @Column
     private String content;
 
     @Column(name = "creation_time")
-    private LocalDateTime creationTime;
+    private LocalDate creationTime;
 
     @Column(name = "is_verified")
     private Boolean isVerified;

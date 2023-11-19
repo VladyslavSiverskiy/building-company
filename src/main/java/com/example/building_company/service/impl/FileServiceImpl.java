@@ -32,12 +32,10 @@ public class FileServiceImpl implements FileService {
      *                           (for ex: /pictures/id7/image.png)
      */
     public void deleteImage(String pathInStaticFolder) {
-        Path path
-                = Paths.get(PATH_TO_STATIC_DIRECTORY, pathInStaticFolder);
+        Path path = Paths.get(PATH_TO_STATIC_DIRECTORY, pathInStaticFolder);
         try {
             Files.delete(path);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new IllegalArgumentException(ERROR_WHILE_DELETING_FILE + e.getMessage());
         }
     }
@@ -46,11 +44,10 @@ public class FileServiceImpl implements FileService {
             ProjectDto projectDto,
             ProjectDto projectDtoToUpdate,
             MultipartFile titleImage,
-            MultipartFile[] files
-    ) {
+            MultipartFile[] files) {
         if (Objects.isNull(titleImage)) {
             projectDto.setTitleImageLink(projectDtoToUpdate.getTitleImageLink());
-        }else {
+        } else {
             try {
                 String fileDirectoryName = FULL_PATH_TO_UPLOAD_DIRECTORY + projectDto.getId() + File.separator;
                 Path dirPath = Paths.get(fileDirectoryName);
@@ -64,7 +61,7 @@ public class FileServiceImpl implements FileService {
                     url = url.substring(url.indexOf(RESOURCES_FOLDER_NAME) + RESOURCES_FOLDER_NAME.length());
                     projectDto.setTitleImageLink(url);
                 }
-            }catch (IOException ex) {
+            } catch (IOException ex) {
                 throw new ProjectWasNotUpdatedException(ExceptionMessages.PROJECT_WAS_NOT_CREATED_IMAGES_ERROR);
             }
         }
@@ -84,7 +81,7 @@ public class FileServiceImpl implements FileService {
                     projectDto.getAdditionalImages().add(url);
                 }
             }
-        }catch (IOException exception) {
+        } catch (IOException exception) {
             throw new ProjectWasNotUpdatedException(ExceptionMessages.PROJECT_WAS_NOT_CREATED_IMAGES_ERROR);
         }
     }
@@ -98,18 +95,18 @@ public class FileServiceImpl implements FileService {
             }
             for (int i = 0; i < files.length; i++) {
                 Path fileNameAndPath = Paths.get(String.valueOf(dirPath), files[i].getOriginalFilename());
-                if (!Objects.isNull(files[i]) && files[i].getOriginalFilename().length() > 3){
+                if (!Objects.isNull(files[i]) && files[i].getOriginalFilename().length() > 3) {
                     Files.write(fileNameAndPath, files[i].getBytes());
                     String url = String.valueOf(fileNameAndPath);
                     url = url.substring(url.indexOf(RESOURCES_FOLDER_NAME) + RESOURCES_FOLDER_NAME.length());
-                    if(i == 0) {
+                    if (i == 0) {
                         savedProject.setTitleImageLink(url);
-                    }else{
+                    } else {
                         savedProject.getAdditionalImages().add(url);
                     }
                 }
             }
-        }catch (IOException exception) {
+        } catch (IOException exception) {
             projectService.delete(savedProject.getId());
             throw new ProjectWasNotCreatedException(ExceptionMessages.PROJECT_WAS_NOT_CREATED_IMAGES_ERROR);
         }
