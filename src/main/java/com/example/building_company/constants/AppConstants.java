@@ -12,11 +12,11 @@ public class AppConstants {
     }
     private static final String ROOT_FOLDER;
     public static final String FULL_PATH_TO_UPLOAD_DIRECTORY =
-            ROOT_FOLDER + File.separator + "target" + File.separator +
-            "classes" + File.separator + "static" + File.separator + "pictures" + File.separator + "id";
+            ROOT_FOLDER + File.separator + "src" + File.separator +
+            "main" + File.separator + "resources" + File.separator + "static" + File.separator + "pictures" + File.separator + "id";
     public static final String PATH_TO_STATIC_DIRECTORY =
-            ROOT_FOLDER + File.separator + "target" + File.separator +
-            "classes" + File.separator + "static";
+            ROOT_FOLDER + File.separator + "src" + File.separator +
+            "main" + File.separator + "resources" + File.separator + "static";
     public static final String DATE_FORMAT = "yyyy-MM-dd";
     public static final String RESOURCES_FOLDER_NAME = "static";
 
