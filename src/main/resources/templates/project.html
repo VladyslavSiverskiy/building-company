@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <header>
+        <div th:insert="top-nav.html"></div>
+    </header>
     <section class="project">
         <div class="project__header">
             <div class="project__header__description">
@@ -30,17 +33,17 @@
                     centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
                 <div class="project__content__additional__info">
                     <h3 class="project__content__additional__info__header">Project info</h3>
-                    <div th:if="${project.getClientName()}" class="project__content__additional__info__unit">
+                    <div th:if="${!project.getClientName().isEmpty()}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Client:</div>
                         <div th:text="${project.getClientName()}" class="project__content__additional__info__unit__text">
 
                         </div>
                     </div>
-                    <div th:if="${project.getCategory()}" class="project__content__additional__info__unit">
+                    <div th:if="${project.getCategory() != null}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Category:</div>
                         <div th:text="${project.getCategory()}" class="project__content__additional__info__unit__text"></div>
                     </div>
-                    <div th:if="${project.getEndDate()}" class="project__content__additional__info__unit">
+                    <div th:if="${project.getEndDate() != null}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Completed on:</div>
                         <div th:text="${project.getEndDate()}" class="project__content__additional__info__unit__text"></div>
                     </div>
@@ -48,6 +51,8 @@
             </div>
             <div class="project__content__main">
                 <img th:if="${project.getTitleImageLink() != null}" class="project__content__main__title-image" th:src="@{${project.getTitleImageLink()}}" alt="img"/>
+                <img th:if="${project.getTitleImageLink() == null}" class="project__content__main__title-image" alt="no-title-image" src="/img/default.jpg">
+
                 <div th:text="${project.getDescription()}" class="project__content__main__full-description">
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                     classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
