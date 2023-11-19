@@ -43,17 +43,18 @@ public class ProjectController {
             @RequestParam("images") MultipartFile[] files,
             Model model
     ) {
-        if (project.getStartDate().isAfter(project.getEndDate())) {
-            model.addAttribute("error", "Date of ending couldn't be less than date of beginning.");
-            project.setStartDate(null);
-            project.setEndDate(null);
-            model.addAttribute("project", project);
-            return "add-project";
+        if (project.getStartDate() != null && project.getEndDate() != null
+            && (project.getStartDate().isAfter(project.getEndDate()))) {
+                model.addAttribute("error", "Date of ending couldn't be less than date of beginning.");
+                project.setStartDate(null);
+                project.setEndDate(null);
+                model.addAttribute("project", project);
+                return "add-project";
         }
         ProjectDto savedProject = projectService.save(project);
         fileService.saveProjectImages(savedProject, files);
         projectService.update(savedProject);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 
     @GetMapping("/{projectId}/delete")
@@ -73,8 +74,10 @@ public class ProjectController {
     public String updateProject(@PathVariable Long projectId, Model model) {
         ProjectDto projectDto = projectService.findById(projectId);
         model.addAttribute("project", projectDto);
-        model.addAttribute("startDate",
-                Date.from(projectDto.getStartDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        if (projectDto.getStartDate() != null) {
+            model.addAttribute("startDate",
+                    Date.from(projectDto.getStartDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        }
         model.addAttribute("endDate",
                 Date.from(projectDto.getEndDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
         return "edit-project";
