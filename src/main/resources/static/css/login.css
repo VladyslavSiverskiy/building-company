@@ -13,12 +13,19 @@ form {
 }
 
 .vh-100 {
+  display: flex;
   background-size: 100% 100%;
-  background: linear-gradient(135deg, #005091 0%, #43529f 100%) 0 0;
+  background: white;
+}
+
+.left-container {
+  display: none;
 }
 
 .card {
-  background-color: rgb(255, 255, 255);
+  background-color: #F7F7F7;
+  border-radius: 0;
+  border-width: 0;
 }
 
 .col-12 {
@@ -61,11 +68,41 @@ form {
   margin: 5px;
 }
 
+.form-control {
+  border: none;
+  border-bottom: 2px solid #ffb400;
+}
+
 .checkbox {
   margin: 5px;
+}
+
+.btn {
+  background: #ffb400 !important;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+.restore-group > a {
+  color: #ffb400;
+}
+
+.restore-group > a:hover {
+  color: rgb(0, 0, 0);
 }
 
 .error {
   color: #ff0000;
 }
 
+@media (min-width: 768px) {
+  .left-container {
+    display: block;
+    height: 475px;
+    padding: 0;
+  }
+
+  .right-container {
+    padding: 0;
+  }
+}
