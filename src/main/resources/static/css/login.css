@@ -78,9 +78,13 @@ form {
 }
 
 .btn {
-  background: #ffb400 !important;
+  background: #ffb400;
   color: #ffffff;
   border-radius: 0;
+}
+
+.btn:hover {
+  background: #ffb400;
 }
 
 .restore-group > a {
