@@ -61,7 +61,7 @@ a {
   max-width: 1200px;
   margin: auto;
   row-gap: 44px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .our-projects__content__project-card {
@@ -80,7 +80,7 @@ a {
 .our-projects__content__project-card__description {
   background-color: #F7F7F7;
   display: flex;
-  padding: 42px 24px 29px 24px;
+  padding: 24px 24px 24px 24px;
   flex-direction: column;
 }
 
@@ -89,7 +89,10 @@ a {
   color: #2a2a2a;
   font-size: 20px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
+
+
 
 .our-projects__content__project-card__description_text {
   color: #666;
@@ -98,11 +101,11 @@ a {
   font-style: normal;
   font-weight: 400;
   line-height: 27px;
-  margin-bottom: 22px;
+  margin-bottom: 8px;
   height: 82px;
   text-indent: 10%;
   text-align: justify;
-
+  word-break: break-word;
 }
 
 .horizontal-orange-divider{
@@ -131,7 +134,7 @@ a {
   font-size: 13px;
   text-align: center;
   text-transform: uppercase;
-  padding: 9px 12px 6px 12px;
+  padding: 8px 12px 6px 12px;
   width: 144px;
   height: 40px;
   color: #343a40;
@@ -163,7 +166,7 @@ a {
 .our-projects__content__project-card__description_view-all:hover{
   color: black;
   background-color: #ffc107;
-  border-color: #d5aa02;
+  border-color: #ffc107;
 }
 
 .our-projects__content__project-card__description_more:hover {
