@@ -17,4 +17,6 @@ public interface ProjectService {
     ProjectDto save(ProjectDto projectDto);
 
     ProjectDto update(ProjectDto projectDto);
+
+    public String extractFirstSentence(String text);
 }
