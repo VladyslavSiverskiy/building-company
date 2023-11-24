@@ -12,7 +12,7 @@
 
         <div class="container mt-5">
             <h2>Add Work</h2>
-            <form action="/work/add-work" method="post">
+            <form th:action="@{/work/add-work}" method="post">
                 <div class="mb-3">
                     <label for="work" class="form-label">Work</label>
                     <input type="text" class="form-control" id="work"

@@ -12,7 +12,10 @@
 
         <div class="container mt-5">
             <h2>Edit Work</h2>
-            <form action="/work/{id}/update" method="post">
+            <form
+                th:action="@{/work/{id}/update(id=${work.getId()})}"
+                method="post"
+                th:object="${work}">
                 <div class="mb-3">
                     <label for="work" class="form-label">Work</label>
                     <input type="text" class="form-control" id="work"
