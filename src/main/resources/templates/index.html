@@ -132,88 +132,50 @@
                 View all
             </a>
         </section>
-
         <div class="main_container">
             <div class="comments_container">
                 <h1 class="client_testimonials">Client Testimonials</h1>
-                <ul>
-                    <li class="stars_container">
+                <ul class="comment-description">
+                    <li class="stars_container"
+                        th:each="review, index: ${recent_reviews}">
                         <div class="comment_block">
                             <div>
-                                <p class="comment">Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde
-                                    necessitatibus quia accusamus blanditiis
-                                    quod, explicabo voluptatibus? Deleniti,
-                                    aperiam. Rerum expedita nemo ducimus dolorem
-                                    amet distinctio asperiores! Minus labore
-                                    nulla cum.</p>
+                                <p class="comment" th:text="${review.content}"></p>
                             </div>
-
-                            <h2 class="aughtor">Mike Dought</h2>
+                            <h2 class="author" th:text="${review.author}"></h2>
                         </div>
                     </li>
-                    <li class="stars_container">
-                        <div class="comment_block">
-                            <div>
-                                <p class="comment">Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde
-                                    necessitatibus quia accusamus blanditiis
-                                    quod, explicabo voluptatibus? Deleniti,
-                                    aperiam. Rerum expedita nemo ducimus dolorem
-                                    amet distinctio asperiores! Minus labore
-                                    nulla cum.</p>
-                            </div>
-
-                            <h2 class="aughtor">Mike Dought</h2>
-                        </div>
-                    </li>
-                    <li class="stars_container">
-                        <div class="comment_block">
-                            <div>
-                                <p class="comment">Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. Unde
-                                    necessitatibus quia accusamus blanditiis
-                                    quod, explicabo voluptatibus? Deleniti,
-                                    aperiam. Rerum expedita nemo ducimus dolorem
-                                    amet distinctio asperiores! Minus labore
-                                    nulla cum.</p>
-                            </div>
-
-                            <h2 class="aughtor">Mike Dought</h2>
-                        </div>
-                    </li>
-
                 </ul>
             </div>
+            <div class="container-btn">
+                <a href="/review/add-review" class="leave-comment-btn">Leave
+                    Your Comment</a>
+            </div>
+
             <div class="contacts_container">
                 <h1 class="contacts_title">Contacts</h1>
                 <div class="contacts_container_inner">
                     <div class="social_media">
-                        <a href="https://www.instagram.com" target="_blank">
-                            <img src="/img/icons/download_2.png" alt="Instagram"
+                        <a href="https://www.instagram.com"
+                            target="_blank">
+                            <img src="/img/icons/download_2.png"
+                                alt="Instagram"
                                 class="social_icon">
                             <h4>Instagram</h4>
                         </a>
-                        <a href="https://www.facebook.com" target="_blank">
-                            <img src="/img/icons/download_1.png" alt="Facebook"
+                        <a href="https://www.facebook.com"
+                            target="_blank">
+                            <img src="/img/icons/download_1.png"
+                                alt="Facebook"
                                 class="social_icon">
                             <h4>Facebook</h4>
                         </a>
                     </div>
-                    <!-- <div class="social">
-                    <ul class="social_ul">
-                        <li class="social_li">
-                            <a href="#" class="social_a">Facebook <i><img src="/frontend/icons/download_1.png" alt="Facebook" class="social_icon_2"></i></a>
-                        </li>
-                        <li class="social_li">
-                            <a href="#" class="social_a">Instagram <img src="/frontend/icons/download_2.png" alt="Instagram" class="social_icon_2"></i></a>
-                        </li>
-                    </ul>
-                </div> -->
                     <div class="contacts">
                         <h4>Phone numbers: <span>+0123456789</span></h4>
                         <h4>Email: <span>building@gmail.com</span></h4>
-                        <h4>Addres: <span>Lorem ipsum dolor sit amet.</span></h4>
+                        <h4>Addres: <span>Lorem ipsum dolor sit
+                                amet.</span></h4>
                     </div>
                 </div>
 

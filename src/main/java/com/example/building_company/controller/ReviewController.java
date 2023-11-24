@@ -30,7 +30,7 @@ public class ReviewController {
     public String createReview(@ModelAttribute("reviewDto") ReviewDto reviewDto, Model model) {
         ReviewDto createdReview = reviewService.save(reviewDto);
         model.addAttribute("createdReview", createdReview);
-        return "redirect:/admin";
+        return "redirect:/home";
     }
 
     @GetMapping("/{id}/update")
