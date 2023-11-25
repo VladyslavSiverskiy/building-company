@@ -62,4 +62,12 @@ public class ProjectServiceImpl implements ProjectService {
         Project project = projectRepository.save(modelMapper.map(projectDto, Project.class));
         return modelMapper.map(project, ProjectDto.class);
     }
+
+    public String extractFirstSentence(String text) {
+        if (text == null || text.isEmpty()) {
+            return "";
+        }
+        String[] sentences = text.split("[.!?]");
+        return sentences[0].trim();
+    }
 }

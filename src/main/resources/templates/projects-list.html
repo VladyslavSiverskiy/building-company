@@ -2,6 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
     >
@@ -10,32 +12,35 @@
 <body>
     <div th:fragment="projects">
         <div class="row justify-content-start">
-            <button type="button" class="text-center col-3 btn btn-primary mt-3 mb-3" onclick="location.href='/project/create'">Create new Project</button>
+            <button type="button" class="text-center col-3 btn btn-primary mt-3 mb-3" onclick="location.href='/project/create'">Add</button>
+
         </div>
-        <table class="table w-100">
-            <tr>
-                <th>No.</th>
-                <th>Title</th>
-                <th>Ending date</th>
-                <th colspan="3">Operations</th>
-            </tr>
-            <tr th:each="project, iterStat : ${projects}">
-                <td th:text="${iterStat.index+1}"></td>
-                <td>
-                    <a th:text="${project.getTitle()}"></a>
-                </td>
-                <td th:text="${project.getEndDate()}"></td>
-                <td>
-                    <a th:href="@{/project/{projectId}(projectId=${project.getId()})}">See details</a>
-                </td>
-                <td>
-                    <a th:href="@{/project/{projectId}/update(projectId=${project.getId()})}">Edit</a>
-                </td>
-                <td>
-                    <a th:href="@{/project/{projectId}/delete(projectId=${project.getId()})}">Delete</a>
-                </td>
-            </tr>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-sm w-100">
+                <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Ending date</th>
+                    <th colspan="3">Operations</th>
+                </tr>
+                <tr th:each="project, iterStat : ${projects}">
+                    <td th:text="${iterStat.index+1}"></td>
+                    <td>
+                        <a th:text="${project.getTitle()}"></a>
+                    </td>
+                    <td th:text="${project.getEndDate()}"></td>
+                    <td>
+                        <a th:href="@{/project/{projectId}(projectId=${project.getId()})}">See details</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/project/{projectId}/update(projectId=${project.getId()})}">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/project/{projectId}/delete(projectId=${project.getId()})}">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
