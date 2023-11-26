@@ -102,7 +102,7 @@ a {
   font-weight: 400;
   line-height: 27px;
   margin-bottom: 8px;
-  height: 82px;
+  height: 105px;
   text-indent: 10%;
   text-align: justify;
   word-break: break-word;
@@ -134,9 +134,9 @@ a {
   font-size: 13px;
   text-align: center;
   text-transform: uppercase;
-  padding: 8px 12px 6px 12px;
-  width: 144px;
-  height: 40px;
+  padding: 3px 12px 6px 12px;
+  width: 85px;
+  height: 30px;
   color: #343a40;
   letter-spacing: 2px;
   cursor: pointer;
@@ -209,11 +209,16 @@ a {
     column-gap: 0;
     justify-content: space-between;
   }
+
   .our-projects > .our-projects__content{
     display: flex;
     padding: 0;
     width: 100%;
     justify-content: space-between;
     gap: 20px;
+  }
+
+  .our-projects__content__project-card:last-child {
+    display: none;
   }
 }

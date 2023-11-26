@@ -11,10 +11,11 @@
     margin: 10px 0 8px 0;
 }
 
-.profile h4 {
+.review-author {
     font-family: var(--font-family-paragraph);
     color: #343a40;
     font-weight: bold;
+    text-align: center;
 }
 
 .review-date{
@@ -25,10 +26,11 @@
     font-family: var(--font-family-paragraph);
 }
 
-.template-demo p{
+.review-content{
     text-align: justify;
     color: #888888;
     font-family: var(--font-family-paragraph);
-    line-height: 20px;
+    line-height: 25px;
     font-weight: 400;
+    margin-bottom: 10px;
 }
