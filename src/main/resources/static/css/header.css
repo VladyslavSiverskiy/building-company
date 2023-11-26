@@ -1,15 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  cursor: pointer;
+
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+
+  z-index: 99;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #2a2a2a;
+  border-radius: 1rem;
+  margin: 6px 0;
+  transition: 0.1s;
+}
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-7px, 4px);
+}
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-8px, -6px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  background-color: #ffb400;
+  padding-top: 120px;
+}
+
+.mobile-nav.is-active {
+  left: 0
+}
+
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  color: #2a2a2a !important;
+
+}
+
+.mobile-nav a:hover {
+  color: #F7F7F7 !important;
+  transition: 0.1s;
+
+}
+
+.navbar {
+  background-color: #ffb400;
+}
+
+.nav-logo {
+  display: none;
+}
 
 .navbar-brand {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 28px !important;
+  color: #2a2a2a;
 }
 
 .nav-link {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+  transition: 0.1s;
   margin: 15px 0;
   font-weight: 400;
+  color: #2a2a2a !important;
+}
+
+.nav-link:hover {
+  color: #F7F7F7 !important;
 }
 
 .nav-item {
@@ -133,6 +220,32 @@
 }
 
 @media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navbar-logo-container {
+    display: flex;
+  }
+
+  .nav-logo {
+    display: block;
+    height: 50px;
+  }
+
+  .navbar-logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo-container > a {
+    font-size: 32px;
+  }
+
   header {
     margin: 0 auto;
     max-width: 1200px;
@@ -159,10 +272,6 @@
 
   .bg-image {
     max-width: 1200px;
-  }
-
-  .nav-link {
-    font-size: 14px;
   }
 
   .navbar {
