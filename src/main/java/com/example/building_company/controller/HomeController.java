@@ -1,7 +1,9 @@
 package com.example.building_company.controller;
 
 import com.example.building_company.dto.ProjectDto;
+import com.example.building_company.dto.ReviewDto;
 import com.example.building_company.service.ProjectService;
+import com.example.building_company.service.ReviewService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/home")
@@ -19,12 +22,15 @@ import java.util.List;
 public class HomeController {
 
     private final ProjectService projectService;
+    private final ReviewService reviewService;
 
     @GetMapping
     public String openHomePage(Model model) {
         List<ProjectDto> projectDtoList = projectService.findAll();
-        List<ProjectDto> sublist = projectDtoList.subList(Math.max(projectDtoList.size() - 3, 0), projectDtoList.size());
+        List<ProjectDto> sublist = projectDtoList.subList(Math.max(projectDtoList.size() - 4, 0), projectDtoList.size());
         model.addAttribute("recent_projects", sublist);
+        List<ReviewDto> reviewDtos = reviewService.findAll().stream().filter(ReviewDto::getIsVerified).toList();
+        model.addAttribute("recent_reviews", reviewDtos);
         return "index";
     }
 

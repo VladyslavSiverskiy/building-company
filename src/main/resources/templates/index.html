@@ -20,7 +20,7 @@
         $(document).ready(function () {
 
             $('.items').slick({
-                dots: true,
+                // dots: true,
                 infinite: true,
                 speed: 800,
                 autoplay: true,
@@ -245,7 +245,7 @@
                     </p>
                     <a class="our-projects__content__project-card__description_more"
                         th:href="@{/project/{projectId}(projectId=${project.getId()})}">
-                        View project
+                        More
                     </a>
                 </div>
             </div>
@@ -255,7 +255,6 @@
         </a>
     </section>
 
-
     <div class="main_container">
         <div class="comments_container">
             <div class="our-project__intro">
@@ -264,106 +263,21 @@
                 </div>
             </div>
             <div class="items">
-                <div class="card">
+                <div class="card" th:each="review, index: ${recent_reviews}">
                     <div class="card-body">
 
                         <div class="card-title"><img src="/img/icons/quotes.svg"></div>
-                        <div class="review-author">
-                            <div class="profile">
-                                <h4 class="cust-name text-center">Delbert Simonas</h4>
-                            </div>
+                        <div class="review-author" th:text="${review.getAuthor()}">
+                           Guest
                         </div>
                         <div class="small-orange-divider"></div>
-                        <div class="template-demo">
-                            <p>"Online reviews can make or break a customer's decision to make a purchase. Read about
+                        <div class="review-content" th:text="${review.getContent()}">
+                            "Online reviews can make or break a customer's decision to make a purchase. Read about
                                 these customer review sites where your customers' Online reviews can make or break a
                                 customer's decision to make a purchase. Read about these customer review sites where
-                                your customers'"</p>
+                                your customers'"
                         </div>
-                        <div class="review-date">
-                            2023-10-11
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-body">
-
-                        <div class="card-title"><img src="/img/icons/quotes.svg"></div>
-                        <div class="review-author">
-                            <div class="profile">
-                                <h4 class="cust-name text-center">Delbert Simonas</h4>
-                            </div>
-                        </div>
-                        <div class="small-orange-divider"></div>
-                        <div class="template-demo">
-                            <p>"When you think of Apple you automatically think expensive if your anything like me. When
-                                purchasing this laptop I was skeptical on laptops i purchased."</p>
-                        </div>
-                        <div class="review-date">
-                            2023-10-11
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-
-                        <div class="card-title"><img src="/img/icons/quotes.svg"></div>
-                        <div class="review-author">
-                            <div class="profile">
-                                <h4 class="cust-name text-center">Delbert Simonas</h4>
-                            </div>
-                        </div>
-                        <div class="small-orange-divider"></div>
-                        <div class="template-demo">
-                            <p>"I&rsquo;ve wanted a MacBook for a while now because of the build quality and the
-                                simplicity of the OS. I spend an average 6 hours a day using it for college and the
-                                battery still has a fair."</p>
-                        </div>
-                        <div class="review-date">
-                            2023-10-11
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title"><img src="/img/icons/quotes.svg"></div>
-                        <div class="review-author">
-                            <div class="profile">
-                                <h4 class="cust-name text-center">Delbert Simonas</h4>
-                            </div>
-                        </div>
-                        <div class="small-orange-divider"></div>
-                        <div class="template-demo">
-                            <p>"This MacBook has excellent processing speed. The screen is crystal clear and I really
-                                enjoy the touchbar. I set up the fingerprint reader. This MacBook has excellent
-                                processing speed. The screen is crystal clear and I really enjoy the touchbar. I set up
-                                the fingerprint reader."</p>
-                        </div>
-                        <div class="review-date">
-                            October 28, 2023
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title"><img src="/img/icons/quotes.svg"></div>
-                        <div class="review-author">
-                            <div class="profile">
-                                <h4 class="cust-name text-center">Delbert Simonas</h4>
-                            </div>
-                        </div>
-                        <div class="small-orange-divider"></div>
-                        <div class="template-demo">
-                            <p>"For the last 10 years, I have owned an old Gateway laptop. Although it was amazing and
-                                lasted me, it was time for an upgrade. I own an Apple phone so I decided to look into a
-                                computer.For the last 10 years, I have owned an old Gateway laptop. Although it was
-                                amazing and lasted me, it was time for an upgrade. I own an Apple phone so I decided to
-                                look into a computer."</p>
-                        </div>
-                        <div class="review-date">
+                        <div class="review-date" th:text="${review.getCreationTime()}">
                             2023-10-11
                         </div>
                     </div>
@@ -371,6 +285,7 @@
             </div>
         </div>
     </div>
+
     <div class="contacts_container">
         <h1 class="contacts_title">Contacts</h1>
         <div class="contacts_container_inner">
