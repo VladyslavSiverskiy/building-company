@@ -15,7 +15,9 @@
   z-index: 99;
 }
 
-.hamburger .bar, .hamburger:after, .hamburger:before {
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
   content: '';
   display: block;
   width: 100%;
@@ -40,18 +42,19 @@
 
 .mobile-nav {
   position: fixed;
-  top: 0;
-  left: 100%;
+  top: -100%;
+  left: 0;
   width: 100%;
   min-height: 100vh;
+  transition: top 0.3s ease;
   display: block;
-  z-index: 98;
+  z-index: -1;
   background-color: #ffb400;
   padding-top: 120px;
 }
 
 .mobile-nav.is-active {
-  left: 0
+  top: 0;
 }
 
 .mobile-nav a {
@@ -72,7 +75,15 @@
 }
 
 .navbar {
+  display: block !important;
   background-color: #ffb400;
+  z-index: 99;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between !important;
+  z-index: 100;
 }
 
 .nav-logo {
@@ -82,13 +93,17 @@
 .navbar-brand {
   font-family: "Jost", sans-serif;
   font-weight: 400;
-  font-size: 28px !important;
+  font-size: 28px;
+  color: #2a2a2a;
+}
+
+.navbar-brand:hover {
   color: #2a2a2a;
 }
 
 .nav-link {
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   transition: 0.1s;
   margin: 15px 0;
   font-weight: 400;
@@ -106,6 +121,7 @@
 }
 
 .header-block {
+  margin-top: 56px;
   background-image: url("../img/header/header-bg-home.png");
 }
 
@@ -140,7 +156,7 @@
   text-indent: 10%;
 }
 
-.header-container-left-button > .btn {
+.header-container-left-button .btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,7 +228,7 @@
   padding: 10px;
 }
 
-.quote-button > .btn {
+.quote-button .btn {
   border-radius: 0;
   border-width: 4px;
   font-weight: bold;
@@ -228,6 +244,11 @@
     display: none;
   }
 
+  .navbar {
+    display: flex !important;
+    height: 89px;
+  }
+
   .navbar-logo-container {
     display: flex;
   }
@@ -235,6 +256,7 @@
   .nav-logo {
     display: block;
     height: 50px;
+    margin-right: 5px;
   }
 
   .navbar-logo-container {
@@ -242,17 +264,22 @@
     align-items: center;
   }
 
-  .navbar-logo-container > a {
-    font-size: 32px;
+  .navbar-logo-container a {
+    font-size: clamp(1rem, 3.4783vw + 0.3043rem, 3rem);
   }
 
   header {
     margin: 0 auto;
     max-width: 1200px;
+    padding-top: 89px;
   }
 
   .header-container-left-title-content {
     font-size: 48px;
+  }
+
+  .header-block {
+    margin-top: 0;
   }
 
   .header-block-container {
@@ -274,10 +301,16 @@
     max-width: 1200px;
   }
 
-  .navbar {
-    padding: 20px 20px;
+  .fixed-top {
+    justify-content: center !important;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
     font-size: 14px;
-    justify-content: center;
+    width: 1200px;
+    margin-top: 0;
   }
 
   .navbar-collapse {
