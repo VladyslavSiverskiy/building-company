@@ -141,6 +141,10 @@
   max-width: 360px;
 }
 
+.header-container-left-title-rectangle img {
+  margin-left: 10px;
+}
+
 .header-container-left-title-content {
   margin-left: 15px;
   font-size: 36px;
@@ -150,7 +154,7 @@
 }
 
 .header-container-left-content {
-  margin: 10px 0 10px 10px;
+  margin: 10px;
   color: rgb(222, 222, 222);
   text-align: justify;
   text-indent: 10%;
@@ -168,6 +172,11 @@
   height: 55px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.header-container-left-button {
+  display: flex;
+  justify-content: end;
 }
 
 .header-container-right {
