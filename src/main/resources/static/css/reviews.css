@@ -1,0 +1,34 @@
+.review-author{
+    max-width: 75%;
+    margin: auto;
+    text-align: center;
+}
+
+.small-orange-divider{
+    background-color: #ffa550;
+    width: 20px;
+    height: 2px;
+    margin: 10px 0 8px 0;
+}
+
+.profile h4 {
+    font-family: var(--font-family-paragraph);
+    color: #343a40;
+    font-weight: bold;
+}
+
+.review-date{
+    color: #ffa550;
+    font-style: italic;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: var(--font-family-paragraph);
+}
+
+.template-demo p{
+    text-align: justify;
+    color: #888888;
+    font-family: var(--font-family-paragraph);
+    line-height: 20px;
+    font-weight: 400;
+}

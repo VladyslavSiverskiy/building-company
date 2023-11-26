@@ -10,6 +10,149 @@
     <link rel="stylesheet" th:href="@{/css/index.css}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+            $(document).ready(function(){
+
+                $('.items').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 800,
+                    autoplay: true,
+                    autoplaySpeed: 6000,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    // prevArrow: $('.prev'),
+                    // nextArrow: $('.next'),
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 670,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 344,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+
+                    ]
+                });
+            });
+     </script>
+     <style>
+            @media (max-width:991.98px) {
+                .padding {
+                    padding: 1.5rem
+                }
+            }
+
+            @media (max-width:767.98px) {
+                .padding {
+                    padding: 1rem
+                }
+            }
+
+            .padding {
+                padding: 5rem
+            }
+
+            .card {
+                position: relative;
+                display: flex;
+                width: 350px;
+                min-height: 317px;
+                flex-direction: column;
+                min-width: 0;
+                word-wrap: break-word;
+                background-color: #fff;
+                background-clip: border-box;
+                border-style: none;
+                /*border: 1px solid #d2d2dc;*/
+                /*border-radius: 11px;*/
+                /*-webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);*/
+                /*-moz-box-shadow: 0px 0px 5px 0px rgba(212,182,212,1);*/
+                /*box-shadow: 0px 0px 5px 0px rgb(161, 163, 164);*/
+            }
+
+            /*.card .card-body {*/
+            /*    padding: 1rem 1rem;*/
+            /*}*/
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            p {
+                font-size: 0.875rem;
+                margin-bottom: .5rem;
+                line-height: 1.5rem
+            }
+
+            h4{
+                line-height: .2 !important;
+            }
+            .profile{
+                margin-top: 16px;
+                margin-left: 11px;
+            }
+
+            .profile-pic{
+                width: 58px;
+            }
+
+            .cust-name{
+                font-size: 18px;
+            }
+
+            .cust-profession{
+                font-size: 10px;
+            }
+
+            .items {
+                width: 90%;
+                margin: 0px auto !important;
+            }
+
+            .card-title{
+                margin: 0;
+            }
+
+            .card-title img{
+                width: 30px;
+                transform: rotate(180deg);
+                margin-bottom: 10px !important;
+            }
+
+
+            .slick-slide {
+                margin: 10px
+            }
+
+            .slick-prev:before, .slick-next:before{
+                color: #343a40;
+            }
+        </style> 
 </head>
 
 <body>
@@ -17,7 +160,8 @@
         <div th:insert="~{top-nav.html}"></div>
         <div th:insert="~{header-home.html}"></div>
     </header>
-    <section class="top-counters">
+    
+  <section class="top-counters">
         <div class="counters-left-container-dark">
             <div class="counters-left-container">
                 <div class="counters-left-container-image">
@@ -70,9 +214,10 @@
                     <div class="projects-counter-title">COMPLETED PROJECTS</div>
                 </div>
             </div>
-        </div>
+          </div>
     </section>
-<section class="our-projects">
+  
+  <section class="our-projects">
     <div class="our-project__intro">
         <h3 class="our-projects__intro_title">Latest projects</h3>
         <div class="horizontal-orange-divider">
@@ -115,60 +260,111 @@
         View all
     </a>
 </section>
+  
+  
+        <div class="main_container">
+            <div class="comments_container">
+                <div class="our-project__intro">
+                    <h3 class="our-projects__intro_title">Client Testimonials</h3>
+                    <div class="horizontal-orange-divider">
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="card">
+                        <div class="card-body">
 
-<div class="main_container">
-    <div class="comments_container">
-        <h1 class="client_testimonials">Client Testimonials</h1>
-        <ul>
-            <li class="stars_container">
-                <div class="comment_block">
-                    <div>
-                        <p class="comment">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Unde
-                            necessitatibus quia accusamus blanditiis
-                            quod, explicabo voluptatibus? Deleniti,
-                            aperiam. Rerum expedita nemo ducimus dolorem
-                            amet distinctio asperiores! Minus labore
-                            nulla cum.</p>
+                            <div class="card-title"><img src="/img/icons/quotes.svg"></div>
+                            <div class="review-author">
+                                <div class="profile">
+                                    <h4 class="cust-name text-center">Delbert Simonas</h4>
+                                </div>
+                            </div>
+                            <div class="small-orange-divider"></div>
+                            <div class="template-demo">
+                                <p>"Online reviews can make or break a customer's decision to make a purchase. Read about these customer review sites where your customers' Online reviews can make or break a customer's decision to make a purchase. Read about these customer review sites where your customers'"</p>
+                            </div>
+                            <div class="review-date">
+                                2023-10-11
+                            </div>
+                        </div>
                     </div>
 
-                    <h2 class="aughtor">Mike Dought</h2>
-                </div>
-            </li>
-            <li class="stars_container">
-                <div class="comment_block">
-                    <div>
-                        <p class="comment">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Unde
-                            necessitatibus quia accusamus blanditiis
-                            quod, explicabo voluptatibus? Deleniti,
-                            aperiam. Rerum expedita nemo ducimus dolorem
-                            amet distinctio asperiores! Minus labore
-                            nulla cum.</p>
+
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="card-title"><img src="/img/icons/quotes.svg"></div>
+                            <div class="review-author">
+                                <div class="profile">
+                                    <h4 class="cust-name text-center">Delbert Simonas</h4>
+                                </div>
+                            </div>
+                            <div class="small-orange-divider"></div>
+                            <div class="template-demo">
+                                <p>"When you think of Apple you automatically think expensive if your anything like me. When purchasing this laptop I was skeptical on laptops i purchased."</p>
+                            </div>
+                            <div class="review-date">
+                                2023-10-11
+                            </div>
+                        </div>
                     </div>
 
-                    <h2 class="aughtor">Mike Dought</h2>
-                </div>
-            </li>
-            <li class="stars_container">
-                <div class="comment_block">
-                    <div>
-                        <p class="comment">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Unde
-                            necessitatibus quia accusamus blanditiis
-                            quod, explicabo voluptatibus? Deleniti,
-                            aperiam. Rerum expedita nemo ducimus dolorem
-                            amet distinctio asperiores! Minus labore
-                            nulla cum.</p>
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="card-title"><img src="/img/icons/quotes.svg"></div>
+                            <div class="review-author">
+                                <div class="profile">
+                                    <h4 class="cust-name text-center">Delbert Simonas</h4>
+                                </div>
+                            </div>
+                            <div class="small-orange-divider"></div>
+                            <div class="template-demo">
+                                <p>"I&rsquo;ve wanted a MacBook for a while now because of the build quality and the simplicity of the OS. I spend an average 6 hours a day using it for college and the battery still has a fair."</p>
+                            </div>
+                            <div class="review-date">
+                                2023-10-11
+                            </div>
+                        </div>
                     </div>
-
-                    <h2 class="aughtor">Mike Dought</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title"><img src="/img/icons/quotes.svg"></div>
+                            <div class="review-author">
+                                <div class="profile">
+                                    <h4 class="cust-name text-center">Delbert Simonas</h4>
+                                </div>
+                            </div>
+                            <div class="small-orange-divider"></div>
+                            <div class="template-demo">
+                                <p>"This MacBook has excellent processing speed. The screen is crystal clear and I really enjoy the touchbar. I set up the fingerprint reader. This MacBook has excellent processing speed. The screen is crystal clear and I really enjoy the touchbar. I set up the fingerprint reader."</p>
+                            </div>
+                            <div class="review-date">
+                                October 28, 2023
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title"><img src="/img/icons/quotes.svg"></div>
+                            <div class="review-author">
+                                <div class="profile">
+                                    <h4 class="cust-name text-center">Delbert Simonas</h4>
+                                </div>
+                            </div>
+                            <div class="small-orange-divider"></div>
+                            <div class="template-demo">
+                                <p>"For the last 10 years, I have owned an old Gateway laptop. Although it was amazing and lasted me, it was time for an upgrade. I own an Apple phone so I decided to look into a computer.For the last 10 years, I have owned an old Gateway laptop. Although it was amazing and lasted me, it was time for an upgrade. I own an Apple phone so I decided to look into a computer."</p>
+                            </div>
+                            <div class="review-date">
+                                2023-10-11
+                            </div>
+                        </div>
+                      </div>
                 </div>
-            </li>
-
-        </ul>
-    </div>
-    <div class="contacts_container">
+            </div>
+        </div>
+      <div class="contacts_container">
         <h1 class="contacts_title">Contacts</h1>
         <div class="contacts_container_inner">
             <div class="social_media">
@@ -214,5 +410,4 @@
     })
 </script>
 </body>
-
 </html>
