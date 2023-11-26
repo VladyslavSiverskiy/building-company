@@ -27,7 +27,7 @@ public class HomeController {
     @GetMapping
     public String openHomePage(Model model) {
         List<ProjectDto> projectDtoList = projectService.findAll();
-        List<ProjectDto> sublist = projectDtoList.subList(Math.max(projectDtoList.size() - 3, 0),
+        List<ProjectDto> sublist = projectDtoList.subList(Math.max(projectDtoList.size() - 4, 0),
                 projectDtoList.size());
         model.addAttribute("recent_projects", sublist);
 

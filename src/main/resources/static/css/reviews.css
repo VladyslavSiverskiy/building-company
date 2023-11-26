@@ -1,0 +1,36 @@
+.review-author{
+    max-width: 75%;
+    margin: auto;
+    text-align: center;
+}
+
+.small-orange-divider{
+    background-color: #ffa550;
+    width: 20px;
+    height: 2px;
+    margin: 10px 0 8px 0;
+}
+
+.review-author {
+    font-family: var(--font-family-paragraph);
+    color: #343a40;
+    font-weight: bold;
+    text-align: center;
+}
+
+.review-date{
+    color: #ffa550;
+    font-style: italic;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: var(--font-family-paragraph);
+}
+
+.review-content{
+    text-align: justify;
+    color: #888888;
+    font-family: var(--font-family-paragraph);
+    line-height: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}

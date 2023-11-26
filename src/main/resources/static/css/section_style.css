@@ -1,6 +1,21 @@
+.main_container {
+  min-width: 100%;
+  padding: 45px 0 54px 0;
+}
+
+@media (max-width: 1200px) {
+  .main_container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 520px) {
+  .main_container {
+    max-width: none;
+  }
+}
 
 /* Sections rate */
-
 .comments_container {
   max-width: 800px;
   margin: 0 auto;
@@ -37,29 +52,59 @@
 .comment {
   font-size: 16px;
   color: #333;
+  font-weight: 700;
 }
 
-.author {
-  font-size: 18px;
-  color: rgb(26, 25, 8);
+.description_content {
+  margin-top: 6.86px;
+  font-size: 10px;
+  font-weight: 400;
 }
 
-/* Center h1 if only two or one review */
-.comment-description:only-child,
-.comment-description:only-child>li {
-  justify-content: center;
+.description_button {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #05a0fa;
+  color: #03c8e2;
+  border-radius: 5px;
+  transition: 0.3s;
+  background-color: #0836ef;
 }
 
-.comment-description:only-child,
-.comment-description:only-child>li,
-.comment-description:only-child+li {
-  width: 100%;
+.description_button:hover {
+  background-color: #ba9915;
+  color: #dffc06;
 }
 
-/* ============================================================================ */
+.description_button_all {
+  margin-right: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #05a0fa;
+  color: #03c8e2;
+  border-radius: 5px;
+  transition: 0.3s;
+  background-color: #0836ef;
+}
+.description_button_all:hover {
+  background-color: #ba9915;
+  color: #dffc06;
+}
 
  /* section contacts */
-
 .contacts_container {
   display: flex;
   flex-direction: column;
@@ -131,7 +176,7 @@
   color: #555;
 }
 
-/* Button for comments+++++++++++++++++++++++++++++++++++++++ */
+/* Button for comments */
 .container-btn {
   text-align: center;
   padding: 20px;

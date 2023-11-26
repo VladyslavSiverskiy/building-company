@@ -1,15 +1,117 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  cursor: pointer;
+
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+
+  z-index: 99;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #2a2a2a;
+  border-radius: 1rem;
+  margin: 6px 0;
+  transition: 0.1s;
+}
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-7px, 4px);
+}
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-8px, -6px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  transition: top 0.3s ease;
+  display: block;
+  z-index: -1;
+  background-color: #ffb400;
+  padding-top: 120px;
+}
+
+.mobile-nav.is-active {
+  top: 0;
+}
+
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  color: #2a2a2a !important;
+
+}
+
+.mobile-nav a:hover {
+  color: #F7F7F7 !important;
+  transition: 0.1s;
+
+}
+
+.navbar {
+  display: block !important;
+  background-color: #ffb400;
+  z-index: 99;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between !important;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: none;
+}
 
 .navbar-brand {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: #2a2a2a;
+}
+
+.navbar-brand:hover {
+  color: #2a2a2a;
 }
 
 .nav-link {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
+  transition: 0.1s;
   margin: 15px 0;
   font-weight: 400;
+  color: #2a2a2a !important;
+}
+
+.nav-link:hover {
+  color: #F7F7F7 !important;
 }
 
 .nav-item {
@@ -19,6 +121,7 @@
 }
 
 .header-block {
+  margin-top: 56px;
   background-image: url("../img/header/header-bg-home.png");
 }
 
@@ -38,6 +141,10 @@
   max-width: 360px;
 }
 
+.header-container-left-title-rectangle img {
+  margin-left: 10px;
+}
+
 .header-container-left-title-content {
   margin-left: 15px;
   font-size: 36px;
@@ -47,13 +154,13 @@
 }
 
 .header-container-left-content {
-  margin: 10px 0 10px 10px;
+  margin: 10px;
   color: rgb(222, 222, 222);
   text-align: justify;
   text-indent: 10%;
 }
 
-.header-container-left-button > .btn {
+.header-container-left-button .btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,6 +172,11 @@
   height: 55px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.header-container-left-button {
+  display: flex;
+  justify-content: end;
 }
 
 .header-container-right {
@@ -125,7 +237,7 @@
   padding: 10px;
 }
 
-.quote-button > .btn {
+.quote-button .btn {
   border-radius: 0;
   border-width: 4px;
   font-weight: bold;
@@ -133,13 +245,50 @@
 }
 
 @media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navbar {
+    display: flex !important;
+    height: 89px;
+  }
+
+  .navbar-logo-container {
+    display: flex;
+  }
+
+  .nav-logo {
+    display: block;
+    height: 50px;
+    margin-right: 5px;
+  }
+
+  .navbar-logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo-container a {
+    font-size: clamp(1rem, 3.4783vw + 0.3043rem, 3rem);
+  }
+
   header {
     margin: 0 auto;
     max-width: 1200px;
+    padding-top: 89px;
   }
 
   .header-container-left-title-content {
     font-size: 48px;
+  }
+
+  .header-block {
+    margin-top: 0;
   }
 
   .header-block-container {
@@ -161,14 +310,16 @@
     max-width: 1200px;
   }
 
-  .nav-link {
-    font-size: 14px;
+  .fixed-top {
+    justify-content: center !important;
   }
 
-  .navbar {
-    padding: 20px 20px;
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
     font-size: 14px;
-    justify-content: center;
+    width: 1200px;
+    margin-top: 0;
   }
 
   .navbar-collapse {
