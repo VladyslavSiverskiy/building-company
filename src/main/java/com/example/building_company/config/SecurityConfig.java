@@ -25,8 +25,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers("/home/**","/pictures/**", "/img/**", "/css/**", "/auth/register").permitAll()
-                .requestMatchers("/project/**").permitAll() //TODO: modify access
+                .requestMatchers("/home/**", "/pictures/**", "/img/**", "/css/**", "/auth/register")
+                .permitAll()
+                .requestMatchers("/project/**").permitAll() // TODO: modify access
+                .requestMatchers("/review/add-review").permitAll()
                 .requestMatchers("/auth/user/**").hasAuthority("USER")
                 .requestMatchers("/admin").hasAuthority("ADMIN")
                 .anyRequest().authenticated()

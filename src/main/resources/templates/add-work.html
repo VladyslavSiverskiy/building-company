@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <title>Add Work</title>
+    </head>
+    <body>
+
+        <div class="container mt-5">
+            <h2>Add Work</h2>
+            <form th:action="@{/work/add-work}" method="post">
+                <div class="mb-3">
+                    <label for="work" class="form-label">Work</label>
+                    <input type="text" class="form-control" id="work"
+                        name="work" required>
+                </div>
+                <div class="mb-3">
+                    <label for="workDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="workDescription"
+                        name="workDescription" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Work</button>
+            </form>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
