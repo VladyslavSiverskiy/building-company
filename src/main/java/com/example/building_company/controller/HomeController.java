@@ -7,11 +7,14 @@ import com.example.building_company.service.ProjectService;
 import com.example.building_company.service.ReviewService;
 import com.example.building_company.service.WorkService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -37,5 +40,12 @@ public class HomeController {
         List<WorkDto> workDtos = workService.findAll();
         model.addAttribute("recent_works", workDtos);
         return "index";
+    }
+
+    @GetMapping("/changeLanguage")
+    public String changeLanguage(@RequestParam String lang, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.setAttribute("lang", lang);
+        return "redirect:/home";
     }
 }
