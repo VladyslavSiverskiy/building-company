@@ -48,6 +48,14 @@
   max-width: var(--project-main-content-width);
 }
 
+.project__header-link{
+  color: #ffffff;
+}
+
+.project__header-link:hover{
+  color: #ffffff;
+}
+
 .project__content__main__title-image {
   padding: 0 20px;
   display: block;
