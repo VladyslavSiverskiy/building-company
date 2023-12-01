@@ -111,9 +111,8 @@ a {
 .horizontal-orange-divider{
   width: 48px;
   height: 5px;
-  margin: auto;
-  margin-bottom: 36px;
-  background-color: orange;
+  margin: auto auto 36px;
+  background-color: #ffb400;
 }
 
 .our-projects__intro_title{

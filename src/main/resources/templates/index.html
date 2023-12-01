@@ -244,28 +244,7 @@
         </div>
     </div>
 
-    <div class="contacts_container">
-        <h1 class="contacts_title">Contacts</h1>
-        <div class="contacts_container_inner">
-            <div class="social_media">
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="/img/icons/download_2.png" alt="Instagram" class="social_icon">
-                    <h4>Instagram</h4>
-                </a>
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="/img/icons/download_1.png" alt="Facebook" class="social_icon">
-                    <h4>Facebook</h4>
-                </a>
-            </div>
-            <div class="contacts">
-                <h4>Phone numbers: <span>+0123456789</span></h4>
-                <h4>Email: <span>building@gmail.com</span></h4>
-                <h4>Addres: <span>Lorem ipsum dolor sit amet.</span></h4>
-            </div>
-        </div>
-
-    </div>
-    </div>
+    <div th:insert="~{footer.html}"></div>
 
     <script>
         const menu_btn = document.querySelector('.hamburger');
