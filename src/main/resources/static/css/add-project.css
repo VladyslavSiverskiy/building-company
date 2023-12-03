@@ -1,0 +1,100 @@
+body {
+    background-color: #f7f7f7;
+    color: #333; /* Dark text color for better readability */
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #343a40;
+}
+
+label {
+    color: #333;
+}
+
+input, .form-control-file {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #ffb400;
+    color: white;
+}
+
+button.btn-secondary {
+    background-color: #333;
+}
+
+.alert {
+    background-color: #ffb400;
+    color: white;
+    border: 1px solid #f7f7f7;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.button-create {
+    font-family: var(--font-family-header);
+    background: none;
+    border: 3px solid  #ffb400;
+    border-radius: 0;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 95px;
+    height: 44px;
+    color: #ffc107;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+/* Hover effect for the Create button */
+.button-create:hover {
+    background-color: #ffb400;
+    border: 3px solid #ffb400;
+    color: #343a40;
+    text-decoration: none;
+}
+
+.button-clear {
+    font-family: var(--font-family-header);
+    border: 3px solid #343a40;
+    border-radius: 0;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 95px;
+    height: 44px;
+    color: #343a40;
+    background-color: #ffffff !important;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+    align-self: end;
+    vertical-align: center;
+}
+
+/* Hover effect for the Clear button */
+.button-clear:hover {
+    border-color: #343a40;
+    background-color: #343a40 !important;
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Notification</title>
+</head>
+<body style="background-color: #F7F7F7;">
+
+<div style="background-color: #ffb400; padding: 20px; text-align: center;">
+    <h1 style="color: #343a40;">Wymarzony Dom</h1>
+</div>
+
+<div style="padding: 20px; background-color: #ffffff">
+    <p>Dear [Website Owner's Name],</p>
+
+    <p>We wanted to inform you that someone has left their phone number on your website. Here are the details:</p>
+
+    <ul>
+        <li><strong>Phone Number:</strong>
+            <a th:text="${number}" th:href="|tel:${number}|"></a>
+        </li>
+    </ul>
+
+    <p>Please take the necessary steps to follow up with this lead as soon as possible.</p>
+
+    <p>Thank you for your attention to this matter.</p>
+
+    <p>Best regards,<br>
+        Your Website Team</p>
+</div>
+</body>
+</html>
