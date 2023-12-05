@@ -67,19 +67,15 @@ button {
     width: 100%;
 }
 
-.w-50.h-50 {
-    width: 50%;
-    height: 50%;
-}
-
-.w-100 {
-    width: 100%;
-}
-
 .btn-update{
     width: 100%;
     border: 3px solid #ffb400;
     color: #ffb400;
     font-weight: 700;
     font-size: 16px;
+}
+
+.additional-photos__grid{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
 }

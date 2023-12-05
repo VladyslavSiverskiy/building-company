@@ -60,9 +60,11 @@
                         <a th:if="${project.getTitleImageLink() != null}" class="btn btn-danger mb-5 mt-2 text-center" th:href="@{/admin/project/deleteImage(projectId=${project.getId()})}">Delete image</a>
                     </div>
                     <h2 class="d-block m-auto text-center mt-5 p-2">Additional images</h2>
-                    <div class="d-flex flex-column align-items-center" th:each="file, index: ${project.getAdditionalImages()}">
-                        <image class="d-block m-auto w-50 h-50" th:src="@{${file}}"></image>
-                        <a class="btn btn-danger mb-5 mt-2 text-center" th:href="@{/admin/project/deleteImage(deleteImagePath=${file}, projectId=${project.getId()})}">Delete image</a>
+                    <div class="additional-photos__grid">
+                        <div class="d-flex flex-column align-items-center" th:each="file, index: ${project.getAdditionalImages()}">
+                            <image class="d-block m-auto w-75 h-75" th:src="@{${file}}"></image>
+                            <a class="btn btn-danger mb-5 mt-2 text-center" th:href="@{/admin/project/deleteImage(deleteImagePath=${file}, projectId=${project.getId()})}">Delete image</a>
+                        </div>
                     </div>
                     <label class="d-block m-auto text-center" for="images">Add additional photos:</label>
                     <div class="d-flex flex-column align-items-center form-group">

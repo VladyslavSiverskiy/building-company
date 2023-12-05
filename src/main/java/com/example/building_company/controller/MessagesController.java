@@ -16,8 +16,7 @@ public class MessagesController {
     private final EmailServiceImpl emailService;
 
     @GetMapping
-    public void sentToMe(@RequestParam(name = "number") String phoneNumber) throws MessagingException {
-        String message = "Hello vladyslav, how are you? Im fine, good bye! Helllo world!!!!!!!!!!!!!!!!!!!!!!!";
+    public void sentToMe(@RequestParam(name = "number") String phoneNumber) {
         emailService.sendEmail("v.siverskiy@gmail.com", "hello gkgkllfllf", phoneNumber);
     }
 }
