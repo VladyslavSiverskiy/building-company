@@ -1,12 +1,10 @@
-<svg width="61" height="62" viewBox="0 0 61 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Group 429">
-<path id="Vector 25" d="M24.1464 60.25H2V1.75H30.4143V60.25H58.4107V15.9571H35.8464" stroke="#FFB400" stroke-width="3.34286"/>
-<path id="Vector 26" opacity="0.5" d="M2 15.1211H19.9679" stroke="#FFB400" stroke-width="3.34286"/>
-<path id="Vector 27" opacity="0.5" d="M2 25.1504H19.9679" stroke="#FFB400" stroke-width="3.34286"/>
-<path id="Vector 30" opacity="0.5" d="M30.4141 25.1504H48.3819" stroke="#FFB400" stroke-width="3.34286"/>
-<path id="Vector 28" opacity="0.5" d="M2 35.1785H19.9679" stroke="#FFB400" stroke-width="3.34286"/>
-<path id="Vector 31" opacity="0.5" d="M30.4143 35.1785H48.3822" stroke="#FFB400" stroke-width="3.34286"/>
-<path id="Vector 29" opacity="0.5" d="M2 45.207H19.9679" stroke="#FFB400" stroke-width="3.34286"/>
-<path id="Vector 32" opacity="0.5" d="M30.4143 45.207H48.3822" stroke="#FFB400" stroke-width="3.34286"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="61" height="63" viewBox="0 0 61 63" fill="none">
+    <path d="M24.1464 60.75H2V2.25H30.4143V60.75H58.4107V16.4571H35.8464" stroke="#666666" stroke-width="3.34286"/>
+    <path opacity="0.5" d="M2 15.6211H19.9679" stroke="#666666" stroke-width="3.34286"/>
+    <path opacity="0.5" d="M2 25.6504H19.9679" stroke="#666666" stroke-width="3.34286"/>
+    <path opacity="0.5" d="M30.4141 25.6504H48.3819" stroke="#666666" stroke-width="3.34286"/>
+    <path opacity="0.5" d="M2 35.6786H19.9679" stroke="#666666" stroke-width="3.34286"/>
+    <path opacity="0.5" d="M30.4141 35.6786H48.3819" stroke="#666666" stroke-width="3.34286"/>
+    <path opacity="0.5" d="M2 45.7072H19.9679" stroke="#666666" stroke-width="3.34286"/>
+    <path opacity="0.5" d="M30.4141 45.7072H48.3819" stroke="#666666" stroke-width="3.34286"/>
 </svg>

@@ -1,0 +1,51 @@
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 134px;
+}
+
+.quote-content {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 10px 20px;
+}
+
+.quote-button {
+    padding: 10px;
+}
+
+.quote-button .btn {
+    border-radius: 0;
+    border-width: 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+    .quote {
+        display: flex;
+        justify-content: center;
+        background-color: #F7F7F7;
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+
+    .quote-container {
+        flex-direction: row;
+        height: 100px;
+        max-width: 1200px;
+    }
+
+    .quote-content {
+        font-size: 38px;
+        line-height: 40px;
+    }
+
+    .quote-button {
+        padding-left: 80px;
+    }
+}

@@ -1,0 +1,81 @@
+.jobs {
+    display: flex;
+    justify-content: center;
+    /*background-color: #F7F7F7;*/
+}
+
+.jobs-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.jobs-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+}
+
+.jobs-column  {
+    display: flex;
+    margin-left: 5px;
+    min-width: 60px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jobs-container-column-section-box {
+    align-items: start;
+}
+
+.jobs-column-img {
+    margin-top: 5px;
+}
+
+.jobs-column-title  {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.jobs-column-content  {
+    text-align: justify;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .jobs {
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+
+    .jobs-container {
+        flex-direction: column;
+        margin: 20px 100px;
+    }
+
+    .jobs-container-column {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .jobs-section {
+        margin: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .jobs-container {
+        flex-direction: row;
+    }
+
+    .jobs-container-column {
+        flex-direction: column;
+    }
+
+    .jobs-section {
+        margin: 30px;
+    }
+}
