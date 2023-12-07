@@ -121,7 +121,7 @@
 }
 
 .header-block {
-  margin-top: 56px;
+  margin-top: 58px;
   background-image: url("../img/header/header-bg-home.png");
 }
 
@@ -132,8 +132,7 @@
 }
 
 .header-container-left {
-  max-width: 500px;
-  margin: 30px 30px 0 30px;
+  margin: 50px 5px 0 5px;
 }
 
 .header-container-left-title {
@@ -146,18 +145,20 @@
 }
 
 .header-container-left-title-content {
-  margin-left: 15px;
-  font-size: 36px;
+  margin-left: 5px;
+  font-size: 45px;
+  line-height: 1.2;
   font-weight: bold;
   color: rgb(222, 222, 222);
   max-height: 110px;
 }
 
 .header-container-left-content {
-  margin: 10px;
+  margin: 15px 10px;
   color: rgb(222, 222, 222);
   text-align: justify;
   text-indent: 10%;
+  font-size: 16px;
 }
 
 .header-container-left-button .btn {
@@ -179,70 +180,53 @@
   justify-content: end;
 }
 
-.header-container-right {
-  margin: 10px 30px 10px 30px;
-}
-
-.header-container-right-title {
-  color: #ffb400;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 20px 10px 10px 10px;
-}
-
-.header-container-right-block-section {
-  display: flex;
-  margin: 15px 10px;
-}
-
-.header-container-right-block-section-box {
-  margin: 5px 10px;
-}
-
-.header-container-right-block-section-image {
-  width: 70px;
-  height: 90px;
+.header-container-left-down-arrows {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-.header-container-right-block-section-title {
-  color: #dedede;
-  font-size: 20px;
 }
 
-.header-container-right-block-section-content {
-  color: #dedede;
-  width: 250px;
-  text-align: justify;
+.header-container-left-down-arrows img {
+  width: 44px;
+  margin-top: 20px;
 }
 
-.quote-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  height: 134px;
-}
+/*.header-container-right {*/
+/*  margin: 10px 30px 10px 30px;*/
+/*}*/
 
-.quote-content {
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 25px;
-  padding: 10px;
-}
+/*.header-container-right-title {*/
+/*  color: #ffb400;*/
+/*  font-size: 32px;*/
+/*  font-weight: 600;*/
+/*  margin: 20px 10px 10px 10px;*/
+/*}*/
 
-.quote-button {
-  padding: 10px;
-}
+/*.header-container-right-block-section {*/
+/*  display: flex;*/
+/*  margin: 15px 10px;*/
+/*}*/
 
-.quote-button .btn {
-  border-radius: 0;
-  border-width: 4px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+/*.header-container-right-block-section-box {*/
+/*  margin: 5px 10px;*/
+/*}*/
+
+/*.header-container-right-block-section-image {*/
+/*  width: 70px;*/
+/*  height: 90px;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+/*.header-container-right-block-section-title {*/
+/*  color: #dedede;*/
+/*  font-size: 20px;*/
+/*}*/
+
+/*.header-container-right-block-section-content {*/
+/*  color: #dedede;*/
+/*  width: 250px;*/
+/*  text-align: justify;*/
+/*}*/
 
 @media (min-width: 768px) {
   .mobile-nav {
@@ -269,7 +253,7 @@
   }
 
   .nav-link {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .navbar-logo-container {
@@ -278,7 +262,7 @@
   }
 
   .navbar-logo-container a {
-    font-size: clamp(1rem, 3.4783vw + 0.3043rem, 3rem);
+    font-size: clamp(1rem, 3.4783vw + 0.3043rem, 3rem) !important;
   }
 
   header {
@@ -287,8 +271,18 @@
     padding-top: 89px;
   }
 
+  .header-container-left {
+    margin: 20px;
+  }
+
+  .header-container-left-content {
+    margin: 15px 10px;
+    font-size: 19px;
+  }
+
   .header-container-left-title-content {
-    font-size: 48px;
+    font-size: 78px;
+    margin-left: 15px;
   }
 
   .header-block {
@@ -298,11 +292,11 @@
   .header-block-container {
     flex-direction: row;
     justify-content: space-evenly;
-    height: 425px;
+    height: 450px;
   }
 
   .header-container-left-title {
-    max-width: 420px;
+    max-width: none;
     line-height: 52px;
   }
 
@@ -330,33 +324,24 @@
     display: flex;
     justify-content: end;
   }
-
-  .quote-container {
-    flex-direction: row;
-    height: 100px;
-  }
-
-  .quote-content {
-    font-size: 38px;
-  }
-
-  .quote-button {
-    padding-left: 80px;
-  }
 }
 
-@media (max-width: 375px) {
+@media (min-width: 1024px) {
   .header-container-left {
-    margin: 20px 5px;
+    margin: 50px 20px;
   }
 
-  .header-container-right {
-    margin: 0 5px;
+  .header-block-container {
+    height: 425px;
   }
 }
 
 @media (max-width: 290px) {
   .navbar-brand {
     font-size: 22px !important;
+  }
+
+  .header-container-left {
+    margin-top: 50px;
   }
 }

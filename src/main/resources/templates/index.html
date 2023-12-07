@@ -82,7 +82,7 @@
 
         .items {
             width: 90%;
-            margin: 0px auto !important;
+            margin: 0 auto !important;
         }
 
         .card-title {
@@ -120,6 +120,9 @@
         <div th:insert="~{top-nav.html}"></div>
         <div th:insert="~{header-home.html}"></div>
     </header>
+
+    <section class="jobs" th:insert="~{jobs-home.html}"></section>
+    <section class="quote" th:insert="~{services-call.html}"></section>
 
     <section class="top-counters">
         <div class="counters-left-container-dark">
@@ -166,11 +169,11 @@
             </div>
             <div class="right-container-bottom">
                 <div class="right-container-bottom-years">
-                    <div class="years-counter">12</div>
+                    <div class="years-counter">2</div>
                     <div class="years-counter-title">YEARS ESTABLISHED</div>
                 </div>
                 <div class="right-container-bottom-projects">
-                    <div class="projects-counter">250</div>
+                    <div class="projects-counter">13</div>
                     <div class="projects-counter-title">COMPLETED PROJECTS</div>
                 </div>
             </div>
@@ -223,7 +226,7 @@
                 <div class="card" th:each="review, index: ${recent_reviews}">
                     <div class="card-body">
 
-                        <div class="card-title"><img src="/img/icons/quotes.svg"></div>
+                        <div class="card-title"><img src="/img/icons/quotes.svg" alt="quotes icon"></div>
                         <div class="review-author" th:text="${review.getAuthor()}">
                            Guest
                         </div>
@@ -243,7 +246,8 @@
         </div>
     </div>
 
-    <div th:insert="~{footer.html}"></div>
+    <section class="quote" th:insert="~{quote-home.html}"></section>
+    <footer class="footer" th:insert="~{footer.html}"></footer>
 
     <script>
         const menu_btn = document.querySelector('.hamburger');
@@ -297,6 +301,6 @@
             });
         });
     </script>
-  
+
 </body>
 </html>

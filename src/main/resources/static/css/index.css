@@ -1,4 +1,5 @@
 @import "header.css";
+@import "jobs-home.css";
 @import "top-counters.css";
 @import "common.css";
 @import "project.css";
@@ -9,4 +10,5 @@
 @import "button_view_all.css";
 @import "all-proj.css";
 @import "reviews.css";
+@import "quote-home.css";
 @import "footer.css";
