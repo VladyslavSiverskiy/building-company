@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Building Company</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <style>
+        @media (max-width:991.98px) {
+            .padding {
+                padding: 1.5rem
+            }
+        }
+
+        @media (max-width:767.98px) {
+            .padding {
+                padding: 1rem
+            }
+        }
+
+        .padding {
+            padding: 5rem
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            width: 350px;
+            min-height: 317px;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border-style: none;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        p {
+            font-size: 0.875rem;
+            margin-bottom: .5rem;
+            line-height: 1.5rem
+        }
+
+        h4 {
+            line-height: .2 !important;
+        }
+
+        .profile {
+            margin-top: 16px;
+            margin-left: 11px;
+        }
+
+        .profile-pic {
+            width: 58px;
+        }
+
+        .cust-name {
+            font-size: 18px;
+        }
+
+        .cust-profession {
+            font-size: 10px;
+        }
+
+        .items {
+            width: 90%;
+            margin: 0px auto !important;
+        }
+
+        .card-title {
+            margin: 0;
+        }
+
+        .card-title img {
+            width: 30px;
+            transform: rotate(180deg);
+            margin-bottom: 10px !important;
+        }
+
+
+        .slick-slide {
+            margin: 10px
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: #343a40;
+        }
+
+        .slick-next{
+            right: -15px;
+        }
+
+        .slick-prev{
+            left: -15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div th:insert="~{top-nav.html}"></div>
+        <div th:insert="~{header-home.html}"></div>
+    </header>
+
+    <section class="top-counters">
+        <div class="counters-left-container-dark">
+            <div class="counters-left-container">
+                <div class="counters-left-container-image">
+                    <img src="/img/top-counter/left-container-image.png" alt="wooden house frame">
+                </div>
+            </div>
+        </div>
+        <div class="counters-right-container">
+            <div class="right-container-top">
+                <div class="right-container-top-title">
+                    <h2>No Project Too Big Or Too Small</h2>
+                </div>
+                <div class="right-container-top-divider">
+                    <img src="/img/top-counter/counter-divider.svg" alt="yellow divider">
+                </div>
+                <div class="right-container-top-content">
+                    <div class="right-container-top-text">
+                        <div class="right-container-top-text-left">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sapien, dignissim tristique tellus sed faucibus nullam.
+                                Tincidunt mauris ut quam sed mauris proin feugiat. Scelerisque
+                                lorem posuere iaculis nunc amet phasellus.</p>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sapien, dignissim tristique tellus sed faucibus nullam.</p>
+                        </div>
+                    </div>
+                    <div class="right-container-top-text">
+                        <div class="right-container-top-text-right">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sapien, dignissim tristique tellus sed faucibus nullam.
+                                Tincidunt mauris ut quam sed mauris proin feugiat. Scelerisque
+                                lorem posuere iaculis nunc amet phasellus.</p>
+                        </div>
+                        <div class="right-container-top-text-button">
+                            <div class="learn-more-button">
+                                <button type="button" class="btn btn-outline-dark">LEARN MORE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-container-bottom">
+                <div class="right-container-bottom-years">
+                    <div class="years-counter">12</div>
+                    <div class="years-counter-title">YEARS ESTABLISHED</div>
+                </div>
+                <div class="right-container-bottom-projects">
+                    <div class="projects-counter">250</div>
+                    <div class="projects-counter-title">COMPLETED PROJECTS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-projects">
+        <div class="our-project__intro">
+            <h3 class="our-projects__intro_title">Latest projects</h3>
+            <div class="horizontal-orange-divider">
+            </div>
+        </div>
+        <div class="our-projects__content">
+            <div class="our-projects__content__project-card" th:each="project, index: ${recent_projects}">
+                <img th:if="${project.getTitleImageLink() != null}" class="our-projects__content__project-card_picture"
+                    th:src="@{${project.getTitleImageLink()}}" alt="project">
+                <img th:if="${project.getTitleImageLink() == null}" class="our-projects__content__project-card_picture"
+                    alt="no-title-image" src="/img/default.jpg">
+                <div class="our-projects__content__project-card__description">
+                    <h3 class="our-projects__content__project-card__description_title" th:text="${project.getTitle()}">
+                        Project title
+                    </h3>
+                    <p class="our-projects__content__project-card__description_text"
+                        th:text="${#strings.length(project.getDescription()) > 125 ? #strings.substring(project.getDescription(), 0, 125) + '...' : project.getDescription()}">
+                        Lorem
+                        ipsum dolor sit amet,
+                        consectetur adipiscing elit. Id et euismod bibendum
+                        adipiscing et orci, fermentum.
+                    </p>
+                    <a class="our-projects__content__project-card__description_more"
+                        th:href="@{/project/{projectId}(projectId=${project.getId()})}">
+                        View project
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a class="our-projects__content__project-card__description_view-all" th:href="@{/project}">
+            View all
+        </a>
+    </section>
+
+    <div class="main_container">
+        <div class="comments_container">
+            <div class="our-project__intro">
+                <h3 class="our-projects__intro_title">Client Testimonials</h3>
+                <div class="horizontal-orange-divider">
+                </div>
+            </div>
+            <div class="items">
+                <div class="card" th:each="review, index: ${recent_reviews}">
+                    <div class="card-body">
+
+                        <div class="card-title"><img src="/img/icons/quotes.svg"></div>
+                        <div class="review-author" th:text="${review.getAuthor()}">
+                           Guest
+                        </div>
+                        <div class="small-orange-divider"></div>
+                        <div class="review-content" th:text="${review.getContent()}">
+                            "Online reviews can make or break a customer's decision to make a purchase. Read about
+                                these customer review sites where your customers' Online reviews can make or break a
+                                customer's decision to make a purchase. Read about these customer review sites where
+                                your customers'"
+                        </div>
+                        <div class="review-date" th:text="${review.getCreationTime()}">
+                            2023-10-11
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:insert="~{footer.html}"></div>
+
+    <script>
+        const menu_btn = document.querySelector('.hamburger');
+        const mobile_menu = document.querySelector('.mobile-nav');
+
+        menu_btn.addEventListener('click', function () {
+            menu_btn.classList.toggle('is-active')
+            mobile_menu.classList.toggle('is-active')
+        })
+    </script>
+  
+    <script>
+        $(document).ready(function () {
+
+            $('.items').slick({
+                dots: false,
+                infinite: true,
+                speed: 800,
+                autoplay: true,
+                autoplaySpeed: 6000,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                // prevArrow: $('.prev'),
+                // nextArrow: $('.next'),
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 670,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 344,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+
+                ]
+            });
+        });
+    </script>
+  
+</body>
+</html>

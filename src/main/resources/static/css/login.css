@@ -1,0 +1,112 @@
+.login-form {
+  padding: 120px 0;
+  margin: auto;
+  max-width: var(--container-width);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+form {
+  width: 320px;
+  color: #566a7f;
+}
+
+.vh-100 {
+  display: flex;
+  background-size: 100% 100%;
+  background: white;
+}
+
+.left-container {
+  display: none;
+}
+
+.card {
+  background-color: #F7F7F7;
+  border-radius: 0;
+  border-width: 0;
+}
+
+.col-12 {
+  max-width: 420px;
+}
+
+.form-control::placeholder {
+  font-weight: 300;
+  font-size: 14px;
+  color: #b2b2b2;
+}
+
+.welcome {
+  font-weight: 300;
+  text-align: start;
+}
+
+.form-outline {
+  font-weight: 300;
+  text-align: start;
+}
+
+.checkbox-group, .restore-group {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.restore-group {
+  justify-content: center;
+}
+
+.restore-group > h6 {
+  margin-bottom: 0;
+  padding-right: 5px;
+}
+
+.form-label {
+  font-size: 12px;
+  margin: 5px;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 2px solid #ffb400;
+}
+
+.checkbox {
+  margin: 5px;
+}
+
+.btn {
+  background: #ffb400;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+.btn:hover {
+  background: #ffb400;
+}
+
+.restore-group > a {
+  color: #ffb400;
+}
+
+.restore-group > a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.error {
+  color: #ff0000;
+}
+
+@media (min-width: 768px) {
+  .left-container {
+    display: block;
+    height: 475px;
+    padding: 0;
+  }
+
+  .right-container {
+    padding: 0;
+  }
+}

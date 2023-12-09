@@ -1,0 +1,224 @@
+.project__header {
+  background-image: url("../img/projects/header.png");
+  max-width: 1200px;
+  height: 250px;
+  margin: auto;
+}
+
+.project__header__description {
+  min-height: 100%;
+  max-width: var(--container-width);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: start;
+  padding: 53px 0 53px 0;
+}
+
+.project__header__description-title {
+  padding: 0 20px;
+  color: #ffffff;
+  font-family: var(--font-family-header);
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.project__header__description-path {
+  padding: 0 20px;
+  color: #ffffff;
+  font-family: var(--font-family-paragraph);
+}
+
+.project__content {
+  max-width: var(--container-width);
+  min-height: 100%;
+  padding: 25px 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.project__content__main {
+  min-height: 100%;
+}
+
+.project__content__additional {
+  min-height: 100%;
+  max-width: var(--project-main-content-width);
+}
+
+.project__header-link{
+  color: #ffffff;
+}
+
+.project__header-link:hover{
+  color: #ffffff;
+}
+
+.project__content__main__title-image {
+  padding: 0 20px;
+  display: block;
+  max-width: 360px;
+  max-height: 290px;
+  margin: auto;
+}
+
+.project__content__main__full-description {
+  padding: 0 25px;
+  max-width: var(--project-main-content-width);
+  margin: auto;
+  margin-top: 25px;
+  color: #000;
+  font-family: var(--font-family-header);
+  font-size: 17px;
+  text-align: justify;
+  word-break: break-all;
+}
+
+.project__content__main__additional-images {
+  margin-top: 25px;
+  max-width: var(--container-width);
+  display: grid;
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 234px;
+}
+
+.project__content__main__additional-images__image {
+  max-width: 234px;
+  max-height: 165px;
+}
+
+.project__content__main__management {
+  max-width: 360px;
+  max-height: 100px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.project__content__main__management__link {
+  text-decoration: none !important;
+  display: flex;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.project__content__main__management__link img {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+}
+
+.project__content__main__management__link p {
+  color: #000;
+  font-family: var(--font-family-paragraph);
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+.project__content__additional {
+  padding: 20px;
+  align-self: center;
+}
+.project__content__additional__info{
+
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+}
+
+.project__content__additional__name {
+  font-family: var(--font-family-header);
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.project__content__additional__short-description {
+  margin-bottom: 32px;
+  font-family: var(--font-family-paragraph);
+  font-weight: bold;
+  font-size: 17px;
+  text-align: justify;
+  word-break: break-all;
+}
+
+.project__content__additional__info__unit {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  max-height: 70px;
+}
+
+.project__content__additional__info__unit__header {
+  font-family: var(--font-family-header);
+  font-size: 22px;
+}
+
+.project__content__additional__info__unit__text {
+  font-family: var(--font-family-paragraph);
+  font-weight: 200;
+  font-size: 17px;
+  text-align: right;
+  padding-top: 4px;
+  word-break: break-all;
+}
+
+@media (min-width: 690px) {
+  .project__content__main__additional-images__image {
+    max-width: 330px;
+    max-height: 285px;
+  }
+
+  .project__content__main__full-description {
+    padding: 0 10px;
+    text-indent: 5%;
+    text-align: justify;
+  }
+
+  .project__content__main__additional-images {
+    grid-template-columns: 330px 330px;
+  }
+
+  .project__content__main__title-image {
+    padding: 0 20px;
+    display: block;
+    max-width: var(--project-main-content-width);
+    max-height: 590px;
+  }
+
+  .project__content__main__management {
+    max-width: var(--container-width);
+    padding: 0;
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .project__content {
+    flex-direction: row-reverse;
+    gap: 85px;
+    padding: 55px 0;
+    justify-content: space-between;
+  }
+
+  .project__content__additional{
+    width: 30%;
+    align-self: start;
+  }
+
+  .project__header__description {
+    min-height: 100%;
+    max-width: var(--container-width);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: start;
+    padding: 53px 0 53px 54px;
+  }
+}
