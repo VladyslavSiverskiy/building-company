@@ -54,9 +54,14 @@ public class ProjectController {
                 model.addAttribute("project", project);
                 return "add-project";
         }
-        ProjectDto savedProject = projectService.save(project);
-        fileService.saveProjectImages(savedProject, files);
-        projectService.update(savedProject);
+        try {
+            ProjectDto savedProject = projectService.save(project);
+            fileService.saveProjectImages(savedProject, files);
+            projectService.update(savedProject);
+        }catch (Exception e){
+            model.addAttribute("error", e.getMessage());
+            return "add-project";
+        }
         return "redirect:/admin";
     }
 
