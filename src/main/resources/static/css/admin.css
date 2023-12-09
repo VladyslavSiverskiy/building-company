@@ -3,6 +3,17 @@
     min-height: 100%;
 }
 
+.admin__all-reviews__container{
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 25px 0;
+    max-width: 1200px;
+    row-gap: 44px;
+    margin: auto auto 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
 .nav-tabs {
     background-color: #ffffff;
 }
@@ -89,7 +100,6 @@
     background-color: #2a2a2a;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    /*padding: 20px;*/
     padding: 0 20px;
 }
 
@@ -145,7 +155,8 @@
     background-color: #343a40;
 }
 
-.our-projects__content-admin::-webkit-scrollbar-track
+.our-projects__content-admin::-webkit-scrollbar-track,
+.admin__all-reviews__container::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
@@ -153,13 +164,15 @@
     margin-left: 2px;
 }
 
-.our-projects__content-admin::-webkit-scrollbar
+.our-projects__content-admin::-webkit-scrollbar,
+.admin__all-reviews__container::-webkit-scrollbar
 {
     width: 6px;
     background-color: #F5F5F5;
 }
 
-.our-projects__content-admin::-webkit-scrollbar-thumb
+.our-projects__content-admin::-webkit-scrollbar-thumb,
+.admin__all-reviews__container::-webkit-scrollbar-thumb
 {
     background-color: #ffb400;
     border-radius: 4px;
@@ -224,7 +237,11 @@
 
     .our-projects__content-admin {
         grid-template-columns: 48% 48%;
-        /*column-gap: 5%;*/
+        justify-content: space-between;
+    }
+
+    .admin__all-reviews__container{
+        grid-template-columns: 48% 48%;
         justify-content: space-between;
     }
 
