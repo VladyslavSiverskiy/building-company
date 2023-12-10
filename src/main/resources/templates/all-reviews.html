@@ -37,8 +37,8 @@
     <div class="container" th:fragment="reviews">
       <h2>All Reviews</h2>
 
-      <div class="row">
-        <div th:each="review, iterStat : ${reviews}" class="col-md-4">
+      <div class="row admin__all-reviews__container">
+        <div th:each="review, iterStat : ${reviews}">
           <div class="review-card">
             <p><strong>ID: </strong><span th:text="${review.id}"></span></p>
             <p><strong>Author: </strong><span th:text="${review.author}"></span></p>
