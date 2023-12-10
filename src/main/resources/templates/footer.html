@@ -25,13 +25,17 @@
 
         <div class="footer-container-right">
             <div class="footer-email-title">Masz pytania?</div>
-            <div class="footer-email-form">
-                <div class="d-flex flex-column gap-2">
-                    <label for="tel" class="visually-hidden"></label>
-                    <input id="tel" type="tel" autocomplete="off" class="form-control" placeholder="Numer telefonu">
-                    <button type="button" class="btn btn-warning">WYŚLIJ</button>
+
+                <div class="footer-email-form">
+                    <form class="d-flex flex-column gap-2" th:action="@{/message}" method="post">
+                        <label for="tel" class="visually-hidden"></label>
+                        <input id="tel" name="phoneNumber" type="tel" autocomplete="off"
+                               class="form-control" placeholder="Numer telefonu">
+                        <button type="submit" class="btn btn-warning">WYŚLIJ</button>
+                        <p th:if="${errorMessage}" class="error-message" th:text="${errorMessage}"></p>
+                    </form>
                 </div>
-            </div>
+
         </div>
     </div>
 
