@@ -1,22 +1,28 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Building Company</title>
-    <link rel="stylesheet" th:href="@{/css/index.css}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Building Company</title>
+        <link rel="stylesheet" th:href="@{/css/index.css}">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <style>
         @media (max-width:991.98px) {
             .padding {
                 padding: 1.5rem
@@ -113,143 +119,170 @@
             left: -15px;
         }
     </style>
-</head>
+    </head>
 
-<body>
-    <header>
-        <div th:insert="~{top-nav.html}"></div>
-        <div th:insert="~{header-home.html}"></div>
-    </header>
+    <body>
+        <header>
+            <div th:insert="~{top-nav.html}"></div>
+            <div th:insert="~{header-home.html}"></div>
+        </header>
 
-    <section class="jobs" th:insert="~{jobs-home.html}"></section>
-    <section class="quote" th:insert="~{services-call.html}"></section>
+        <section class="jobs" th:insert="~{jobs-home.html}"></section>
+        <section class="quote" th:insert="~{services-call.html}"></section>
 
-    <section class="top-counters">
-        <div class="counters-left-container-dark">
-            <div class="counters-left-container">
-                <div class="counters-left-container-image">
-                    <img src="/img/top-counter/left-container-image.png" alt="wooden house frame">
+        <section class="top-counters">
+            <div class="counters-left-container-dark">
+                <div class="counters-left-container">
+                    <div class="counters-left-container-image">
+                        <img src="/img/top-counter/left-container-image.png"
+                            alt="wooden house frame">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="counters-right-container">
-            <div class="right-container-top">
-                <div class="right-container-top-title">
-                    <h2>No Project Too Big Or Too Small</h2>
-                </div>
-                <div class="right-container-top-divider">
-                    <img src="/img/top-counter/counter-divider.svg" alt="yellow divider">
-                </div>
-                <div class="right-container-top-content">
-                    <div class="right-container-top-text">
-                        <div class="right-container-top-text-left">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sapien, dignissim tristique tellus sed faucibus nullam.
-                                Tincidunt mauris ut quam sed mauris proin feugiat. Scelerisque
-                                lorem posuere iaculis nunc amet phasellus.</p>
+            <div class="counters-right-container">
+                <div class="right-container-top">
+                    <div class="right-container-top-title">
+                        <h2>O Właścicielu:</h2>
+                    </div>
+                    <div class="right-container-top-divider">
+                        <img src="/img/top-counter/counter-divider.svg"
+                            alt="yellow divider">
+                    </div>
+                    <div class="right-container-top-content">
+                        <div class="right-container-top-text">
+                            <div class="right-container-top-text-left">
+                                <p>Założyciel firmy, Vitaliy Sachko, specjalista
+                                    z dziesięcioletnim doświadczeniem w
+                                    budownictwie i wykończeniach domów, z czego
+                                    pięć lat to doświadczenie jako kierownik
+                                    brygady budowlanej w Polsce. Dla niego
+                                    budownictwo to jego życie, dlatego wkłada
+                                    duszę w każdy projekt i stara się wykonywać
+                                    go tak, jakby był dla siebie.</p>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sapien, dignissim tristique tellus sed faucibus nullam.</p>
+                                <p> Każdy projekt, zarówno duży, jak i mały,
+                                    jest dla niego ważny - musi być wykonany
+                                    dobrze. Największym projektem Vitaliia był
+                                    dom o powierzchni 220 m kw. </p>
+                            </div>
+                        </div>
+                        <div class="right-container-top-text">
+                            <div class="right-container-top-text-right">
+                                <p> Został on zbudowany od podstaw do
+                                    zakończenia prac remontowych. Korzystając z
+                                    jego usług, możesz być pewien, że wszystkie
+                                    twoje przedsięwzięcia budowlane będą udane.</p>
+                            </div>
+                            <div class="right-container-top-text-button">
+                                <div class="learn-more-button">
+                                    <button type="button"
+                                        class="btn btn-outline-dark">OCZSIĄDŹ
+                                        WIĘCEJ</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="right-container-top-text">
-                        <div class="right-container-top-text-right">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sapien, dignissim tristique tellus sed faucibus nullam.
-                                Tincidunt mauris ut quam sed mauris proin feugiat. Scelerisque
-                                lorem posuere iaculis nunc amet phasellus.</p>
-                        </div>
-                        <div class="right-container-top-text-button">
-                            <div class="learn-more-button">
-                                <button type="button" class="btn btn-outline-dark">LEARN MORE</button>
+                </div>
+                <div class="right-container-bottom">
+                    <div class="right-container-bottom-years">
+                        <div class="years-counter">7</div>
+                        <div class="years-counter-title">LATA ISTNIENIA</div>
+                    </div>
+                    <div class="right-container-bottom-projects">
+                        <div class="projects-counter">23</div>
+                        <div class="projects-counter-title">UKOŃCZONE PROJEKTY</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-projects">
+            <div class="our-project__intro">
+                <h3 class="our-projects__intro_title">Najnowsze projekty</h3>
+                <div class="horizontal-orange-divider">
+                </div>
+            </div>
+            <div class="our-projects__content">
+                <div class="our-projects__content__project-card"
+                    th:each="project, index: ${recent_projects}">
+                    <img th:if="${project.getTitleImageLink() != null}"
+                        class="our-projects__content__project-card_picture"
+                        th:src="@{${project.getTitleImageLink()}}" alt="project">
+                    <img th:if="${project.getTitleImageLink() == null}"
+                        class="our-projects__content__project-card_picture"
+                        alt="no-title-image" src="/img/default.jpg">
+                    <div
+                        class="our-projects__content__project-card__description">
+                        <h3
+                            class="our-projects__content__project-card__description_title"
+                            th:text="${project.getTitle()}">
+                            Project title
+                        </h3>
+                        <p
+                            class="our-projects__content__project-card__description_text"
+                            th:text="${#strings.length(project.getDescription()) > 125 ? #strings.substring(project.getDescription(), 0, 125) + '...' : project.getDescription()}">
+                            Lorem
+                            ipsum dolor sit amet,
+                            consectetur adipiscing elit. Id et euismod bibendum
+                            adipiscing et orci, fermentum.
+                        </p>
+                        <a
+                            class="our-projects__content__project-card__description_more"
+                            th:href="@{/project/{projectId}(projectId=${project.getId()})}">
+                            View project
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a class="our-projects__content__project-card__description_view-all"
+                th:href="@{/project}">
+                View all
+            </a>
+        </section>
+
+        <div class="main_container">
+            <div class="comments_container">
+                <div class="our-project__intro">
+                    <h3 class="our-projects__intro_title">Opinie Klientów</h3>
+                    <div class="horizontal-orange-divider">
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="card" th:each="review, index: ${recent_reviews}">
+                        <div class="card-body">
+
+                            <div class="card-title"><img
+                                    src="/img/icons/quotes.svg"
+                                    alt="quotes icon"></div>
+                            <div class="review-author"
+                                th:text="${review.getAuthor()}">
+                                Guest
+                            </div>
+                            <div class="small-orange-divider"></div>
+                            <div class="review-content"
+                                th:text="${review.getContent()}">
+                                "Online reviews can make or break a customer's
+                                decision to make a purchase. Read about
+                                these customer review sites where your customers'
+                                Online reviews can make or break a
+                                customer's decision to make a purchase. Read
+                                about these customer review sites where
+                                your customers'"
+                            </div>
+                            <div class="review-date"
+                                th:text="${review.getCreationTime()}">
+                                2023-10-11
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="right-container-bottom">
-                <div class="right-container-bottom-years">
-                    <div class="years-counter">2</div>
-                    <div class="years-counter-title">YEARS ESTABLISHED</div>
-                </div>
-                <div class="right-container-bottom-projects">
-                    <div class="projects-counter">13</div>
-                    <div class="projects-counter-title">COMPLETED PROJECTS</div>
-                </div>
-            </div>
         </div>
-    </section>
 
-    <section class="our-projects">
-        <div class="our-project__intro">
-            <h3 class="our-projects__intro_title">Latest projects</h3>
-            <div class="horizontal-orange-divider">
-            </div>
-        </div>
-        <div class="our-projects__content">
-            <div class="our-projects__content__project-card" th:each="project, index: ${recent_projects}">
-                <img th:if="${project.getTitleImageLink() != null}" class="our-projects__content__project-card_picture"
-                    th:src="@{${project.getTitleImageLink()}}" alt="project">
-                <img th:if="${project.getTitleImageLink() == null}" class="our-projects__content__project-card_picture"
-                    alt="no-title-image" src="/img/default.jpg">
-                <div class="our-projects__content__project-card__description">
-                    <h3 class="our-projects__content__project-card__description_title" th:text="${project.getTitle()}">
-                        Project title
-                    </h3>
-                    <p class="our-projects__content__project-card__description_text"
-                        th:text="${#strings.length(project.getDescription()) > 125 ? #strings.substring(project.getDescription(), 0, 125) + '...' : project.getDescription()}">
-                        Lorem
-                        ipsum dolor sit amet,
-                        consectetur adipiscing elit. Id et euismod bibendum
-                        adipiscing et orci, fermentum.
-                    </p>
-                    <a class="our-projects__content__project-card__description_more"
-                        th:href="@{/project/{projectId}(projectId=${project.getId()})}">
-                        View project
-                    </a>
-                </div>
-            </div>
-        </div>
-        <a class="our-projects__content__project-card__description_view-all" th:href="@{/project}">
-            View all
-        </a>
-    </section>
+        <section class="quote" th:insert="~{quote-home.html}"></section>
+        <footer class="footer" th:insert="~{footer.html}"></footer>
 
-    <div class="main_container">
-        <div class="comments_container">
-            <div class="our-project__intro">
-                <h3 class="our-projects__intro_title">Client Testimonials</h3>
-                <div class="horizontal-orange-divider">
-                </div>
-            </div>
-            <div class="items">
-                <div class="card" th:each="review, index: ${recent_reviews}">
-                    <div class="card-body">
-
-                        <div class="card-title"><img src="/img/icons/quotes.svg" alt="quotes icon"></div>
-                        <div class="review-author" th:text="${review.getAuthor()}">
-                           Guest
-                        </div>
-                        <div class="small-orange-divider"></div>
-                        <div class="review-content" th:text="${review.getContent()}">
-                            "Online reviews can make or break a customer's decision to make a purchase. Read about
-                                these customer review sites where your customers' Online reviews can make or break a
-                                customer's decision to make a purchase. Read about these customer review sites where
-                                your customers'"
-                        </div>
-                        <div class="review-date" th:text="${review.getCreationTime()}">
-                            2023-10-11
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="quote" th:insert="~{quote-home.html}"></section>
-    <footer class="footer" th:insert="~{footer.html}"></footer>
-
-    <script>
+        <script>
         const menu_btn = document.querySelector('.hamburger');
         const mobile_menu = document.querySelector('.mobile-nav');
 
@@ -258,8 +291,8 @@
             mobile_menu.classList.toggle('is-active')
         })
     </script>
-  
-    <script>
+
+        <script>
         $(document).ready(function () {
 
             $('.items').slick({
@@ -302,5 +335,5 @@
         });
     </script>
 
-</body>
+    </body>
 </html>

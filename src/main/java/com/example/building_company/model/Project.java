@@ -28,7 +28,7 @@ public class Project {
     private String category;
     @Column(name = "client_name")
     private String clientName;
-    @Column(nullable = false, length = 755)
+    @Column(nullable = false)
     private String description;
     @Column
     private String place;
