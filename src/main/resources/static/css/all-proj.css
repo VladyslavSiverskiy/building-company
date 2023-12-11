@@ -74,8 +74,6 @@ a {
   margin-bottom: 10px;
 }
 
-
-
 .our-projects__content__project-card {
   margin: auto;
   max-width: 293px;
@@ -94,6 +92,8 @@ a {
   display: flex;
   padding: 24px 24px 24px 24px;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 277px;
 }
 
 .our-projects__content__project-card__description_title {
@@ -186,7 +186,7 @@ a {
 
 @media (min-width: 339px) {
   .our-projects__content__project-card__description_text{
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
 }
 
@@ -209,7 +209,7 @@ a {
   }
 
   .our-projects__content__project-card__description_text{
-    margin-bottom: 18px;
+    margin-bottom: 30px;
   }
 
   /*.our-projects__content {*/
