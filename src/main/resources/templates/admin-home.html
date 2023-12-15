@@ -14,10 +14,14 @@
 <div class="container-fluid">
     <div class="admin-page">
         <div class="admin-header">
-            <img src="/img/footer/footer-logo.svg" alt="Building company logo.">
+            <button class="admin__home-button">
+                <a th:href="@{/home}">
+                    <img src="/img/footer/footer-logo.svg" alt="Building company logo.">
+                </a>
+            </button>
             <p class="admin-logo__header">WYMARZHONY DOM ADMIN</p>
             <form class="form-horizontal" th:action="@{/logout}" method="POST" style="margin-top: 40px;">
-                <button class="our-projects__content__project-card__description_view-all" type="submit">
+                <button class="admin__home-button" type="submit">
                     <img class="logout-img" src="/img/icons/logout.svg" alt="<-">
                 </button>
             </form>

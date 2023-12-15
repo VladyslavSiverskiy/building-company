@@ -37,7 +37,7 @@
 .admin-projects__controls{
     display: flex;
     min-width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     row-gap: 4px;
 }
 
@@ -112,6 +112,13 @@
     display: none;
 }
 
+.admin-projects__controls-edit-delete{
+    min-width: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .admin-header img {
     display: block;
     height: 50px;
@@ -149,10 +156,13 @@
     height: 50px;
     text-align: center;
     margin-bottom: 15px;
+    border: none !important;
 }
 
-.form-horizontal button:hover {
-    background-color: #343a40;
+.admin__home-button{
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .our-projects__content-admin::-webkit-scrollbar-track,
@@ -179,9 +189,10 @@
 }
 
 .logout-img{
-    width: 20px !important;
-    height: 30px !important;
+    width: 40px !important;
+    height: 60px !important;
     margin: auto;
+    padding-top: 7px;
 }
 
 @media screen and (min-width: 530px) {
@@ -249,6 +260,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-width: 100%;
+        max-height: 75px;
+    }
+
+    .logout-img{
+        margin-bottom: 20px;
     }
 }
