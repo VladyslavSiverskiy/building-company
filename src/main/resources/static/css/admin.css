@@ -223,7 +223,7 @@
 
     .right-panel{
         background-color: #ffffff;
-        max-height: 100%;
+        height: 650px;
         padding: 20px;
         min-width: 75%;
         border-bottom-right-radius: 20px;
