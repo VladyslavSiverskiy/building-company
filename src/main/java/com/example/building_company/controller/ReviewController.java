@@ -28,6 +28,7 @@ public class ReviewController {
 
     @PostMapping("/add-review")
     public String createReview(@ModelAttribute("reviewDto") ReviewDto reviewDto, Model model) {
+        reviewDto.setCreationTime(LocalDate.now());
         ReviewDto createdReview = reviewService.save(reviewDto);
         model.addAttribute("createdReview", createdReview);
         return "redirect:/home";
@@ -41,13 +42,12 @@ public class ReviewController {
 
     @PostMapping("/{id}/update")
     public String updateReview(@ModelAttribute("review") ReviewDto reviewDto, @PathVariable Long id,
-            @RequestParam("creationTime") String creationTime,
             @RequestParam(value = "isVerified", required = false) Boolean isVerified) {
         ReviewDto existingReview = reviewService.findById(id);
 
         existingReview.setContent(reviewDto.getContent());
         existingReview.setAuthor(reviewDto.getAuthor());
-        existingReview.setCreationTime(LocalDate.parse(creationTime));
+        existingReview.setCreationTime(existingReview.getCreationTime());
         existingReview.setIsVerified(isVerified != null && isVerified);
 
         reviewService.update(existingReview);
