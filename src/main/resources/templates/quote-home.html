@@ -1,6 +1,11 @@
 <div class="quote-container">
     <div class="quote-content">Podziel się z nami opinią</div>
     <div class="quote-button">
-        <a type="button" class="btn btn-outline-warning" th:href="@{/review/add-review}">ZOSTAWIĆ OPINIĘ</a>
+        <a type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#quoteModal">
+            ZOSTAWIĆ OPINIĘ
+        </a>
+        <div class="modal fade" id="quoteModal">
+            <div class="modal-dialog-centered" th:insert="~{/add-review.html}"></div>
+        </div>
     </div>
 </div>
