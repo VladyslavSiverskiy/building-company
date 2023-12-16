@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @AllArgsConstructor
 @RequestMapping("/message")
 public class MessagesController {
+    private final HomeController homeController;
 
     private final EmailServiceImpl emailService;
 
@@ -19,7 +20,7 @@ public class MessagesController {
     public String sentToMe(@RequestParam(name = "phoneNumber") String phoneNumber, Model model) {
         if (phoneNumber.isEmpty()) {
             model.addAttribute("errorMessage", "Podaj numer telefonu!");
-            return "index";
+            return homeController.openHomePage(model);
         }
         emailService.sendEmail("rksvjdbx@gmail.com", "Hello, Nazar!", phoneNumber);
 

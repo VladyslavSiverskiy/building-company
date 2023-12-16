@@ -60,7 +60,7 @@
 .mobile-nav a {
   display: block;
   width: 100%;
-  max-width: 200px;
+  max-width: 215px;
   margin: 0 auto 16px;
   text-align: center;
   padding: 12px 16px;
@@ -211,7 +211,8 @@
   .nav-logo {
     display: block;
     height: 50px;
-    margin-right: 5px;
+    /*margin-right: 5px;*/
+    margin: 0 5px 5px 0;
   }
 
   .nav-link {
@@ -224,7 +225,7 @@
   }
 
   .navbar-logo-container a {
-    font-size: clamp(1rem, 3.4783vw + 0.3043rem, 3rem) !important;
+    font-size: clamp(1rem, 3.4783vw + 0.1043rem, 3rem) !important;
   }
 
   header {
@@ -289,6 +290,10 @@
 }
 
 @media (min-width: 1024px) {
+  .nav-logo {
+    height: 60px;
+  }
+
   .header-container-left {
     margin: 50px 20px;
   }
