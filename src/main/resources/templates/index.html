@@ -197,7 +197,7 @@
                         Project title
                     </h3>
                     <p class="our-projects__content__project-card__description_text"
-                        th:text="${#strings.length(project.getDescription()) > 125 ? #strings.substring(project.getDescription(), 0, 125) + '...' : project.getDescription()}">
+                        th:text="${#strings.length(project.getDescription()) > 115 ? #strings.substring(project.getDescription(), 0, 115) + '...' : project.getDescription()}">
                         Lorem
                         ipsum dolor sit amet,
                         consectetur adipiscing elit. Id et euismod bibendum
