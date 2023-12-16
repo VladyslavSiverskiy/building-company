@@ -4,7 +4,6 @@ import com.example.building_company.dto.ProjectDto;
 import com.example.building_company.service.FileService;
 import com.example.building_company.service.ProjectService;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +20,11 @@ import static com.example.building_company.constants.AppConstants.DATE_FORMAT;
 
 
 @Controller
-@RequestMapping("/project")
+@RequestMapping("/projects")
 @RequiredArgsConstructor
 public class ProjectController {
     private final ProjectService projectService;
     private final FileService fileService;
-    private final ModelMapper modelMapper;
 
     @GetMapping
     public String getAllProjects(Model model) {
@@ -81,7 +79,7 @@ public class ProjectController {
 
     @GetMapping("/{projectId}/next")
     public String nextProject(@PathVariable Long projectId) {
-        List<ProjectDto> allProjects = projectService.findAll();   // (id = 28, id = 29, id = 31)   i = 1
+        List<ProjectDto> allProjects = projectService.findAll();
         Long idOfNext = allProjects.get(0).getId();
         for (int i = 0; i < allProjects.size(); i++) {
             if (Objects.equals(allProjects.get(i).getId(), projectId)) {

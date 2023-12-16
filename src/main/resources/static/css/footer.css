@@ -54,8 +54,13 @@
     padding-bottom: 10px;
 }
 
+.footer-email-form {
+    max-width: 260px;
+    margin: auto;
+}
+
 .d-flex .btn {
-    margin: 15px 0;
+    margin: 15px 0 5px;
 }
 
 .footer-copyrights {
@@ -112,6 +117,18 @@
     padding: 0 10px;
 }
 
+.error-message {
+    color: red;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+@media (min-width: 360px) {
+    .footer-email-form {
+        max-width: none;
+    }
+}
+
 @media (min-width: 768px) {
     .footer-container {
         align-items: stretch;
@@ -161,6 +178,10 @@
 
     .footer-copyrights-mobile {
         display: none;
+    }
+
+    .footer-email-form {
+        max-width: 200px;
     }
 }
 

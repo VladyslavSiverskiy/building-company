@@ -5,10 +5,7 @@ import com.example.building_company.repository.ClientRepository;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -30,7 +27,7 @@ public class EmailServiceImpl {
         saveNumberToDatabase(visitorPhoneNumber);
         try {
             sendEmailToOwner(to, subject, visitorPhoneNumber);
-            log.warn("Email wasn't sent. {}", LocalDateTime.now());
+            log.info("Email was sent. {}", LocalDateTime.now());
         }catch (Exception e){
             log.warn("Email wasn't sent. {}", LocalDateTime.now());
         }

@@ -1,0 +1,32 @@
+<div class="our-project__intro">
+  <h3 class="our-projects__intro_title">Latest projects</h3>
+  <div class="horizontal-orange-divider">
+  </div>
+</div>
+<div class="our-projects__content">
+  <div class="our-projects__content__project-card" th:each="project, index: ${recent_projects}">
+    <img th:if="${project.getTitleImageLink() != null}" class="our-projects__content__project-card_picture"
+         th:src="@{${project.getTitleImageLink()}}" alt="project">
+    <img th:if="${project.getTitleImageLink() == null}" class="our-projects__content__project-card_picture"
+         alt="no-title-image" src="/img/default.jpg">
+    <div class="our-projects__content__project-card__description">
+      <h3 class="our-projects__content__project-card__description_title" th:text="${project.getTitle()}">
+        Project title
+      </h3>
+      <p class="our-projects__content__project-card__description_text"
+         th:text="${#strings.length(project.getDescription()) > 115 ? #strings.substring(project.getDescription(), 0, 115) + '...' : project.getDescription()}">
+        Lorem
+        ipsum dolor sit amet,
+        consectetur adipiscing elit. Id et euismod bibendum
+        adipiscing et orci, fermentum.
+      </p>
+      <a class="our-projects__content__project-card__description_more"
+         th:href="@{/projects/{projectId}(projectId=${project.getId()})}">
+        View project
+      </a>
+    </div>
+  </div>
+</div>
+<a class="our-projects__content__project-card__description_view-all" th:href="@{/projects}">
+  View all
+</a>

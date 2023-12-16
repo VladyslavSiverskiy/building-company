@@ -18,11 +18,38 @@
     padding: 10px;
 }
 
-.quote-button .btn {
+.quote-button .btn-outline-warning {
     border-radius: 0;
     border-width: 4px;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.modal-title {
+    font-size: clamp(1rem, 1.6783vw + 0.3043rem, 3rem);
+}
+
+.form-buttons .btn-warning {
+    background: #ffb400 !important;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 0;
+    width: 100%;
+    margin: 30px auto 10px;
+}
+
+.form-buttons .btn-warning:hover {
+    color: #2a2a2a;
+}
+
+.modal-body label {
+    margin: 10px 0;
+}
+
+.close {
+    display: flex;
 }
 
 @media (min-width: 768px) {
@@ -33,7 +60,8 @@
     }
 
     .quote-container {
-        height: 170px;
+        flex-direction: row;
+        min-height: 70px;
     }
 
     .quote-content {
@@ -62,5 +90,9 @@
 
     .quote-button {
         padding-left: 0;
+    }
+
+    .modal-title {
+        font-size: clamp(1rem, 0.9vw + 0.3043rem, 3rem);
     }
 }

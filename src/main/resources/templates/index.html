@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -123,99 +123,10 @@
 
     <section class="jobs" th:insert="~{jobs-home.html}"></section>
     <section class="quote" th:insert="~{services-call.html}"></section>
+    <section class="top-counters" th:insert="~{top-counters.html}"></section>
+    <section class="our-projects" th:insert="~{our-projects.html}"></section>
 
-    <section class="top-counters">
-        <div class="counters-left-container-dark">
-            <div class="counters-left-container">
-                <div class="counters-left-container-image">
-                    <img src="/img/top-counter/left-container-image.png" alt="wooden house frame">
-                </div>
-            </div>
-        </div>
-        <div class="counters-right-container">
-            <div class="right-container-top">
-                <div class="right-container-top-title">
-                    <h2>No Project Too Big Or Too Small</h2>
-                </div>
-                <div class="right-container-top-divider">
-                    <img src="/img/top-counter/counter-divider.svg" alt="yellow divider">
-                </div>
-                <div class="right-container-top-content">
-                    <div class="right-container-top-text">
-                        <div class="right-container-top-text-left">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sapien, dignissim tristique tellus sed faucibus nullam.
-                                Tincidunt mauris ut quam sed mauris proin feugiat. Scelerisque
-                                lorem posuere iaculis nunc amet phasellus.</p>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sapien, dignissim tristique tellus sed faucibus nullam.</p>
-                        </div>
-                    </div>
-                    <div class="right-container-top-text">
-                        <div class="right-container-top-text-right">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sapien, dignissim tristique tellus sed faucibus nullam.
-                                Tincidunt mauris ut quam sed mauris proin feugiat. Scelerisque
-                                lorem posuere iaculis nunc amet phasellus.</p>
-                        </div>
-                        <div class="right-container-top-text-button">
-                            <div class="learn-more-button">
-                                <button type="button" class="btn btn-outline-dark">LEARN MORE</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="right-container-bottom">
-                <div class="right-container-bottom-years">
-                    <div class="years-counter">2</div>
-                    <div class="years-counter-title">YEARS ESTABLISHED</div>
-                </div>
-                <div class="right-container-bottom-projects">
-                    <div class="projects-counter">13</div>
-                    <div class="projects-counter-title">COMPLETED PROJECTS</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="our-projects">
-        <div class="our-project__intro">
-            <h3 class="our-projects__intro_title">Latest projects</h3>
-            <div class="horizontal-orange-divider">
-            </div>
-        </div>
-        <div class="our-projects__content">
-            <div class="our-projects__content__project-card" th:each="project, index: ${recent_projects}">
-                <img th:if="${project.getTitleImageLink() != null}" class="our-projects__content__project-card_picture"
-                    th:src="@{${project.getTitleImageLink()}}" alt="project">
-                <img th:if="${project.getTitleImageLink() == null}" class="our-projects__content__project-card_picture"
-                    alt="no-title-image" src="/img/default.jpg">
-                <div class="our-projects__content__project-card__description">
-                    <h3 class="our-projects__content__project-card__description_title" th:text="${project.getTitle()}">
-                        Project title
-                    </h3>
-                    <p class="our-projects__content__project-card__description_text"
-                        th:text="${#strings.length(project.getDescription()) > 115 ? #strings.substring(project.getDescription(), 0, 115) + '...' : project.getDescription()}">
-                        Lorem
-                        ipsum dolor sit amet,
-                        consectetur adipiscing elit. Id et euismod bibendum
-                        adipiscing et orci, fermentum.
-                    </p>
-                    <a class="our-projects__content__project-card__description_more"
-                        th:href="@{/project/{projectId}(projectId=${project.getId()})}">
-                        View project
-                    </a>
-                </div>
-            </div>
-        </div>
-        <a class="our-projects__content__project-card__description_view-all" th:href="@{/project}">
-            View all
-        </a>
-    </section>
-
-    <div class="main_container">
+    <section class="main_container">
         <div class="comments_container">
             <div class="our-project__intro">
                 <h3 class="our-projects__intro_title">Client Testimonials</h3>
@@ -244,7 +155,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="quote" th:insert="~{quote-home.html}"></section>
     <footer class="footer" th:insert="~{footer.html}"></footer>

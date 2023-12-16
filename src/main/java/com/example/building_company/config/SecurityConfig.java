@@ -27,7 +27,8 @@ public class SecurityConfig {
         http.authorizeHttpRequests()
                 .requestMatchers("/home/**", "/pictures/**", "/img/**", "/css/**", "/auth/register")
                 .permitAll()
-                .requestMatchers("/project/**").permitAll() // TODO: modify access
+                .requestMatchers("/projects/**").permitAll()
+                .requestMatchers("/message/**").permitAll()
                 .requestMatchers("/review/add-review").permitAll()
                 .requestMatchers("/auth/user/**").hasAuthority("USER")
                 .requestMatchers("/admin").hasAuthority("ADMIN")
