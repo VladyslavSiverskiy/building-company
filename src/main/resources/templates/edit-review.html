@@ -50,16 +50,10 @@
             <textarea class="form-control" id="content"
               name="content" rows="3" th:field="*{content}"></textarea>
           </div>
-          <div class="mb-3">
-            <label for="creationTime" class="form-label">Creation Time</label>
-            <input type="date" class="form-control" id="creationTime"
-              name="creationTime" required>
-          </div>
 
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input"
-              id="isVerified" name="isVerified" {{
-              review.isVerified ? 'checked' : '' }}>
+              id="isVerified" name="isVerified" th:checked="${review.isVerified}">
             <label class="form-check-label" for="isVerified">Is
               Verified</label>
           </div>
