@@ -63,7 +63,8 @@ form {
   padding-right: 5px;
 }
 
-.form-label {
+.form-outline .form-label,
+.checkbox-group .form-label {
   font-size: 12px;
   margin: 5px;
 }

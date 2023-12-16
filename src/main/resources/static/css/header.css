@@ -294,6 +294,10 @@
     height: 60px;
   }
 
+  .nav-link {
+    font-size: 18px;
+  }
+
   .header-container-left {
     margin: 50px 20px;
   }
