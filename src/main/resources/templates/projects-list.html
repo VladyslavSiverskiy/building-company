@@ -30,14 +30,14 @@
                     </p>
                     <div class="admin-projects__controls">
                         <div class="admin-projects__controls-edit-delete">
-                            <a th:href="@{/project/{projectId}/update(projectId=${project.getId()})}">
+                            <a th:href="@{/projects/{projectId}/update(projectId=${project.getId()})}">
                                 <img src="/img/icons/edit.svg" alt="edit">
                             </a>
-                            <a th:href="@{/project/{projectId}/delete(projectId=${project.getId()})}">
+                            <a th:href="@{/projects/{projectId}/delete(projectId=${project.getId()})}">
                                 <img src="/img/icons/delete.svg" alt="del" onclick="return confirm('Czy jesteś pewien, że chcesz usunąć ten projekt?')">
                             </a>
                         </div>
-                        <a class="our-projects__content__project-card__description_more" th:href="@{/project/{projectId}(projectId=${project.getId()})}">
+                        <a class="our-projects__content__project-card__description_more" th:href="@{/projects/{projectId}(projectId=${project.getId()})}">
                             Details
                         </a>
                     </div>

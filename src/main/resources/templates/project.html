@@ -94,11 +94,11 @@
                 </div>
 
                     <div class="project__content__main__management">
-                    <a th:href="@{/project/{projectId}/prev(projectId=${project.getId()})}" class="project__content__main__management__link"><img
+                    <a th:href="@{/projects/{projectId}/prev(projectId=${project.getId()})}" class="project__content__main__management__link"><img
                             src="/img/projects/prev-proj.svg">
                         <p>Previous project</p>
                     </a>
-                    <a th:href="@{/project/{projectId}/next(projectId=${project.getId()})}" class="project__content__main__management__link">
+                    <a th:href="@{/projects/{projectId}/next(projectId=${project.getId()})}" class="project__content__main__management__link">
                         <p>Next project</p>
                         <img src="/img/projects/next-proj.svg">
                     </a>

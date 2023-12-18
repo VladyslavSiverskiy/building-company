@@ -90,13 +90,13 @@ public class ProjectController {
                 }
             }
         }
-        return "redirect:/project/" + idOfNext;
+        return "redirect:/projects/" + idOfNext;
     }
 
 
     @GetMapping("/{projectId}/prev")
     public String prevProject(@PathVariable Long projectId) {
-        List<ProjectDto> allProjects = projectService.findAll();   // (id = 28, id = 29, id = 31)   i = 1
+        List<ProjectDto> allProjects = projectService.findAll();
         Long idOfPrev = allProjects.get(0).getId();
         for (int i = 0; i < allProjects.size(); i++) {
             if (Objects.equals(allProjects.get(i).getId(), projectId)) {
@@ -107,7 +107,7 @@ public class ProjectController {
                 }
             }
         }
-        return "redirect:/project/" + idOfPrev;
+        return "redirect:/projects/" + idOfPrev;
     }
 
     @GetMapping("/{projectId}/update")
