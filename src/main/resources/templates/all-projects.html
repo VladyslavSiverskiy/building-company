@@ -37,7 +37,7 @@
                     <p class="our-projects__content__project-card__description_text" th:text="${#strings.length(project.getDescription()) > 125 ? #strings.substring(project.getDescription(), 0, 125) + '...' : project.getDescription()}">Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit. Id et euismod bibendum adipiscing et orci, fermentum.
                     </p>
-                    <a class="our-projects__content__project-card__description_more" th:href="@{/project/{projectId}(projectId=${project.getId()})}">
+                    <a class="our-projects__content__project-card__description_more" th:href="@{/projects/{projectId}(projectId=${project.getId()})}">
                         Learn more
                     </a>
                 </div>

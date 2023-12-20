@@ -90,7 +90,7 @@ public class ProjectController {
                 }
             }
         }
-        return "redirect:/project/" + idOfNext;
+        return "redirect:/projects/" + idOfNext;
     }
 
 
@@ -107,7 +107,7 @@ public class ProjectController {
                 }
             }
         }
-        return "redirect:/project/" + idOfPrev;
+        return "redirect:/projects/" + idOfPrev;
     }
 
     @GetMapping("/{projectId}/update")
