@@ -1,61 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
-    >
-    <link rel="stylesheet" th:href="@{/css/add-project.css}">
-    <title>Create New Project</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+        <link rel="stylesheet" th:href="@{/css/add-project.css}">
+        <title>Create New Project</title>
+    </head>
+    <body>
 
-<div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <a class="nav-link" style="padding: 0; color: #343a40" th:href="@{/admin(currentPage='project')}"> <- Back </a>
-            <h1 class="mb-4">Create New Project</h1>
-            <form th:action="@{/project/create}" th:object="${project}" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="title">Title (*):</label>
-                    <input th:field="*{title}" type="text" class="form-control" name="title" id="title">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description (*):</label>
-                    <input th:field="*{description}" type="text" class="form-control" name="description" id="description" maxlength="755">
-                </div>
-                <div class="form-group">
-                    <label for="place">Place:</label>
-                    <input th:field="*{place}" type="text" class="form-control" name="place" id="place">
-                </div>
-                <div class="form-group">
-                    <label for="category">Category (*):</label>
-                    <input th:field="*{category}" type="text" class="form-control" name="category" id="category">
-                </div>
-                <div class="form-group">
-                    <label for="client">Client:</label>
-                    <input th:field="*{clientName}" type="text" class="form-control" name="client" id="client">
-                </div>
-                <div class="form-group">
-                    <label for="start-date">Start date:</label>
-                    <input th:field="*{startDate}"  type="date" class="form-control" name="start-date" id="start-date">
-                </div>
-                <div class="form-group">
-                    <label for="end-date">End date (*):</label>
-                    <input th:field="*{endDate}" type="date" class="form-control" name="end-date" id="end-date">
-                </div>
+        <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <a class="nav-link" style="padding: 0; color: #343a40"
+                        th:href="@{/admin(currentPage='project')}"> <- Wróć </a>
+                    <h1 class="mb-4">Utwórz nowy projekt</h1>
+                    <form th:action="@{/project/create}" th:object="${project}"
+                        method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="title">Tytuł (*):</label>
+                            <input th:field="*{title}" type="text"
+                                class="form-control" name="title" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Opis (*):</label>
+                            <input th:field="*{description}" type="text"
+                                class="form-control" name="description"
+                                id="description" maxlength="755">
+                        </div>
+                        <div class="form-group">
+                            <label for="place">Miejsce:</label>
+                            <input th:field="*{place}" type="text"
+                                class="form-control" name="place" id="place">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Kategoria (*):</label>
+                            <input th:field="*{category}" type="text"
+                                class="form-control" name="category"
+                                id="category">
+                        </div>
+                        <div class="form-group">
+                            <label for="client">Klient:</label>
+                            <input th:field="*{clientName}" type="text"
+                                class="form-control" name="client" id="client">
+                        </div>
+                        <div class="form-group">
+                            <label for="start-date">Data rozpoczęcia:</label>
+                            <input th:field="*{startDate}" type="date"
+                                class="form-control" name="start-date"
+                                id="start-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">Data zakończenia (*):</label>
+                            <input th:field="*{endDate}" type="date"
+                                class="form-control" name="end-date"
+                                id="end-date">
+                        </div>
 
-                <div class="form-group">
-                    <input type="file" name="images" accept="image/*" class="form-control-file" multiple>
-                </div>
+                        <div class="form-group">
+                            <input type="file" name="images" accept="image/*"
+                                class="form-control-file" multiple>
+                        </div>
 
-                <button type="submit" class="btn btn-primary button-create">Create</button>
-                <button type="reset" class="btn btn-secondary button-clear">Clear</button>
-                <div th:if="${error}" th:text="${error}" class="alert alert-danger container mt-4 mr-auto ml-auto text-center" role="alert"></div>
-            </form>
+                        <button type="submit"
+                            class="btn btn-primary button-create">Utwórz</button>
+                        <button type="reset"
+                            class="btn btn-secondary button-clear">Wyczyść</button>
+                        <div th:if="${error}" th:text="${error}"
+                            class="alert alert-danger container mt-4 mr-auto ml-auto text-center"
+                            role="alert"></div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-</body>
+    </body>
 </html>

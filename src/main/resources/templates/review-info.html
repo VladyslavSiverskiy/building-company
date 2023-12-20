@@ -36,21 +36,21 @@
   </head>
   <body>
     <div class="container">
-      <h2>Review Information</h2>
+      <h2>Informacje o recenzji</h2>
       <p><strong>ID: </strong><span th:text="${review.id}"></span></p>
-      <p><strong>Author: </strong><span th:text="${review.author}"></span></p>
-      <p><strong>Content: </strong><span th:text="${review.content}"></span></p>
-      <p><strong>Date: </strong><span th:text="${review.creationTime}"></span></p>
-      <p><strong>Verified: </strong><span th:text="${review.isVerified}"></span></p>
+      <p><strong>Autor: </strong><span th:text="${review.author}"></span></p>
+      <p><strong>Treść: </strong><span th:text="${review.content}"></span></p>
+      <p><strong>Data: </strong><span th:text="${review.creationTime}"></span></p>
+      <p><strong>Zweryfikowane: </strong><span th:text="${review.isVerified}"></span></p>
       <div class="btn-container">
         <a th:href="@{/review/{reviewId}/update(reviewId=${review.getId()})}"
-          class="btn btn-warning btn-edit">Edit</a>
+          class="btn btn-warning btn-edit">Edytuj</a>
         <a
           th:href="@{/review/{reviewId}/delete(reviewId=${review.id})}"
           class="btn btn-danger"
-          onclick="return confirm('Are you sure you want to delete this review?')">Delete</a>
+          onclick="return confirm('Are you sure you want to delete this review?')">Usuń</a>
         <a th:href="@{/admin}"
-          class="btn btn-primary">All Reviews</a>
+          class="btn btn-primary">Wszystkie recenzje</a>
       </div>
     </div>
 

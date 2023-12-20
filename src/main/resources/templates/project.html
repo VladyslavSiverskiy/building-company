@@ -32,7 +32,7 @@
         <div class="project__header">
             <div class="project__header__description">
                 <div th:text="${project.getTitle()}" class="project__header__description-title"></div>
-                <div class="project__header__description-path"> <a class="project__header-link" th:href="@{/home}">Home</a> / <a class="project__header-link" th:href="@{/project}">Projects Archive</a> /
+                <div class="project__header__description-path"> <a class="project__header-link" th:href="@{/home}">Strona główna</a> / <a class="project__header-link" th:href="@{/project}">Projects Archive</a> /
                     <span th:text="${project.getTitle()}"></span>
                 </div>
             </div>
@@ -48,25 +48,25 @@
                 <div class="project__content__additional__info">
                     <h3 class="project__content__additional__info__header">Project info:</h3>
                     <div th:if="${!project.getClientName().isEmpty()}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Client:</div>
+                        <div class="project__content__additional__info__unit__header">Klient:</div>
                         <div th:text="${project.getClientName()}" class="project__content__additional__info__unit__text">
 
                         </div>
                     </div>
                     <div th:if="${project.getCategory() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Category:</div>
+                        <div class="project__content__additional__info__unit__header">Kategoria:</div>
                         <div th:text="${project.getCategory()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                     <div th:if="${project.getPlace() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Place:</div>
+                        <div class="project__content__additional__info__unit__header">Miejsce:</div>
                         <div th:text="${project.getPlace()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                     <div th:if="${project.getStartDate() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Start date:</div>
+                        <div class="project__content__additional__info__unit__header">Data rozpoczęcia:</div>
                         <div th:text="${project.getStartDate()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                     <div th:if="${project.getEndDate() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">End date:</div>
+                        <div class="project__content__additional__info__unit__header">Data zakończenia:</div>
                         <div th:text="${project.getEndDate()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                 </div>
@@ -89,17 +89,17 @@
                     Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
                     their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
                 </div>
+              
                 <div class="project__content__main__additional-images">
                     <image th:src="@{${file}}" th:each="file, index: ${project.getAdditionalImages()}"
                            class="project__content__main__additional-images__image"></image>
                 </div>
-
                     <div class="project__content__main__management">
                     <a th:href="@{/projects/{projectId}/prev(projectId=${project.getId()})}" class="project__content__main__management__link">
-                        <button type="button" class="btn btn-outline-dark btn-back">BACK</button>
+                        <button type="button" class="btn btn-outline-dark btn-back">POPRZEDNI</button>
                     </a>
                     <a th:href="@{/projects/{projectId}/next(projectId=${project.getId()})}" class="project__content__main__management__link">
-                        <button type="button" class="btn btn-outline-dark btn-next">NEXT</button>
+                        <button type="button" class="btn btn-outline-dark btn-next">NASTĘPNY</button>
                     </a>
                 </div>
             </div>
