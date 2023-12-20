@@ -31,7 +31,7 @@
         <div class="project__header">
             <div class="project__header__description">
                 <div th:text="${project.getTitle()}" class="project__header__description-title"></div>
-                <div class="project__header__description-path"> <a class="project__header-link" th:href="@{/home}">Home</a> / <a class="project__header-link" th:href="@{/project}">Projects Archive</a> /
+                <div class="project__header__description-path"> <a class="project__header-link" th:href="@{/home}">Strona główna</a> / <a class="project__header-link" th:href="@{/project}">Projects Archive</a> /
                     <span th:text="${project.getTitle()}"></span>
                 </div>
             </div>
@@ -45,27 +45,27 @@
                     galley of type and scrambled it to make a type specimen book. It has survived not only five
                     centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
                 <div class="project__content__additional__info">
-                    <h3 class="project__content__additional__info__header">Project info</h3>
+                    <h3 class="project__content__additional__info__header">Informacje o projekcie</h3>
                     <div th:if="${!project.getClientName().isEmpty()}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Client:</div>
+                        <div class="project__content__additional__info__unit__header">Klient:</div>
                         <div th:text="${project.getClientName()}" class="project__content__additional__info__unit__text">
 
                         </div>
                     </div>
                     <div th:if="${project.getCategory() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Category:</div>
+                        <div class="project__content__additional__info__unit__header">Kategoria:</div>
                         <div th:text="${project.getCategory()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                     <div th:if="${project.getPlace() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Place:</div>
+                        <div class="project__content__additional__info__unit__header">Miejsce:</div>
                         <div th:text="${project.getPlace()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                     <div th:if="${project.getStartDate() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">Start date:</div>
+                        <div class="project__content__additional__info__unit__header">Data rozpoczęcia:</div>
                         <div th:text="${project.getStartDate()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                     <div th:if="${project.getEndDate() != null}" class="project__content__additional__info__unit">
-                        <div class="project__content__additional__info__unit__header">End date:</div>
+                        <div class="project__content__additional__info__unit__header">Data zakończenia:</div>
                         <div th:text="${project.getEndDate()}" class="project__content__additional__info__unit__text"></div>
                     </div>
                 </div>
@@ -96,10 +96,10 @@
                     <div class="project__content__main__management">
                     <a th:href="@{/projects/{projectId}/prev(projectId=${project.getId()})}" class="project__content__main__management__link"><img
                             src="/img/projects/prev-proj.svg">
-                        <p>Previous project</p>
+                        <p>Poprzedni projekt</p>
                     </a>
                     <a th:href="@{/projects/{projectId}/next(projectId=${project.getId()})}" class="project__content__main__management__link">
-                        <p>Next project</p>
+                        <p>Następny projekt</p>
                         <img src="/img/projects/next-proj.svg">
                     </a>
                 </div>

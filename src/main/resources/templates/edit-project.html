@@ -13,31 +13,31 @@
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <a class="nav-link" style="padding: 0; color: #343a40" th:href="@{/admin(currentPage='project')}"> <- Back </a>
-            <h1 class="mb-4">Edit Project</h1>
+            <a class="nav-link" style="padding: 0; color: #343a40" th:href="@{/admin(currentPage='project')}"> <- Wróć</a>
+            <h1 class="mb-4">Edytuj projekt</h1>
             <form th:action="@{/project/{projectId}/update(projectId=${project.getId()})}" th:object="${project}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="title">Title:</label>
+                    <label for="title">Tytuł:</label>
                     <input th:field="*{title}" type="text" class="form-control" name="title" id="title">
                 </div>
                 <div class="form-group">
-                    <label for="description">Description:</label>
+                    <label for="description">Opis:</label>
                     <input th:field="*{description}" type="text" class="form-control" name="description" id="description" maxlength="755">
                 </div>
                 <div class="form-group">
-                    <label for="place">Place:</label>
+                    <label for="place">Miejsce:</label>
                     <input th:field="*{place}" type="text" class="form-control" name="place" id="place">
                 </div>
                 <div class="form-group">
-                    <label for="category">Category:</label>
+                    <label for="category">Kategoria:</label>
                     <input th:field="*{category}" type="text" class="form-control" name="category" id="category">
                 </div>
                 <div class="form-group">
-                    <label for="client">Client:</label>
+                    <label for="client">Klient:</label>
                     <input th:field="*{clientName}" type="text" class="form-control" name="client" id="client">
                 </div>
                 <div class="form-group">
-                    <label for="start-date">Start date:</label>
+                    <label for="start-date">Data rozpoczęcia:</label>
                     <input
                             th:value="${#dates.format(startDate , 'yyyy-MM-dd')}"
                             type="date" class="form-control"
@@ -45,7 +45,7 @@
                             id="start-date">
                 </div>
                 <div class="form-group">
-                    <label for="end-date">End date:</label>
+                    <label for="end-date">Data zakończenia:</label>
                     <input
                             th:value="${#dates.format(endDate , 'yyyy-MM-dd')}"
                             type="date" class="form-control"
@@ -54,24 +54,24 @@
                 </div>
                 <div class="form-group">
                     <div class="d-flex flex-column align-items-center">
-                        <h2 class="d-block m-auto text-center mb-2">Title image:</h2>
+                        <h2 class="d-block m-auto text-center mb-2">Obraz tytułowy:</h2>
                         <input th:if="${project.getTitleImageLink() == null}" type="file" id="title-image" name="title-image" accept="image/*" class="form-control-file m-auto text-center">
                         <image th:if="${project.getTitleImageLink() != null}" class="d-block m-auto text-center w-50 h-50" th:src="@{${project.getTitleImageLink()}}"></image>
                         <a th:if="${project.getTitleImageLink() != null}" class="btn btn-danger mb-5 mt-2 text-center" th:href="@{/admin/project/deleteImage(projectId=${project.getId()})}">Delete image</a>
                     </div>
-                    <h2 class="d-block m-auto text-center mt-5 p-2">Additional images</h2>
+                    <h2 class="d-block m-auto text-center mt-5 p-2">Dodatkowe obrazy</h2>
                     <div class="additional-photos__grid">
                         <div class="d-flex flex-column align-items-center" th:each="file, index: ${project.getAdditionalImages()}">
                             <image class="d-block m-auto w-75 h-75" th:src="@{${file}}"></image>
                             <a class="btn btn-danger mb-5 mt-2 text-center" th:href="@{/admin/project/deleteImage(deleteImagePath=${file}, projectId=${project.getId()})}">Delete image</a>
                         </div>
                     </div>
-                    <label class="d-block m-auto text-center" for="images">Add additional photos:</label>
+                    <label class="d-block m-auto text-center" for="images">Dodaj dodatkowe zdjęcia:</label>
                     <div class="d-flex flex-column align-items-center form-group">
                         <input type="file" id="images" name="images" accept="image/*" class="form-control-file m-auto text-center" multiple>
                     </div>
                 </div>
-                <button type="submit" class="btn m-auto btn-outline-warning btn-update">Update</button>
+                <button type="submit" class="btn m-auto btn-outline-warning btn-update">Aktualizuj</button>
 
                 <div th:if="${error}" th:text="${error}" class="alert alert-danger container mt-4 mr-auto ml-auto text-center" role="alert">
                 </div>

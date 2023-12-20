@@ -1,30 +1,36 @@
 <div class="quote-container">
     <div class="quote-content">Podziel się z nami opinią</div>
     <div class="quote-button">
-        <a type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#quoteModal">
+        <a type="button" class="btn btn-outline-warning" data-toggle="modal"
+            data-target="#quoteModal">
             ZOSTAWIĆ OPINIĘ
         </a>
 
-        <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalTitle" aria-hidden="true">
+        <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog"
+            aria-labelledby="quoteModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <p class="modal-title" id="quoteModalLongTitle">Zostaw swój komentarz</p>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <p class="modal-title" id="quoteModalLongTitle">Zostaw
+                            swój komentarz</p>
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <form th:action="@{/review/add-review}" method="post">
                             <div class="author-r">
-                                <label for="author">Author:</label>
-                                <input type="text" class="form-control" name="author"
-                                       id="author">
+                                <label for="author">Autor:</label>
+                                <input type="text" class="form-control"
+                                    name="author"
+                                    id="author">
                             </div>
                             <div class="content-r">
-                                <label for="content" class="form-label">Content</label>
-                                <textarea class="form-control" id="content" name="content"
-                                          required></textarea>
+                                <label for="content" class="form-label">Treść</label>
+                                <textarea class="form-control" id="content"
+                                    name="content"
+                                    required></textarea>
                             </div>
                             <div class="form-buttons">
                                 <button type="submit" class="btn btn-warning">WYŚLIJ</button>

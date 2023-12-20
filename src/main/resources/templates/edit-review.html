@@ -32,7 +32,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>Edit Review</h2>
+      <h2>Edytuj recenzję</h2>
 
       <div class="form-container">
         <form
@@ -40,25 +40,25 @@
           method="post"
           th:object="${review}">
           <div class="mb-3">
-            <label for="author">Author:</label>
+            <label for="author">Autor:</label>
             <input th:field="*{author}" type="text" class="form-control"
               name="author" id="author">
           </div>
 
           <div class="mb-3">
-            <label for="content" class="form-label">Content</label>
+            <label for="content" class="form-label">Treść</label>
             <textarea class="form-control" id="content"
               name="content" rows="3" th:field="*{content}"></textarea>
           </div>
 
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input"
-              id="isVerified" name="isVerified" th:checked="${review.isVerified}">
-            <label class="form-check-label" for="isVerified">Is
-              Verified</label>
+              id="isVerified" name="isVerified"
+              th:checked="${review.isVerified}">
+            <label class="form-check-label" for="isVerified">Zweryfikowane</label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-save">Save</button>
+          <button type="submit" class="btn btn-primary btn-save">Zapisz</button>
         </form>
       </div>
     </div>

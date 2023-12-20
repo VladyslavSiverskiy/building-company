@@ -35,18 +35,19 @@
   </head>
   <body>
     <div class="container" th:fragment="reviews">
-      <h2>All Reviews</h2>
+      <h2>Wszystkie recenzje</h2>
 
       <div class="row admin__all-reviews__container">
         <div th:each="review, iterStat : ${reviews}">
           <div class="review-card">
             <p><strong>ID: </strong><span th:text="${review.id}"></span></p>
-            <p><strong>Author: </strong><span th:text="${review.author}"></span></p>
-            <p><strong>Content: </strong><span th:text="${review.content}"></span></p>
-            <p><strong>Date: </strong><span th:text="${review.creationTime}"></span></p>
-            <p><strong>Verified: </strong><span th:text="${review.isVerified}"></span></p>
+            <p><strong>Autor: </strong><span th:text="${review.author}"></span></p>
+            <p><strong>Treść: </strong><span th:text="${review.content}"></span></p>
+            <p><strong>Data: </strong><span th:text="${review.creationTime}"></span></p>
+            <p><strong>Zweryfikowane: </strong><span
+                th:text="${review.isVerified}"></span></p>
             <a th:href="@{/review/{reviewId}/read(reviewId=${review.getId()})}"
-              class="btn btn-primary info-btn">See details</a>
+              class="btn btn-primary info-btn">Otwórz</a>
           </div>
           <div th:if="${iterStat.index % 3 == 2}" class="w-100"></div>
         </div>
