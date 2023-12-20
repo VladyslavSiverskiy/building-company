@@ -290,7 +290,8 @@ a {
   .our-projects__content .our-projects__content__project-card:nth-child(4) {
     display: none;
   }
-  .our-projects__content .our-projects__content__project-card__description_text{
-    margin-bottom: 8px;
-  }
+
+  /*.our-projects__content .our-projects__content__project-card__description_text{*/
+  /*  margin-bottom: 8px;*/
+  /*}*/
 }
