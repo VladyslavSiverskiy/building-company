@@ -1,0 +1,45 @@
+.about-us {
+    background-color: #F7F7F7;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-top-container h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 25px;
+    padding-top: 30px;
+}
+
+.about-top-container-divider {
+    width: 48px;
+    height: 5px;
+    margin: 24px auto;
+    background-color: #ffb400;
+}
+
+.about-bottom-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.bottom-container-text p {
+    margin: 15px 30px;
+    text-align: justify;
+    text-indent: 10%;
+    font-size: 15px;
+}
+
+@media (min-width: 768px) {
+    .about-bottom-container {
+        flex-direction: row;
+    }
+}
