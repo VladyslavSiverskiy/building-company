@@ -22,7 +22,7 @@ public class MessagesController {
             model.addAttribute("errorMessage", "Podaj numer telefonu!");
             return homeController.openHomePage(model);
         }
-        emailService.sendEmail("rksvjdbx@gmail.com", "Hello, Nazar!", phoneNumber);
+        emailService.sendEmail("vitaliisachko188@gmail.com", "Cześć, Vitaliyu!", phoneNumber);
 
         return "redirect:/home";
     }

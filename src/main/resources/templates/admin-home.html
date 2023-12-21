@@ -43,11 +43,6 @@
                                     th:classappend="${currentPage.equals('review') ? ' active' : ''}"
                                     th:href="@{/admin(currentPage='review')}">Recenzje</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    th:classappend="${currentPage.equals('work') ? ' active' : ''}"
-                                    th:href="@{/admin(currentPage='work')}">Prace</a>
-                            </li>
                         </ul>
 
                     </div>
@@ -56,8 +51,6 @@
                             th:insert="~{projects-list::projects}"></div>
                         <div th:if="${currentPage.equals('review')}"
                             th:insert="~{all-reviews::reviews}"></div>
-                        <div th:if="${currentPage.equals('work')}"
-                            th:insert="~{all-works::works}"></div>
                     </div>
                 </div>
             </div>
