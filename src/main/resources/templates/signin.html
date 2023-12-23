@@ -35,7 +35,8 @@
                                         swoje konto</h6>
 
                                     <div class="form-outline mb-3">
-                                        <label class="form-label" for="username">NAZWA
+                                        <label class="form-label"
+                                            for="username">NAZWA
                                             UŻYTKOWNIKA</label>
                                         <input type="text" id="username"
                                             name="username" class="form-control"
@@ -43,7 +44,8 @@
                                     </div>
 
                                     <div class="form-outline pass_show mb-2">
-                                        <label class="form-label" for="password">HASŁO</label>
+                                        <label class="form-label"
+                                            for="password">HASŁO</label>
                                         <input type="password" id="password"
                                             name="password" class="form-control"
                                             placeholder="············" />
@@ -52,15 +54,17 @@
                                         <input type="checkbox" id="check"
                                             class="checkbox">
                                         <label id="show-hide" for="check"
-                                            class="form-label">POKAŻ HASŁO</label>
+                                            class="form-label">POKAŻ
+                                            HASŁO</label>
                                     </div>
                                     <input type="submit" value="LOGIN"
                                         class="btn btn-warning btn-lg btn-block mb-3" />
-                                    <p th:if="${loginError}" class="error">Nieprawidłowa
+                                    <p th:if="${loginError}"
+                                        class="error">Nieprawidłowa
                                         nazwa użytkownika lub hasło!</p>
                                     <div class="restore-group">
-                                        <h6 class="welcome">Zapomniałeś hasła?</h6>
-                                        <a href="#">Przywróć</a>
+                                        <a th:href="@{/home}">Strona
+                                            główna</a>
                                     </div>
 
                                 </form>

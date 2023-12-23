@@ -15,7 +15,7 @@
         <div class="col-md-8">
             <a class="nav-link" style="padding: 0; color: #343a40" th:href="@{/admin(currentPage='project')}"> <- Wróć</a>
             <h1 class="mb-4">Edytuj projekt</h1>
-            <form th:action="@{/project/{projectId}/update(projectId=${project.getId()})}" th:object="${project}" method="post" enctype="multipart/form-data">
+            <form th:action="@{/projects/{projectId}/update(projectId=${project.getId()})}" th:object="${project}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">Tytuł:</label>
                     <input th:field="*{title}" type="text" class="form-control" name="title" id="title">

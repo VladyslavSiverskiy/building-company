@@ -24,9 +24,9 @@ public class MessagesController {
         if (phoneNumber.isEmpty() || !phoneNumberWithoutSymbols.matches(regex)) {
             model.addAttribute("errorMessage", "Nieprawidłowy format numeru telefonu!");
         }else {
-            emailService.sendEmail("v.siverskiy@gmail.com", "Hello, Nazar!", phoneNumber);
+            emailService.sendEmail("vitaliisachko188@gmail.com", "Cześć, Vitaliyu!", phoneNumber);
             model.addAttribute("successMessage", "Wiadomość została wysłana pomyślnie!");
-        }
+        }   
         return homeController.openHomePage(model);
     }
 }

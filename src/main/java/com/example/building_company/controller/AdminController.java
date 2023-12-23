@@ -65,7 +65,7 @@ public class AdminController {
             projectDto.getAdditionalImages().remove(deleteImagePath);
         }
         projectService.update(projectDto);
-        return "redirect:/project/" + projectId + "/update";
+        return "redirect:/projects/" + projectId + "/update";
     }
 
 }

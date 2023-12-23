@@ -17,7 +17,7 @@
                     <a class="nav-link" style="padding: 0; color: #343a40"
                         th:href="@{/admin(currentPage='project')}"> <- Wróć </a>
                     <h1 class="mb-4">Utwórz nowy projekt</h1>
-                    <form th:action="@{/project/create}" th:object="${project}"
+                    <form th:action="@{/projects/create}" th:object="${project}"
                         method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="title">Tytuł (*):</label>
