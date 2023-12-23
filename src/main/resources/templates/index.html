@@ -100,17 +100,16 @@
                 toastContent.innerText = message;
 
                 if (isError) {
-                    toastMessage.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+                    toastMessage.style.backgroundColor = 'rgba(255,0,0,0.65)';
                 } else {
-                    toastMessage.style.backgroundColor = 'rgba(0, 128, 0, 0.7)';
+                    toastMessage.style.backgroundColor = 'rgba(0,128,0,0.63)';
                 }
 
                 toastMessage.style.display = 'block';
 
-                // Закриття вікна після 5 секунд
                 setTimeout(() => {
                     toastMessage.style.display = 'none';
-                }, 5000);
+                }, 3000);
             }
         </script>
         <script>
@@ -124,8 +123,6 @@
                 autoplaySpeed: 6000,
                 slidesToShow: 2,
                 slidesToScroll: 1,
-                // prevArrow: $('.prev'),
-                // nextArrow: $('.next'),
                 responsive: [
                     {
                         breakpoint: 1024,
@@ -156,7 +153,6 @@
         });
     </script>
         <script>
-            // Перевірка наявності повідомлення про успіх або помилку
             if ("[[${successMessage}]]") {
                 showToast("[[${successMessage}]]");
             }
