@@ -3,22 +3,28 @@
         <div class="footer-container-left">
             <div class="footer-logo">
                 <div class="footer-logo-container">
-                    <img class="footer-logo-img" src="/img/footer/footer-logo.svg" alt="Building company logo.">
+                    <img class="footer-logo-img"
+                        src="/img/footer/footer-logo.svg"
+                        alt="Building company logo.">
                 </div>
-                <div class="footer-logo-name">WYMARZHONY DOM</div>
+                <div class="footer-logo-name">WYMARZONY DOM</div>
             </div>
             <div class="footer-contacts">
                 <div class="footer-contacts-line">
-                    <img class="footer-contacts-icon" src="/img/footer/home-icon.svg" alt="address icon">
+                    <img class="footer-contacts-icon"
+                        src="/img/footer/home-icon.svg" alt="address icon">
                     <span class="footer-contacts-text">Opole, Krapkowice</span>
                 </div>
                 <div class="footer-contacts-line">
-                    <img class="footer-contacts-icon" src="/img/footer/call-icon.svg" alt="phone icon">
+                    <img class="footer-contacts-icon"
+                        src="/img/footer/call-icon.svg" alt="phone icon">
                     <span class="footer-contacts-text">+48 792 049 483</span>
                 </div>
                 <div class="footer-contacts-line">
-                    <img class="footer-contacts-icon" src="/img/footer/email-icon.svg" alt="email icon">
-                    <span class="footer-contacts-text">vitalliisachko188@gmail.com</span>
+                    <img class="footer-contacts-icon"
+                        src="/img/footer/email-icon.svg" alt="email icon">
+                    <span
+                        class="footer-contacts-text">vitaliisachko188@gmail.com</span>
                 </div>
             </div>
         </div>
@@ -26,15 +32,20 @@
         <div class="footer-container-right">
             <div class="footer-email-title">Masz pytania?</div>
 
-                <div class="footer-email-form">
-                    <form class="d-flex flex-column gap-2" th:action="@{/message}" method="post">
-                        <label for="tel" class="visually-hidden"></label>
-                        <input id="tel" name="phoneNumber" type="tel" autocomplete="off"
-                               class="form-control" placeholder="Numer telefonu" maxlength="15">
-                        <button type="submit" class="btn btn-warning">WYŚLIJ</button>
-                        <p th:if="${errorMessage}" class="error-message" th:text="${errorMessage}"></p>
-                    </form>
-                </div>
+            <div class="footer-email-form">
+                <form class="d-flex flex-column gap-2" th:action="@{/message}"
+                    method="post">
+                    <label for="tel" class="visually-hidden"></label>
+                    <input id="tel" name="phoneNumber" type="tel"
+                        autocomplete="off"
+                        class="form-control" placeholder="Numer telefonu"
+                        maxlength="15">
+                    <button type="submit"
+                        class="btn btn-warning">WYŚLIJ</button>
+                    <p th:if="${errorMessage}" class="error-message"
+                        th:text="${errorMessage}"></p>
+                </form>
+            </div>
 
         </div>
     </div>
@@ -47,12 +58,14 @@
 
         <div class="footer-copyrights-container">
             <div class="footer-copyrights footer-copyrights-widescreen">
-                <div class="footer-copyrights-left"><p>Zaprojektowane z pasją. Wszystkie prawa zastrzeżone.</p></div>
+                <div class="footer-copyrights-left"><p>Zaprojektowane z pasją.
+                        Wszystkie prawa zastrzeżone.</p></div>
                 <div class="footer-copyrights-right"><p>Lwów, 2023</p></div>
             </div>
             <div class="footer-copyrights footer-copyrights-mobile">
 
-                <div class="footer-copyrights-left"><p>Zaprojektowane z pasją.</p></div>
+                <div class="footer-copyrights-left"><p>Zaprojektowane z
+                        pasją.</p></div>
                 <div class="footer-copyrights-right"><p>Lwów, 2023</p></div>
             </div>
         </div>

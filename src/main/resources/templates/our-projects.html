@@ -15,7 +15,7 @@
     <div class="our-projects__content__project-card__description">
       <h3 class="our-projects__content__project-card__description_title"
         th:text="${project.getTitle()}">
-        Project title
+        Tytuł projektu
       </h3>
       <p class="our-projects__content__project-card__description_text"
         th:text="${#strings.length(project.getDescription()) > 115 ? #strings.substring(project.getDescription(), 0, 115) + '...' : project.getDescription()}">
