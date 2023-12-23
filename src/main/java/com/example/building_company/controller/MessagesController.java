@@ -21,9 +21,10 @@ public class MessagesController {
         if (phoneNumber.isEmpty()) {
             model.addAttribute("errorMessage", "Podaj numer telefonu!");
             return homeController.openHomePage(model);
+        }else {
+            emailService.sendEmail("v.siverskiy@gmail.com", "Hello, Nazar!", phoneNumber);
+            model.addAttribute("successMessage", "Wiadomość została wysłana pomyślnie!");
+            return homeController.openHomePage(model);
         }
-        emailService.sendEmail("rksvjdbx@gmail.com", "Hello, Nazar!", phoneNumber);
-
-        return "redirect:/home";
     }
 }
