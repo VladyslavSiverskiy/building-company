@@ -45,6 +45,7 @@ public class FileServiceImpl implements FileService {
             ProjectDto projectDtoToUpdate,
             MultipartFile titleImage,
             MultipartFile[] files) {
+
         if (Objects.isNull(titleImage)) {
             projectDto.setTitleImageLink(projectDtoToUpdate.getTitleImageLink());
         } else {
@@ -87,6 +88,9 @@ public class FileServiceImpl implements FileService {
     }
 
     public void saveProjectImages(ProjectDto savedProject, MultipartFile[] files) {
+        if (files.length > 15) {
+            throw new ProjectWasNotUpdatedException("Nie możesz dodać więcej niż 15 zdjęć.");
+        }
         try {
             String fileDirectoryName = FULL_PATH_TO_UPLOAD_DIRECTORY + savedProject.getId() + File.separator;
             Path dirPath = Paths.get(fileDirectoryName);
