@@ -18,12 +18,15 @@ public class MessagesController {
 
     @PostMapping
     public String sentToMe(@RequestParam(name = "phoneNumber") String phoneNumber, Model model) {
-        if (phoneNumber.isEmpty()) {
-            model.addAttribute("errorMessage", "Podaj numer telefonu!");
-            return homeController.openHomePage(model);
+        String regex = "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$";
+        String phoneNumberWithoutSymbols;
+        phoneNumberWithoutSymbols = phoneNumber.replaceAll("\\D", "");
+        if (phoneNumber.isEmpty() || !phoneNumberWithoutSymbols.matches(regex)) {
+            model.addAttribute("errorMessage", "Nieprawidłowy format numeru telefonu!");
+        }else {
+            emailService.sendEmail("v.siverskiy@gmail.com", "Hello, Nazar!", phoneNumber);
+            model.addAttribute("successMessage", "Wiadomość została wysłana pomyślnie!");
         }
-        emailService.sendEmail("rksvjdbx@gmail.com", "Hello, Nazar!", phoneNumber);
-
-        return "redirect:/home";
+        return homeController.openHomePage(model);
     }
 }
