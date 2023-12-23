@@ -75,7 +75,7 @@ a {
 
 .our-projects__content__project-card {
   max-width: 293px;
-  max-height: 491px;
+  min-height: 491px;
   margin: auto auto 26px;
 }
 
@@ -91,7 +91,7 @@ a {
   padding: 24px 24px 24px 24px;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 277px;
+  min-height: 301px;
 }
 
 .our-projects__content__project-card__description_title {
