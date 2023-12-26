@@ -2,6 +2,7 @@
     background-color: #F7F7F7;
     max-width: 1200px;
     margin: auto;
+    padding-top: 30px;
 }
 
 .about-top-container {
@@ -15,7 +16,7 @@
     font-size: 40px;
     font-weight: 700;
     line-height: 25px;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .about-top-container-divider {
@@ -28,7 +29,6 @@
 .about-bottom-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 .bottom-container-text p {
@@ -36,6 +36,11 @@
     text-align: justify;
     text-indent: 10%;
     font-size: 15px;
+    font-family: var(--font-family-paragraph);
+}
+
+.bottom-container-right {
+    margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
