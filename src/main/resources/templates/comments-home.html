@@ -1,0 +1,37 @@
+<div class="comments_container">
+  <div class="our-project__intro">
+    <h3 class="our-projects__intro_title">Opinie Klientów</h3>
+    <div class="horizontal-orange-divider">
+    </div>
+  </div>
+  <div class="items">
+    <div class="card" th:if="${review.isVerified}"
+         th:each="review, index: ${recent_reviews}">
+      <div class="card-body">
+
+        <div class="card-title"><img
+                src="/img/icons/quotes.svg"
+                alt="quotes icon"></div>
+        <div class="review-author"
+             th:text="${review.getAuthor()}">
+          Guest
+        </div>
+        <div class="small-orange-divider"></div>
+        <div class="review-content"
+             th:text="${review.getContent()}">
+          "Online reviews can make or break a customer's
+          decision to make a purchase. Read about
+          these customer review sites where your customers'
+          Online reviews can make or break a
+          customer's decision to make a purchase. Read
+          about these customer review sites where
+          your customers'"
+        </div>
+        <div class="review-date"
+             th:text="${review.getCreationTime()}">
+          2023-10-11
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

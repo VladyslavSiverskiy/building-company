@@ -1,16 +1,16 @@
-.main_container {
+.comments {
   min-width: 100%;
   padding: 45px 0 15px 0;
 }
 
 @media (max-width: 1200px) {
-  .main_container {
+  .comments {
     max-width: 1200px;
   }
 }
 
 @media (max-width: 520px) {
-  .main_container {
+  .comments {
     max-width: none;
   }
 }
