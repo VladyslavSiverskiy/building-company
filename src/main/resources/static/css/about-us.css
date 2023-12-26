@@ -39,6 +39,10 @@
 }
 
 @media (min-width: 768px) {
+    .about-us {
+        padding-bottom: 20px;
+    }
+
     .about-bottom-container {
         flex-direction: row;
     }

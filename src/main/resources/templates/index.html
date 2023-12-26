@@ -1,165 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Building Company</title>
-        <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-        <script
-        src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-        <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-        <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <link rel="stylesheet" th:href="@{/css/index.css}">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Building Company</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
 
-    <body>
-        <header>
-            <div th:insert="~{top-nav.html}"></div>
-            <div th:insert="~{header-home.html}"></div>
-        </header>
+<body>
+<header>
+    <div th:insert="~{top-nav.html}"></div>
+    <div th:insert="~{header-home.html}"></div>
+</header>
 
-        <section class="jobs" th:insert="~{jobs-home.html}"></section>
-        <section class="quote" th:insert="~{services-call.html}"></section>
-        <section class="top-counters" th:insert="~{top-counters.html}"></section>
-        <section class="our-projects" th:insert="~{our-projects.html}"></section>
-        <section class="about-us" th:insert="~{about-us.html}"></section>
-      
-        <section class="main_container">
-            <div class="comments_container">
-                <div class="our-project__intro">
-                    <h3 class="our-projects__intro_title">Opinie Klientów</h3>
-                    <div class="horizontal-orange-divider">
-                    </div>
-                </div>
-                <div class="items">
-                    <div class="card" th:if="${review.isVerified}"
-                        th:each="review, index: ${recent_reviews}">
-                        <div class="card-body">
+<section class="jobs" th:insert="~{jobs-home.html}"></section>
+<section class="quote" th:insert="~{services-call.html}"></section>
+<section class="top-counters" th:insert="~{top-counters.html}"></section>
+<section class="our-projects" th:insert="~{our-projects.html}"></section>
+<section class="about-us" th:insert="~{about-us.html}"></section>
+<section class="comments" th:insert="~{comments-home.html}"></section>
+<section class="quote" th:insert="~{quote-home.html}"></section>
+<footer class="footer" th:insert="~{footer.html}"></footer>
 
-                            <div class="card-title"><img
-                                    src="/img/icons/quotes.svg"
-                                    alt="quotes icon"></div>
-                            <div class="review-author"
-                                th:text="${review.getAuthor()}">
-                                Guest
-                            </div>
-                            <div class="small-orange-divider"></div>
-                            <div class="review-content"
-                                th:text="${review.getContent()}">
-                                "Online reviews can make or break a customer's
-                                decision to make a purchase. Read about
-                                these customer review sites where your customers'
-                                Online reviews can make or break a
-                                customer's decision to make a purchase. Read
-                                about these customer review sites where
-                                your customers'"
-                            </div>
-                            <div class="review-date"
-                                th:text="${review.getCreationTime()}">
-                                2023-10-11
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div id="toastMessage" class="toast-message" style="display:none;">
+    <span id="toastContent"></span>
+</div>
 
+<script>
+    const menu_btn = document.querySelector('.hamburger');
+    const mobile_menu = document.querySelector('.mobile-nav');
 
-        <section class="quote" th:insert="~{quote-home.html}"></section>
-        <footer class="footer" th:insert="~{footer.html}"></footer>
+    menu_btn.addEventListener('click', function () {
+        menu_btn.classList.toggle('is-active')
+        mobile_menu.classList.toggle('is-active')
+    })
+</script>
 
-        <div id="toastMessage" class="toast-message" style="display:none;">
-            <span id="toastContent"></span>
-        </div>
-        <script>
-        const menu_btn = document.querySelector('.hamburger');
-        const mobile_menu = document.querySelector('.mobile-nav');
+<script>
+    function showToast(message, isError = false) {
+        const toastMessage = document.getElementById('toastMessage');
+        const toastContent = document.getElementById('toastContent');
 
-        menu_btn.addEventListener('click', function () {
-            menu_btn.classList.toggle('is-active')
-            mobile_menu.classList.toggle('is-active')
-        })
-    </script>
-        <script>
-            function showToast(message, isError = false) {
-                const toastMessage = document.getElementById('toastMessage');
-                const toastContent = document.getElementById('toastContent');
+        toastContent.innerText = message;
 
-                toastContent.innerText = message;
+        if (isError) {
+            toastMessage.style.backgroundColor = 'rgba(255,0,0,0.65)';
+        } else {
+            toastMessage.style.backgroundColor = 'rgba(0,128,0,0.63)';
+        }
 
-                if (isError) {
-                    toastMessage.style.backgroundColor = 'rgba(255,0,0,0.65)';
-                } else {
-                    toastMessage.style.backgroundColor = 'rgba(0,128,0,0.63)';
+        toastMessage.style.display = 'block';
+
+        setTimeout(() => {
+            toastMessage.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        $('.items').slick({
+            dots: false,
+            infinite: true,
+            speed: 800,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 670,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 344,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
 
-                toastMessage.style.display = 'block';
-
-                setTimeout(() => {
-                    toastMessage.style.display = 'none';
-                }, 3000);
-            }
-        </script>
-        <script>
-        $(document).ready(function () {
-
-            $('.items').slick({
-                dots: false,
-                infinite: true,
-                speed: 800,
-                autoplay: true,
-                autoplaySpeed: 6000,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 670,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 344,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-
-                ]
-            });
+            ]
         });
-    </script>
-        <script>
-            if ("[[${successMessage}]]") {
-                showToast("[[${successMessage}]]");
-            }
-            if ("[[${errorMessage}]]") {
-                showToast("[[${errorMessage}]]", true);
-            }
-        </script>
+    });
+</script>
 
-    </body>
+<script>
+    if ("[[${successMessage}]]") {
+        showToast("[[${successMessage}]]");
+    }
+    if ("[[${errorMessage}]]") {
+        showToast("[[${errorMessage}]]", true);
+    }
+</script>
+
+</body>
 </html>

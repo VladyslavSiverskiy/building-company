@@ -19,6 +19,7 @@
 }
 
 .quote-button .btn-outline-warning {
+    border-color: #ffb400 !important;
     border-radius: 0;
     border-width: 4px;
     font-weight: bold;
