@@ -2,7 +2,7 @@ package com.example.building_company.auth;
 
 import com.example.building_company.model.Role;
 import com.example.building_company.model.User;
-import com.example.building_company.service.UserServiceImpl;
+import com.example.building_company.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

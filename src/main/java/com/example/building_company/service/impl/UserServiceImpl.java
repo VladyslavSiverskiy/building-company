@@ -1,10 +1,11 @@
-package com.example.building_company.service;
+package com.example.building_company.service.impl;
 
 import com.example.building_company.constants.ExceptionMessages;
 import com.example.building_company.dto.UserDto;
 import com.example.building_company.exception.UserNotFoundException;
 import com.example.building_company.model.User;
 import com.example.building_company.repository.UserRepository;
+import com.example.building_company.service.UserService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.UserDetails;

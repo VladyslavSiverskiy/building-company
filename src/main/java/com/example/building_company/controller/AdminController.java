@@ -3,15 +3,12 @@ package com.example.building_company.controller;
 import com.example.building_company.dto.ProjectDto;
 import com.example.building_company.model.Project;
 import com.example.building_company.model.Review;
-import com.example.building_company.model.Work;
 import com.example.building_company.service.FileService;
 import com.example.building_company.service.ProjectService;
 import com.example.building_company.service.ReviewService;
-import com.example.building_company.service.WorkService;
 
 import lombok.AllArgsConstructor;
 
-import org.hibernate.mapping.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +23,6 @@ public class AdminController {
 
     private final ProjectService projectService;
     private final ReviewService reviewService;
-    private final WorkService workService;
     private final FileService fileService;
     private final ModelMapper modelMapper;
 
@@ -40,13 +36,8 @@ public class AdminController {
                 .stream()
                 .map(elem -> modelMapper.map(elem, Review.class))
                 .toList();
-        var works = workService.findAll()
-                .stream()
-                .map(elem -> modelMapper.map(elem, Work.class))
-                .toList();
         model.addAttribute("projects", pr);
         model.addAttribute("reviews", reviews);
-        model.addAttribute("works", works);
         model.addAttribute("currentPage", currentPage);
         return "admin-home";
     }
@@ -67,5 +58,4 @@ public class AdminController {
         projectService.update(projectDto);
         return "redirect:/projects/" + projectId + "/update";
     }
-
 }

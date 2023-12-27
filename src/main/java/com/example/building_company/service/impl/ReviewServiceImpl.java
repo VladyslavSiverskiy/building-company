@@ -1,5 +1,6 @@
-package com.example.building_company.service;
+package com.example.building_company.service.impl;
 
+import com.example.building_company.service.ReviewService;
 import lombok.AllArgsConstructor;
 
 import java.util.List;

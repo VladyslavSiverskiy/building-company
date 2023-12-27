@@ -1,10 +1,11 @@
-package com.example.building_company.service;
+package com.example.building_company.service.impl;
 
 import com.example.building_company.constants.ExceptionMessages;
 import com.example.building_company.dto.ProjectDto;
 import com.example.building_company.exception.ProjectNotFoundException;
 import com.example.building_company.model.Project;
 import com.example.building_company.repository.ProjectRepository;
+import com.example.building_company.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
