@@ -195,6 +195,14 @@
     padding-top: 7px;
 }
 
+.review-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
 @media screen and (min-width: 530px) {
     .admin-logo__header{
         display: block;

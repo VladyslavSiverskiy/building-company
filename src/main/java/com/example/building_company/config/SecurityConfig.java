@@ -1,6 +1,6 @@
 package com.example.building_company.config;
 
-import com.example.building_company.service.UserServiceImpl;
+import com.example.building_company.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

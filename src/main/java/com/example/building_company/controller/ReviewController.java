@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.building_company.dto.ReviewDto;
-import com.example.building_company.service.ReviewServiceImpl;
+import com.example.building_company.service.impl.ReviewServiceImpl;
 
 @Controller
 @RequestMapping("/review")

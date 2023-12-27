@@ -1,6 +1,6 @@
 body {
     background-color: #f7f7f7;
-    color: #333; /* Dark text color for better readability */
+    color: #333;
 }
 
 .container {
@@ -88,7 +88,6 @@ button.btn-secondary {
     vertical-align: center;
 }
 
-/* Hover effect for the Clear button */
 .button-clear:hover {
     border-color: #343a40;
     background-color: #343a40 !important;
