@@ -16,13 +16,14 @@
                 <div class="col-md-8">
                     <a class="nav-link" style="padding: 0; color: #343a40"
                         th:href="@{/admin(currentPage='project')}"> <- Wróć </a>
-                    <h1 class="mb-4">Utwórz nowy projekt</h1>
+                    <h1 class="mb-4">Stwórz nowy projekt</h1>
                     <form th:action="@{/projects/create}" th:object="${project}"
                         method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="title">Tytuł (*):</label>
                             <input th:field="*{title}" type="text"
-                                class="form-control" name="title" id="title" maxlength="75">
+                                class="form-control" name="title" id="title"
+                                maxlength="75">
                         </div>
                         <div class="form-group">
                             <label for="description">Opis (*):</label>
@@ -65,7 +66,7 @@
                         </div>
 
                         <button type="submit"
-                            class="btn btn-primary button-create">Utwórz</button>
+                            class="btn btn-primary button-create">Stwórz</button>
                         <button type="reset"
                             class="btn btn-secondary button-clear">Wyczyść</button>
                         <div th:if="${error}" th:text="${error}"
