@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping
 @AllArgsConstructor
 public class HomeController {
 
@@ -27,7 +27,7 @@ public class HomeController {
     private final ReviewService reviewService;
     private final WorkService workService;
 
-    @GetMapping
+    @GetMapping(value = {"", "/","/home"})
     public String openHomePage(Model model) {
         List<ProjectDto> projectDtoList = projectService.findAll();
         List<ProjectDto> sublist = projectDtoList.subList(Math.max(projectDtoList.size() - 4, 0),
