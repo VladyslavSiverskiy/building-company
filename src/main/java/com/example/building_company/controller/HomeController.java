@@ -33,12 +33,11 @@ public class HomeController {
         List<ProjectDto> sublist = projectDtoList.subList(Math.max(projectDtoList.size() - 4, 0),
                 projectDtoList.size());
         model.addAttribute("recent_projects", sublist);
-
         List<ReviewDto> reviewDtos = reviewService.findAll();
         model.addAttribute("recent_reviews", reviewDtos);
-
         List<WorkDto> workDtos = workService.findAll();
         model.addAttribute("recent_works", workDtos);
+        model.addAttribute("projects_amount", 12 + projectDtoList.size());
         return "index";
     }
 
