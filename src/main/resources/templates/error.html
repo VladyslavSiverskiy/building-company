@@ -13,9 +13,10 @@
     <div class="notfound">
         <div class="notfound-404">
             <h1>Oops!</h1>
-            <h2>404 - Strona nie znaleziona</h2>
+            <h2 th:text="${status + ' - ' + error}"></h2>
         </div>
         <a href="/">Przejdź do strony głównej</a>
+
     </div>
 </div>
 </body>

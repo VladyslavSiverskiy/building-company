@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
 
 @Configuration
 @EnableWebSecurity
@@ -44,7 +45,7 @@ public class SecurityConfig {
                 .logoutSuccessUrl("/login?logout=true")
                 .deleteCookies("JSESSIONID")
                 .permitAll();
-
+        http.exceptionHandling().authenticationEntryPoint(new Http403ForbiddenEntryPoint());
         return http.build();
     }
 
