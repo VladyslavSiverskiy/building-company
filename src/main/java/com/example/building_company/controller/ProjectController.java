@@ -4,6 +4,7 @@ import com.example.building_company.dto.ProjectDto;
 import com.example.building_company.service.FileService;
 import com.example.building_company.service.ProjectService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -33,12 +34,14 @@ public class ProjectController {
     }
 
     @GetMapping("/create")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String create(Model model) {
         model.addAttribute("project", new ProjectDto());
         return "add-project";
     }
 
     @PostMapping("/create")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String create(
             @ModelAttribute("project") ProjectDto project,
             @RequestParam("images") MultipartFile[] files,
@@ -64,6 +67,7 @@ public class ProjectController {
     }
 
     @GetMapping("/{projectId}/delete")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String delete(@PathVariable Long projectId) {
         projectService.delete(projectId);
         return "redirect:/admin";
@@ -111,6 +115,7 @@ public class ProjectController {
     }
 
     @GetMapping("/{projectId}/update")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String updateProject(@PathVariable Long projectId, Model model) {
         ProjectDto projectDto = projectService.findById(projectId);
         model.addAttribute("project", projectDto);
@@ -124,6 +129,7 @@ public class ProjectController {
     }
 
     @PostMapping("/{projectId}/update")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String updateProject( @ModelAttribute("project") ProjectDto projectDto,
                                  @PathVariable Long projectId,
                                  @RequestParam("start-date") String startDate,

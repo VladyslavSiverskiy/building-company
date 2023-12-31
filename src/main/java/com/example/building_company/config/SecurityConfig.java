@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .requestMatchers("/review/add-review").permitAll()
                 .requestMatchers("/auth/user/**").hasAuthority("USER")
                 .requestMatchers("/admin").hasAuthority("ADMIN")
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/auth/login")

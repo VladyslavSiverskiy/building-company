@@ -40,7 +40,7 @@ a {
 }
 
 .our-projects__text {
-  align-content: center;
+  align-items: center;
   max-width: 500px;
   display: flex;
   justify-content: space-between;

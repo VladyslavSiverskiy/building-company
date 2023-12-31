@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,12 +36,14 @@ public class ReviewController {
     }
 
     @GetMapping("/{id}/update")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String editReview(@PathVariable Long id, Model model) {
         model.addAttribute("review", modelMapper.map(reviewService.findById(id), ReviewDto.class));
         return "edit-review";
     }
 
     @PostMapping("/{id}/update")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String updateReview(@ModelAttribute("review") ReviewDto reviewDto, @PathVariable Long id,
             @RequestParam(value = "isVerified", required = false) Boolean isVerified) {
         ReviewDto existingReview = reviewService.findById(id);
@@ -55,6 +58,7 @@ public class ReviewController {
     }
 
     @GetMapping("/{id}/read")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String readById(@PathVariable Long id, Model model) {
         model.addAttribute("review", modelMapper.map(reviewService.findById(id), ReviewDto.class));
         return "/review-info";
@@ -68,6 +72,7 @@ public class ReviewController {
     }
 
     @GetMapping("/{reviewId}/delete")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteReview(@PathVariable Long reviewId) {
         reviewService.delete(reviewId);
         return "redirect:/admin";
