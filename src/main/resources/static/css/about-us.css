@@ -3,6 +3,7 @@
     max-width: 1200px;
     margin: auto;
     padding-top: 30px;
+    scroll-margin-top: 50px;
 }
 
 .about-top-container {
