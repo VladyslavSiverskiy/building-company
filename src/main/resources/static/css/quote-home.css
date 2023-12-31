@@ -53,6 +53,10 @@
     display: flex;
 }
 
+.quote-input-form {
+    background-color: #F7F7F7 ;
+}
+
 @media (min-width: 768px) {
     .quote {
         display: flex;

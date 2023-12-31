@@ -152,6 +152,7 @@
 
     .right-container-top-text {
         margin-bottom: 40px;
+        min-width: 50%;
     }
 
     .right-container-top-text-button {

@@ -22,7 +22,7 @@ form {
   display: none;
 }
 
-.card {
+.login-card {
   background-color: #F7F7F7;
   border-radius: 0;
   border-width: 0;
@@ -89,11 +89,11 @@ form {
 }
 
 .restore-group > a {
-  color: #ffb400;
+  color: #566a7f;
 }
 
 .restore-group > a:hover {
-  color: rgb(0, 0, 0);
+  color: black;
 }
 
 .error {

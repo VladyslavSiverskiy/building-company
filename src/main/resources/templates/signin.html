@@ -26,9 +26,9 @@
 
                     <div
                         class="right-container col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div class="card shadow-2-strong">
-                            <div class="card-body p-3 pt-5 pb-5 text-start">
-                                <form class="card-body-login"
+                        <div class="login-card shadow-2-strong">
+                            <div class="login-card-body p-3 pt-5 pb-5 text-start">
+                                <form class="card-body-login-form"
                                     th:action="@{/auth/login}" method="POST">
                                     <h1 class="welcome mb-2">Witaj!</h1>
                                     <h6 class="welcome mb-4">Zaloguj się na
@@ -63,8 +63,7 @@
                                         class="error">Nieprawidłowa
                                         nazwa użytkownika lub hasło!</p>
                                     <div class="restore-group">
-                                        <a th:href="@{/home}">Strona
-                                            główna</a>
+                                        <a th:href="@{/}">Przejdź do strony głównej</a>
                                     </div>
 
                                 </form>
