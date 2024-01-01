@@ -18,11 +18,11 @@
             <form th:action="@{/projects/{projectId}/update(projectId=${project.getId()})}" th:object="${project}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">Tytuł:</label>
-                    <input th:field="*{title}" type="text" class="form-control" name="title" id="title" maxlength="75">
+                    <input th:field="*{title}" type="text" class="form-control" name="title" id="title" maxlength="75" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Opis:</label>
-                    <input th:field="*{description}" type="text" class="form-control" name="description" id="description" maxlength="755">
+                    <input th:field="*{description}" type="text" class="form-control" name="description" id="description" maxlength="755" required>
                 </div>
                 <div class="form-group">
                     <label for="place">Miejsce:</label>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="category">Kategoria:</label>
-                    <input th:field="*{category}" type="text" class="form-control" name="category" id="category">
+                    <input th:field="*{category}" type="text" class="form-control" name="category" id="category" required>
                 </div>
                 <div class="form-group">
                     <label for="client">Klient:</label>
@@ -50,7 +50,7 @@
                             th:value="${#dates.format(endDate , 'yyyy-MM-dd')}"
                             type="date" class="form-control"
                             name="end-date"
-                            id="end-date">
+                            id="end-date" required>
                 </div>
                 <div class="form-group">
                     <div class="d-flex flex-column align-items-center">

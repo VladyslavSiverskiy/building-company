@@ -30,6 +30,9 @@ public class ReviewController {
     @PostMapping("/add-review")
     public String createReview(@ModelAttribute("reviewDto") ReviewDto reviewDto, Model model) {
         reviewDto.setCreationTime(LocalDate.now());
+        if (reviewDto.getAuthor().isEmpty()) {
+            reviewDto.setAuthor("Gość");
+        }
         ReviewDto createdReview = reviewService.save(reviewDto);
         model.addAttribute("createdReview", createdReview);
         return "redirect:/home";
@@ -75,6 +78,6 @@ public class ReviewController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteReview(@PathVariable Long reviewId) {
         reviewService.delete(reviewId);
-        return "redirect:/admin";
+        return "redirect:/admin?currentPage=review";
     }
 }

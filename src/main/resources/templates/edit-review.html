@@ -42,13 +42,13 @@
           <div class="mb-3">
             <label for="author">Autor:</label>
             <input th:field="*{author}" type="text" class="form-control"
-              name="author" id="author">
+              name="author" id="author" maxlength="50">
           </div>
 
           <div class="mb-3">
             <label for="content" class="form-label">Treść</label>
             <textarea class="form-control" id="content"
-              name="content" rows="3" th:field="*{content}"></textarea>
+              name="content" rows="3" th:field="*{content}" maxlength="255"></textarea>
           </div>
 
           <div class="mb-3 form-check">

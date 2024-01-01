@@ -53,11 +53,11 @@
 
                         </div>
                     </div>
-                    <div th:if="${project.getCategory() != null}" class="project__content__additional__info__unit">
+                    <div th:if="${!project.getCategory().isEmpty()}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Kategoria:</div>
                         <div th:text="${project.getCategory()}" class="project__content__additional__info__unit__text"></div>
                     </div>
-                    <div th:if="${project.getPlace() != null}" class="project__content__additional__info__unit">
+                    <div th:if="${!project.getPlace().isEmpty()}" class="project__content__additional__info__unit">
                         <div class="project__content__additional__info__unit__header">Miejsce:</div>
                         <div th:text="${project.getPlace()}" class="project__content__additional__info__unit__text"></div>
                     </div>

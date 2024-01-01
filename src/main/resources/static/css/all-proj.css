@@ -95,6 +95,7 @@ a {
 }
 
 .our-projects__content__project-card__description_title {
+  word-break: break-all;
   font-family: var(--font-family-paragraph);
   color: #2a2a2a;
   font-size: 20px;

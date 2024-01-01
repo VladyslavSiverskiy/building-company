@@ -42,10 +42,9 @@ public class SecurityConfig {
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/login?logout=true")
+                .logoutSuccessUrl("/auth/login?logout=true")
                 .deleteCookies("JSESSIONID")
                 .permitAll();
-        http.exceptionHandling().authenticationEntryPoint(new Http403ForbiddenEntryPoint());
         return http.build();
     }
 

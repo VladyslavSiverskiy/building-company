@@ -41,8 +41,8 @@
         <div th:each="review, iterStat : ${reviews}">
           <div class="review-card">
             <p><strong>ID: </strong><span th:text="${review.id}"></span></p>
-            <p><strong>Autor: </strong><span th:text="${review.author}"></span></p>
-            <p><strong>Treść: </strong><span th:text="${review.content}"></span></p>
+            <p><strong>Autor: </strong><span style="word-break: break-all;" th:text="${review.author}"></span></p>
+            <p><strong>Treść: </strong><span style="word-break: break-all;" th:text="${review.content}"></span></p>
             <p><strong>Data: </strong><span th:text="${review.creationTime}"></span></p>
             <p><strong>Zweryfikowane: </strong><span
                 th:text="${review.isVerified}"></span></p>

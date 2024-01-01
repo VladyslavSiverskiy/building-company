@@ -23,13 +23,13 @@
                             <label for="title">Tytuł (*):</label>
                             <input th:field="*{title}" type="text"
                                 class="form-control" name="title" id="title"
-                                maxlength="75">
+                                maxlength="75" required>
                         </div>
                         <div class="form-group">
                             <label for="description">Opis (*):</label>
                             <input th:field="*{description}" type="text"
                                 class="form-control" name="description"
-                                id="description" maxlength="755">
+                                id="description" maxlength="755" required>
                         </div>
                         <div class="form-group">
                             <label for="place">Miejsce:</label>
@@ -40,7 +40,7 @@
                             <label for="category">Kategoria (*):</label>
                             <input th:field="*{category}" type="text"
                                 class="form-control" name="category"
-                                id="category">
+                                id="category" required>
                         </div>
                         <div class="form-group">
                             <label for="client">Klient:</label>
@@ -57,7 +57,7 @@
                             <label for="end-date">Data zakończenia (*):</label>
                             <input th:field="*{endDate}" type="date"
                                 class="form-control" name="end-date"
-                                id="end-date">
+                                id="end-date" required>
                         </div>
 
                         <div class="form-group">

@@ -14,7 +14,7 @@
 .review-author {
     font-family: var(--font-family-paragraph);
     color: #343a40;
-    /*font-weight: bold;*/
+    word-break: break-all;
     text-align: center;
 }
 
@@ -108,6 +108,7 @@
 }
 
 .review-content{
+    word-break: break-all;
     text-align: justify;
     color: #888888;
     font-family: var(--font-family-paragraph);

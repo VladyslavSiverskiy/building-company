@@ -29,7 +29,7 @@ public class AuthenticationController {
 
     @GetMapping("/register")
     public String registerUser() {
-        userService.save(new User(0L, "admin@gmail.com", "bc_admin", "huMAN!Q?YJsjWSdA", Role.ADMIN));
+        userService.save(new User(0L, "admin1@gmail.com", "VitaliiS01!", "WymarzonyDom", Role.ADMIN));
         return "signin";
     }
 }
