@@ -51,6 +51,12 @@
     }
 }
 
+@media (min-width: 435px) {
+    .jobs-container-column {
+        max-width: 400px;
+    }
+}
+
 @media (min-width: 768px) {
     .jobs {
         max-width: 1200px;

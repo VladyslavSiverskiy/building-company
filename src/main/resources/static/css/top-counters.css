@@ -24,7 +24,8 @@
 }
 
 .right-container-top-title > h2 {
-    font-size: clamp(1rem, 3.4783vw + 0.6043rem, 3rem);
+    /*font-size: clamp(1rem, 3.4783vw + 1.4043rem, 3rem);*/
+    font-size: 38px;
     font-weight: 600;
     line-height: 25px;
     padding-top: 30px;
@@ -131,7 +132,8 @@
 
 @media (min-width: 768px) {
     .right-container-top-title > h2 {
-        font-size: 38px;
+        font-size: 40px;
+        font-weight: 600;
     }
 
     .top-counters {
