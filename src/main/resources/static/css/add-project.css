@@ -1,6 +1,6 @@
 body {
     background-color: #f7f7f7;
-    color: #333; /* Dark text color for better readability */
+    color: #333;
 }
 
 .container {
@@ -8,8 +8,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 50px 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+
 }
 
 h1 {
@@ -96,3 +95,9 @@ button.btn-secondary {
     text-decoration: none;
 }
 
+@media (min-width: 768px) {
+    .container{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}

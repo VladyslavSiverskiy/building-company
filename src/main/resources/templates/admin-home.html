@@ -23,7 +23,7 @@
                     </button>
                     <p class="admin-logo__header">WYMARZONY DOM ADMIN</p>
                     <form class="form-horizontal" th:action="@{/logout}"
-                        method="POST" style="margin-top: 40px;">
+                        method="POST">
                         <button class="admin__home-button" type="submit">
                             <img class="logout-img" src="/img/icons/logout.svg"
                                 alt="<-">
@@ -33,6 +33,9 @@
                 <div class="admin-panels">
                     <div class="left-panel">
                         <ul class="nav nav-tabs flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/}">Start</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link"
                                     th:classappend="${currentPage.equals('project') ? ' active' : ''}"
@@ -44,7 +47,7 @@
                                     th:href="@{/admin(currentPage='review')}">Recenzje</a>
                             </li>
                         </ul>
-
+                        <br>
                     </div>
                     <div class="right-panel">
                         <div th:if="${currentPage.equals('project')}"
