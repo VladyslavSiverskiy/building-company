@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
+import java.util.Random;
 
 import static com.example.building_company.constants.AppConstants.*;
 import static com.example.building_company.constants.AppConstants.RESOURCES_FOLDER_NAME;
@@ -55,7 +56,8 @@ public class FileServiceImpl implements FileService {
                 if (!Files.exists(dirPath)) {
                     Files.createDirectories(dirPath);
                 }
-                Path fileNameAndPath = Paths.get(String.valueOf(dirPath), titleImage.getOriginalFilename());
+                Integer num = new Random().nextInt(Integer.MAX_VALUE - 1) + 1;
+                Path fileNameAndPath = Paths.get(String.valueOf(dirPath), num + titleImage.getOriginalFilename());
                 if (Objects.requireNonNull(titleImage.getOriginalFilename()).length() > 3) {
                     Files.write(fileNameAndPath, titleImage.getBytes());
                     String url = String.valueOf(fileNameAndPath);
@@ -74,7 +76,9 @@ public class FileServiceImpl implements FileService {
                 Files.createDirectories(dirPath);
             }
             for (MultipartFile file : files) {
-                Path fileNameAndPath = Paths.get(String.valueOf(dirPath), file.getOriginalFilename());
+                Integer num = new Random().nextInt(Integer.MAX_VALUE -1) + 1;
+
+                Path fileNameAndPath = Paths.get(String.valueOf(dirPath),num.toString()+ file.getOriginalFilename());
                 if (Objects.requireNonNull(file.getOriginalFilename()).length() > 3) {
                     Files.write(fileNameAndPath, file.getBytes());
                     String url = String.valueOf(fileNameAndPath);
@@ -98,7 +102,9 @@ public class FileServiceImpl implements FileService {
                 Files.createDirectories(dirPath);
             }
             for (int i = 0; i < files.length; i++) {
-                Path fileNameAndPath = Paths.get(String.valueOf(dirPath), files[i].getOriginalFilename());
+                Integer num = new Random().nextInt(Integer.MAX_VALUE - 1) + 1;
+                Path fileNameAndPath = Paths.get(String.valueOf(dirPath),num.toString() + files[i].getOriginalFilename());
+                System.out.println(fileNameAndPath);
                 if (!Objects.isNull(files[i]) && files[i].getOriginalFilename().length() > 3) {
                     Files.write(fileNameAndPath, files[i].getBytes());
                     String url = String.valueOf(fileNameAndPath);

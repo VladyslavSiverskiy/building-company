@@ -8,7 +8,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 50px 20px;
-
+    margin: 0;
+    min-width: 100%;
 }
 
 h1 {
@@ -95,9 +96,9 @@ button.btn-secondary {
     text-decoration: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .container{
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin: 50px auto;
+        max-width: 720px;
     }
 }

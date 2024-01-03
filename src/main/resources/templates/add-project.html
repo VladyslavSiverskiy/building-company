@@ -7,6 +7,35 @@
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous">
         <link rel="stylesheet" th:href="@{/css/add-project.css}">
+        <style>
+            /* ... other styles remain unchanged ... */
+
+            /* Adjustments for small devices (tablets) */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 30px 10px; /* reduce padding */
+                }
+
+                h1 {
+                    font-size: 1.5rem; /* decrease font size */
+                }
+
+                input, .form-control-file {
+                    padding: 6px; /* reduce padding */
+                    font-size: 0.9rem; /* decrease font size */
+                }
+
+                button {
+                    font-size: 0.9rem; /* decrease font size */
+                    height: 38px; /* reduce button height */
+                }
+
+                .button-create, .button-clear {
+                    font-size: 14px; /* decrease font size */
+                    height: 38px; /* reduce button height */
+                }
+            }
+        </style>
         <title>Create New Project</title>
     </head>
     <body>
