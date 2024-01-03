@@ -47,7 +47,7 @@
             <p><strong>Zweryfikowane: </strong><span
                 th:text="${review.isVerified}"></span></p>
             <a th:href="@{/review/{reviewId}/read(reviewId=${review.getId()})}"
-              class="btn btn-primary info-btn">Otwórz</a>
+              class="btn info-btn">OTWÓRZ</a>
           </div>
           <div th:if="${iterStat.index % 3 == 2}" class="w-100"></div>
         </div>

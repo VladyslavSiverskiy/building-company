@@ -82,10 +82,12 @@ form {
   background: #ffb400;
   color: #ffffff;
   border-radius: 0;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
 .btn:hover {
-  background: #ffb400;
+  color: #2a2a2a;
 }
 
 .restore-group > a {

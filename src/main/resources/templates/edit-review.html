@@ -24,8 +24,20 @@
       margin-top: 20px;
     }
 
-    .btn-save {
-      margin-right: 10px;
+    .btn {
+      border-radius: 0;
+      letter-spacing: 1px;
+      font-weight: bold;
+      border-width: 4px;
+      margin-right: 5px;
+    }
+
+    .btn-outline-warning {
+      border-color: #ffb400 !important;
+    }
+
+    .btn-outline-warning:hover {
+      background-color: #ffb400 !important;
     }
   </style>
     <title>Edit Review</title>
@@ -58,8 +70,8 @@
             <label class="form-check-label" for="isVerified">Zweryfikowane</label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-save">Zapisz</button>
-          <input type="button" class="btn btn-primary" onclick="location.href='/review/all-reviews';" value="Wróć" />
+          <button type="submit" class="btn btn-outline-warning">AKTUALIZUJ</button>
+          <input type="button" class="btn btn-outline-dark" onclick="location.href='/admin?currentPage=review';" value="WRÓĆ" />
         </form>
       </div>
     </div>

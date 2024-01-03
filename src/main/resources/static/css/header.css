@@ -175,6 +175,10 @@
   letter-spacing: 1px;
 }
 
+.header-container-left-button .btn:hover {
+  color: #2a2a2a;
+}
+
 .header-container-left-button {
   display: flex;
   justify-content: end;
