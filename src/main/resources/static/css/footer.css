@@ -46,8 +46,13 @@
     color: #F7F7F7;
 }
 
-.footer-contacts-text span {
+.footer-contacts-line a {
     font-size: 16px;
+    color: #f7f7f7;
+}
+
+.footer-contacts-line a:hover {
+    color: #f7f7f7;
 }
 
 .footer-container-right {

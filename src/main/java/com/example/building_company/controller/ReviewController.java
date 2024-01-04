@@ -64,7 +64,7 @@ public class ReviewController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String readById(@PathVariable Long id, Model model) {
         model.addAttribute("review", modelMapper.map(reviewService.findById(id), ReviewDto.class));
-        return "/review-info";
+        return "review-info";
     }
 
     @GetMapping("/all-reviews")
