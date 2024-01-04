@@ -75,43 +75,63 @@ public class ProjectController {
 
     @GetMapping("/{projectId}")
     public String getProject(@PathVariable Long projectId, Model model){
-        ProjectDto projectDto = projectService.findById(projectId);
+        ProjectDto projectDto;
+        try {
+            projectDto = projectService.findById(projectId);
+        }catch (Exception e){
+            model.addAttribute("status", "404");
+            model.addAttribute("error", "Page doesn't exist");
+            return "error";
+        }
         model.addAttribute("project", projectDto);
         model.addAttribute("first_sentence", projectService.extractFirstSentence(projectDto.getDescription()));
         return "project";
     }
 
     @GetMapping("/{projectId}/next")
-    public String nextProject(@PathVariable Long projectId) {
-        List<ProjectDto> allProjects = projectService.findAll();
-        Long idOfNext = allProjects.get(0).getId();
-        for (int i = 0; i < allProjects.size(); i++) {
-            if (Objects.equals(allProjects.get(i).getId(), projectId)) {
-                if (i >= allProjects.size() - 1) {
-                    idOfNext = allProjects.get(0).getId();
-                }else{
-                    idOfNext = allProjects.get(i+1).getId();
+    public String nextProject(@PathVariable Long projectId, Model model) {
+        try {
+            List<ProjectDto> allProjects = projectService.findAll();
+            Long idOfNext = allProjects.get(0).getId();
+            for (int i = 0; i < allProjects.size(); i++) {
+                if (Objects.equals(allProjects.get(i).getId(), projectId)) {
+                    if (i >= allProjects.size() - 1) {
+                        idOfNext = allProjects.get(0).getId();
+                    }else{
+                        idOfNext = allProjects.get(i+1).getId();
+                    }
                 }
             }
+            return "redirect:/projects/" + idOfNext;
+        }catch (Exception e) {
+            model.addAttribute("status", "404");
+            model.addAttribute("error", "Page doesn't exist");
+            return "error";
         }
-        return "redirect:/projects/" + idOfNext;
     }
 
 
     @GetMapping("/{projectId}/prev")
-    public String prevProject(@PathVariable Long projectId) {
-        List<ProjectDto> allProjects = projectService.findAll();
-        Long idOfPrev = allProjects.get(0).getId();
-        for (int i = 0; i < allProjects.size(); i++) {
-            if (Objects.equals(allProjects.get(i).getId(), projectId)) {
-                if (i == 0) {
-                    idOfPrev = allProjects.get(allProjects.size() - 1).getId();
-                }else{
-                    idOfPrev = allProjects.get(i-1).getId();
+    public String prevProject(@PathVariable Long projectId, Model model) {
+        try{
+            List<ProjectDto> allProjects = projectService.findAll();
+            Long idOfPrev = allProjects.get(0).getId();
+            for (int i = 0; i < allProjects.size(); i++) {
+                if (Objects.equals(allProjects.get(i).getId(), projectId)) {
+                    if (i == 0) {
+                        idOfPrev = allProjects.get(allProjects.size() - 1).getId();
+                    }else{
+                        idOfPrev = allProjects.get(i-1).getId();
+                    }
                 }
             }
+            return "redirect:/projects/" + idOfPrev;
+        }catch (Exception e) {
+            model.addAttribute("status", "404");
+            model.addAttribute("error", "Page doesn't exist");
+            return "error";
         }
-        return "redirect:/projects/" + idOfPrev;
+
     }
 
     @GetMapping("/{projectId}/update")
